@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
-from releases.release_0_65_features import FEATURES, set_page_config
+
+try:
+    from releases.release_0_65_features import FEATURES, set_page_config
+except:
+    import urllib.request
+    with urllib.request.urlopen('https://raw.githubusercontent.com/streamlit/release-demos/master/releases/release_0_65_features.py') as response:
+       exec(response.read())
 
 __VERSION__ = "0.65.0"
 
