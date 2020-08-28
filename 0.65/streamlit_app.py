@@ -12,24 +12,36 @@ st.beta_set_page_config(
 
 
 def draw_main_page():
-    st.write("""
-# Release notes
+    st.write(f"""
+# Welcome!
 
-## New features
+This app is a demo of several :fire: **red-hot** :fire: features that made it into this Streamlit
+version.
+""")
+
+    st.info("""
+        :point_left: **To get started, choose a demo on the left sidebar.**
+    """)
+
+
+    st.write(f"""
+## Release notes {VERSION}
+
+### New features
 
 - Foo
 - Bar
 
-## Notable fixes
+### Notable fixes
 
 - Foo
 - Bar
 
-## Callouts
+### Callouts
 
 Deprecation Warning: The `st.image` parameter `format` has been renamed to `output_format`
 
-# More info
+## More info
 
 - As usual, the source code for this app can be found in [Github](#).
 - If you'd like to know what _exactly_ went into this release, check out the [commit
@@ -65,22 +77,10 @@ demos = {
 
 # Draw sidebar
 
+st.sidebar.title(f"Streamlit {VERSION}")
+selected_demo = st.sidebar.radio("Select a page", list(demos.keys()))
+
 # Draw main page
 
-
-f"""
-# Welcome to Streamlit {VERSION}! :wave:
-
-This app is a demo of several :fire: **red-hot** :fire: features that made it into this Streamlit
-version.
-
-To get started, choose what you'd like to see below.
-"""
-
-"---"
-
-selected_demo = st.radio("Select one", list(demos.keys()))
-
-"---"
 
 demos[selected_demo]()
