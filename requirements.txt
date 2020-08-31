@@ -1,3 +1,0 @@
-pandas >=0.21.0
-streamlit==0.64.0
-streamlit-nightly==0.64.1.dev20200810
