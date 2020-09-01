@@ -13,7 +13,7 @@ version.
     """)
 
     st.write(release_notes)
-    st.write("""
+    st.write(f"""
 ### Release Details
 
 - If you'd like to know what _exactly_ went into this release, check out the [commit
