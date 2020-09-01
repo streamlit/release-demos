@@ -12,25 +12,23 @@ except ValueError: # Already removed
 import streamlit as st
 import validators
 from util.release_helper import create_release_notes
+
+VERSION = '.'.join(st.__version__.split('.')[:2])
+
+# Begin release updates
 from demos.select_slider import select_slider
 from demos.write_sidebar import write_sidebar
 
-
 previous_version = "0.64.0"
-
 demo_pages = {
     "st.write in sidebar": write_sidebar,
     "Slider for lists or objects": select_slider,
 }
 
-VERSION = '.'.join(st.__version__.split('.')[:2])
 st.beta_set_page_config(
     page_title=f"New features in Streamlit {VERSION}",
     page_icon=":shark:",
 )
-
-pages = list(demo_pages.keys())
-pages.insert(0, "Release Notes")
 
 def draw_main_page():
     create_release_notes("""
@@ -52,8 +50,12 @@ def draw_main_page():
 
     🖥 Support for running Streamlit on Unix sockets
     """, previous_version, VERSION)
+# End release updates
 
 # Draw sidebar
+pages = list(demo_pages.keys())
+pages.insert(0, "Release Notes")
+
 st.sidebar.title(f"Streamlit v{VERSION} Demos")
 selected_demo = st.sidebar.radio("", pages)
 
