@@ -30,6 +30,6 @@ As always, thank you to all our [contributors](https://github.com/streamlit/stre
 
 - We can be found at https://streamlit.io and https://twitter.com/streamlit
 - Come by
-[the forums](https://discuss.streamlit.io/c/official-announcements/6) if you'd like ask questions,
+[the forums](https://discuss.streamlit.io/c/official-announcements/6) if you'd like to ask questions,
 post awesome apps, or just say hi!
     """)
