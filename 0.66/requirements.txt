@@ -1,4 +1,2 @@
 pandas >=0.21.0
-# TODO Update version
-streamlit==0.65.0
-streamlit-nightly==0.65.3.dev20200829
+streamlit==0.66.0
