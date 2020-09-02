@@ -40,7 +40,7 @@ def create_static_notes(contributors, previous_version, current_version):
     st.write(f"""
 
 
-        As always, thank you to [all our contributors](https://github.com/streamlit/streamlit/graphs/contributors) who help make Streamlit great!
+        As always, thank you to [all our contributors](https://github.com/streamlit/streamlit/graphs/contributors) who help make Streamlit awesome!
 
         ---
 
