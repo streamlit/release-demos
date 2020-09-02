@@ -1,15 +1,18 @@
 import streamlit as st
 import validators
+from demos.svg import svg
+from demos.query_params import query_params
+from demos.dataframe import dataframe
+from demos.stop import stop
+from demos.page_config import page_config
 
 
 VERSION = '.'.join(st.__version__.split('.')[:2])
-
 
 st.beta_set_page_config(
     page_title=f"New features in Streamlit {VERSION}",
     page_icon=":shark:",  # Pick a fun new emoji for every version.
 )
-
 
 def draw_main_page():
     st.write(f"""
@@ -29,13 +32,11 @@ version.
 
 ### New features
 
-- Foo
-- Bar
-
-### Notable fixes
-
-- Foo
-- Bar
+- Page config [beta]
+- Query params [experimental]
+- Improved support for Pandas dataframes
+- Stop streamlit with st.stop
+- Inline SVG support for st.image
 
 ### Callouts
 
@@ -52,35 +53,21 @@ diff](https://github.com/streamlit/streamlit/compare/0.64.0...0.65.0).
 post awesome apps, or just say hi!
     """)
 
-
-
-def draw_foo():
-    st.write("# Demo of foo")
-
-    import numpy as np
-    arr = np.random.randn(10, 5)
-    st.line_chart(arr)
-
-
-def draw_bar():
-    st.write("# Demo of bar")
-
-    st.write("# :smiley:")
-
-
-demos = {
+pages = {
     "Release notes": draw_main_page,
-    "Demo of foo": draw_foo,
-    "Demo of bar": draw_bar,
+    "Page config [beta]": page_config,
+    "Query params [experimental]": query_params,
+    "Pandas for dataframes": dataframe,
+    "Stop streamlit with st.stop": stop,
+    "Inline SVG support for st.image": svg,
 }
-
 
 # Draw sidebar
 
 st.sidebar.title(f"Streamlit {VERSION}")
-selected_demo = st.sidebar.radio("Select a page", list(demos.keys()))
+selected_demo = st.sidebar.radio("Select a page", list(pages.keys()))
 
 # Draw main page
 
 
-demos[selected_demo]()
+pages[selected_demo]()
