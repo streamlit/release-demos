@@ -25,8 +25,8 @@ from demos.advanced import advanced
 
 previous_version = "0.67.0"
 demo_pages = {
-    "Layouts: Container": container,
     "Layouts: Columns": columns,
+    "Layouts: Container": container,
     "Layouts: Expander": expander,
     "Layouts: Advanced": advanced,
     "Redesigned File Uploader": file_uploader,
@@ -40,8 +40,12 @@ contributors = [
 ]
 
 intro = """
-In celebration of our 1st birthday, we've put together a jam packed release
-[with some anniversary verbiage or maybe notes from adrien].
+In celebration of our 1st birthday, we've put together a jam packed release with
+features long awaited by the community.
+
+Streamlit is only where it is today
+because of the community and we're thankful to have taken this journey with you
+over the last year 🤗
 """
 
 release_notes = """
@@ -49,7 +53,7 @@ release_notes = """
 
 ### New Features
 
-- 🦷 Introducing new layout options for Streamlit! Move aside, vertical layout.
+- ⌗ Introducing new layout options for Streamlit! Move aside, vertical layout.
 Make a little space for... horizontal layout! Check out our
 [blog post](https://www.npmjs.com/package/streamlit-component-lib).
 - 💾 File uploader blurb
@@ -57,9 +61,9 @@ Make a little space for... horizontal layout! Check out our
 
 ### Notable Changes
 
-- 🚨 Breaking Change: Following the deprecation of `st.deck_gl_chart` in [date], we have
-now removed the API completely. Please use [replacement] instead.
-- 🎈 `st.balloon` has gotten a facelift with better balloons.
+- 🚨 Breaking Change: Following the deprecation of `st.deck_gl_chart` in January 2020, we have
+now removed the API completely. Please use `st.pydeck_chart` instead.
+- 🎈 `st.balloon` has gotten a facelift with nicer balloons and smoother animations.
 """
 # End release updates
 

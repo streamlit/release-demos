@@ -17,7 +17,6 @@ def advanced():
     from the `st.` namespace!
     """)
 
-    st.write("## Use columns to compare things side-by-side:")
     with st.echo("below"):
         charts = [area_chart, bar_chart, line_chart]
         def make_chart():
