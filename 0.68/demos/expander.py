@@ -16,13 +16,8 @@ def expander():
         """
     )
 
-    # with st.echo("below"):
-    filters = st.beta_expander("Search and Filter", expanded=True)
-    filter1, filter2, filter3 = filters.beta_columns((4, 2, 1))
-
-    filter1.text_input("Search")
-    filter2.selectbox(
-        "By Author",
-        ["", "domoritz", "tanmaylaud", "cclauss", "kinghuang", "matthiasgoergens", "1wpro2"]
-    )
-    filter3.selectbox("Sort by", ["", "Name", "Newest", "Oldest"])
+    expander = st.beta_expander("Toggle to see code")
+    expander.code("""
+expander = st.beta_expander("Show Code")
+expander.code("expander = st.beta_expander("Show Code")")
+    """)

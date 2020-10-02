@@ -28,7 +28,7 @@ demo_pages = {
     "Layouts: Columns": columns,
     "Layouts: Container": container,
     "Layouts: Expander": expander,
-    "Layouts: Advanced": advanced,
+    "Layouts: Best Practices": advanced,
     "Redesigned File Uploader": file_uploader,
 }
 
@@ -74,17 +74,15 @@ def draw_main_page():
 
 
     st.write(intro)
-    balloons()
 
     st.info("""
         :point_left: **To get started, choose a demo on the left sidebar.**
     """)
+    balloons()
 
     st.write(release_notes)
 
     create_static_notes(contributors, previous_version, VERSION)
-
-    st.balloons()
 
 
 # Draw sidebar
@@ -100,3 +98,4 @@ if selected_demo in demo_pages:
     demo_pages[selected_demo]()
 else:
     draw_main_page()
+    st.balloons()

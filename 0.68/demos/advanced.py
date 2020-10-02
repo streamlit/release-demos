@@ -9,12 +9,14 @@ import random
 
 def advanced():
     st.write("""
-    # Dig deeper into layouts
+    # Layouts: Best Practices
 
     Finally, we're introducing a new syntax to help you manage all these new
     containers: with container. Instead of making function calls directly on
-    the container, use the container as a Context Manager and call functions
-    from the `st.` namespace!
+    the container, use the container as a Context Manager (`with`) and call
+    functions from the `st.` namespace!
+
+    In order to use custom components, we recommend using `with`.
     """)
 
     with st.echo("below"):
