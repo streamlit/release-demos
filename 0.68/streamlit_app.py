@@ -38,7 +38,7 @@ st.beta_set_page_config(
 
 contributors = [
     "cdeil",
-    "cdeil"
+    "domoritz"
 ]
 
 intro = """
