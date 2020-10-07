@@ -16,8 +16,13 @@ def expander():
         """
     )
 
+    st.write("## Example 1")
     expander = st.beta_expander("Toggle to see code")
     expander.code("""
 expander = st.beta_expander("Show Code")
 expander.code("expander = st.beta_expander("Show Code")")
     """)
+
+    st.write("## Example 2")
+    with st.echo("below"):
+        st.beta_expander("I am an empty expander")

@@ -29,7 +29,7 @@ demo_pages = {
     "Layouts: Container": container,
     "Layouts: Expander": expander,
     "Layouts: Best Practices": advanced,
-    "Redesigned File Uploader": file_uploader,
+    "File Uploader: Redesigned": file_uploader,
 }
 
 st.beta_set_page_config(
@@ -37,6 +37,8 @@ st.beta_set_page_config(
 )
 
 contributors = [
+    "cdeil",
+    "cdeil"
 ]
 
 intro = """
@@ -56,7 +58,9 @@ release_notes = """
 - ⌗ Introducing new layout options for Streamlit! Move aside, vertical layout.
 Make a little space for... horizontal layout! Check out our
 [blog post](https://www.npmjs.com/package/streamlit-component-lib).
-- 💾 File uploader blurb
+- 💾 File uploader redesigned with new functionality for multiple files uploads
+and better support for working with uploaded files. This may cause breaking
+changes.
 
 
 ### Notable Changes
@@ -64,6 +68,8 @@ Make a little space for... horizontal layout! Check out our
 - 🚨 Breaking Change: Following the deprecation of `st.deck_gl_chart` in January 2020, we have
 now removed the API completely. Please use `st.pydeck_chart` instead.
 - 🎈 `st.balloon` has gotten a facelift with nicer balloons and smoother animations.
+- 📹 Better support across browsers for start and stop times for `st.video`.
+- 🖼 Bug fix for intermittently failing media files
 """
 # End release updates
 
@@ -98,4 +104,3 @@ if selected_demo in demo_pages:
     demo_pages[selected_demo]()
 else:
     draw_main_page()
-    st.balloons()

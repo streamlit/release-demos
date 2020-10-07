@@ -1,6 +1,5 @@
 import streamlit as st
-import os
-import io
+import time
 
 def container():
     st.write(
@@ -19,7 +18,11 @@ def container():
     )
 
     with st.echo("below"):
+        st.write("I come before the container")
         container = st.beta_container()
-        st.write("I am not in a container 😢")
-        container.write("I will show up on top in the container despite being added later")
-        container.write("I'm in the container too but I won't replace what's there 🤗")
+        for percent_complete in range(10):
+            time.sleep(0.5)
+            container.write(
+                "I'm in the container but I won't replace what's alreadyhere 🤗"
+            )
+        st.write("I come after the container and am outside 😢")

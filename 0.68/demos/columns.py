@@ -18,15 +18,14 @@ def columns():
 
     with st.echo("below"):
         svg="""
-<svg xmlns="http://www.w3.org/2000/svg">
-    <rect
-        width="100%"
-        height="100%"
-        fill="black"
-    />
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <rect
+                    width="100%"
+                    height="100%"
+                    fill="black"
+                />
+            </svg>
         """
-
 
         col1, col2 = st.beta_columns(2)
 
@@ -43,7 +42,7 @@ def columns():
     ---
     ## Or create a grid layout!
     """)
-    
+
     with st.echo("below"):
         colors = ['red', 'pink', 'orange','green','blue', 'purple']
         svg="""

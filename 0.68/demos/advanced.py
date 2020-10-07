@@ -17,6 +17,10 @@ def advanced():
     functions from the `st.` namespace!
 
     In order to use custom components, we recommend using `with`.
+
+    ----
+
+    ### Example
     """)
 
     with st.echo("below"):
@@ -33,3 +37,5 @@ def advanced():
             for col in cols:
                 with col:
                     make_chart()
+
+        st.write("### Code")
