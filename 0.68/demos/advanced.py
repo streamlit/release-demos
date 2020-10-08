@@ -23,7 +23,7 @@ def advanced():
     ### Example
     """)
 
-    with st.echo("below"):
+    with st.echo():
         charts = [area_chart, bar_chart, line_chart]
         def make_chart():
             chart_data = pd.DataFrame(
