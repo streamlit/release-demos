@@ -14,8 +14,8 @@ def file_uploader():
         multiple files and based on what our users have said, we now return
         identifying information about the file including
         - File name
-        - Size (in bytes)
         - File type
+        - Size (in bytes)
 
         -----
 

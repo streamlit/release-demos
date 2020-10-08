@@ -37,5 +37,3 @@ def advanced():
             for col in cols:
                 with col:
                     make_chart()
-
-        st.write("### Code")
