@@ -75,8 +75,6 @@ January 2020, we have now removed the API completely. Please use
 `st.vega_lite_chart` in January 2020, we have now removed the args completely.
  Please set the width and height in the respective charting library.
 - 🎈 `st.balloon` has gotten a facelift with nicer balloons and smoother animations.
-- 📹 Better support across browsers for start and stop times for `st.video`.
-- 🖼 Bug fix for intermittently failing media files
 """
 # End release updates
 
