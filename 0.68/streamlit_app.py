@@ -62,6 +62,7 @@ Make a little space for... horizontal layout! Check out our
 
 ### Notable Changes
 
+- 🎈 `st.balloon` has gotten a facelift with nicer balloons and smoother animations.
 - 🚨 Breaking Change: Following the deprecation of `st.deck_gl_chart` in
 January 2020, we have now removed the API completely. Please use
 `st.pydeck_chart` instead.
@@ -69,7 +70,7 @@ January 2020, we have now removed the API completely. Please use
 `st.altair_chart`, `st.graphviz_chart`, `st.plotly_chart`, and
 `st.vega_lite_chart` in January 2020, we have now removed the args completely.
  Please set the width and height in the respective charting library.
-- 🎈 `st.balloon` has gotten a facelift with nicer balloons and smoother animations.
+
 """
 # End release updates
 
