@@ -6,7 +6,7 @@ def container():
         """
         # Adding a new concept: containers!
 
-        st.beta_container is a building block that helps you organize your app.
+        `st.beta_container` is a building block that helps you organize your app.
         Just like `st.empty`, `st.beta_container` lets you set aside some space, and
         then later write things to it out of order. But while subsequent calls to
         the same `st.empty` replace the item inside it, subsequent calls to the
