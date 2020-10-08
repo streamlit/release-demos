@@ -29,7 +29,6 @@ demo_pages = {
     "Layouts: Container": container,
     "Layouts: Expander": expander,
     "Layouts: Best Practices": advanced,
-    "File Uploader: Redesigned": file_uploader,
 }
 
 st.beta_set_page_config(
@@ -59,10 +58,6 @@ release_notes = """
 - ⌗ Introducing new layout options for Streamlit! Move aside, vertical layout.
 Make a little space for... horizontal layout! Check out our
 [blog post](blog.streamlit.io/introducing-new-layout-options-for-streamlit).
-- 💾 File uploader redesigned with new functionality for multiple files uploads
-and better support for working with uploaded files. This may cause breaking
-changes. Please see the new api in our
-[documentation](https://docs.streamlit.io/en/0.68.0/api.html#streamlit.file_uploader)
 
 
 ### Notable Changes
