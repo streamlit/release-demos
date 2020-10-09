@@ -21,8 +21,8 @@ def container():
         st.write("I come before the container")
         container = st.beta_container()
         for percent_complete in range(10):
-            time.sleep(0.5)
+            time.sleep(2)
             container.write(
-                "I'm in the container but I won't replace what's alreadyhere 🤗"
+                "I'm in the container but I won't replace what's already here 🤗"
             )
         st.write("I come after the container and am outside 😢")
