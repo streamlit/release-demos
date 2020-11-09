@@ -15,11 +15,13 @@ from util.release_helper import create_static_notes
 VERSION = '.'.join(st.__version__.split('.')[:2])
 
 # Begin release updates
-from demos.barchart import bar_chart
+from demos.file_uploader import file_uploader
+from demos.chart_fullscreen import chart_fullscreen
 
 previous_version = "0.70.0"
 demo_pages = {
-    "Bar Chart Tweaks": bar_chart
+    "File uploader buffer reset": file_uploader,
+    "Optimize chart render": chart_fullscreen
 }
 
 st.set_page_config(
@@ -27,15 +29,14 @@ st.set_page_config(
 )
 
 contributors = [
-    "tribut",
-    "jnothman",
-    "domoritz",
+    "darshkpatel",
+    "nixphix",
+    "imba-tjd",
 ]
 
 intro = """
-After our exciting [launch of Streamlit share](http://blog.streamlit.io/introducing-streamlit-sharing/),
-we doubled down on refining our current set of features and documentation
-for this release!
+This release is focused on continuing cleanup of the amazing features we launched
+last month in addition to setting up the framework for exciting new features!
 """
 
 release_notes = f"""
@@ -43,12 +44,11 @@ release_notes = f"""
 
 **Notable Changes**
 
-- 🧪 [`st.set_page_config`](https://docs.streamlit.io/en/{st.__version__}/api.html#streamlit.set_page_config)
-and [`st.color_picker`](https://docs.streamlit.io/en/{st.__version__}/api.html#streamlit.color_picker)
-have now been moved into the Streamlit namespace. These will be removed from beta
-January 28th, 2021. Learn more about our beta process
+- 📁 Updated [`st.file_uploader`](https://docs.streamlit.io/en/{st.__version__}/api.html#streamlit.file_uploader)
+to automatically reset buffer on app reruns.
 [here](https://docs.streamlit.io/en/{st.__version__}/api.html#beta-and-experimental-features).
-- 📊 Improve display of bar charts for discrete values.
+- 📊 Optimize the default rendering of charts and reduce issues with the inital render.
+- 🎠 Setup a framework for theming and convert existing components over to the new framework.
 
 """
 # End release updates
