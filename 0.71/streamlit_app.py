@@ -32,6 +32,7 @@ contributors = [
     "darshkpatel",
     "nixphix",
     "imba-tjd",
+    "DhruvkBhatt",
 ]
 
 intro = """
@@ -41,14 +42,11 @@ last month in addition to setting up the framework for exciting new features!
 
 release_notes = f"""
 ---
-
 **Notable Changes**
 
 - 📁 Updated [`st.file_uploader`](https://docs.streamlit.io/en/{st.__version__}/api.html#streamlit.file_uploader)
 to automatically reset buffer on app reruns.
-[here](https://docs.streamlit.io/en/{st.__version__}/api.html#beta-and-experimental-features).
-- 📊 Optimize the default rendering of charts and reduce issues with the inital render.
-- 🎠 Setup a framework for theming and convert existing components over to the new framework.
+- 📊 Optimize the default rendering of charts and reduce issues with the initial render.
 
 """
 # End release updates
