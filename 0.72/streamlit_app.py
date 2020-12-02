@@ -43,7 +43,7 @@ release_notes = f"""
 
 - 🌈 Establish a framework for theming and migrate existing components.
 - 📱 Improve the sidebar experience for mobile devices.
-- 🧰 Updated [`st.file_uploader`](https://docs.streamlit.io/en/0.71.0/api.html#streamlit.file_uploader) to reduce reruns
+- 🧰 Updated [`st.file_uploader`](https://docs.streamlit.io/en/0.72.0/api.html#streamlit.file_uploader) to reduce reruns
 
 """
 # End release updates

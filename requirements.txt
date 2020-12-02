@@ -1,6 +1,6 @@
 pandas >=0.21.0
 numpy
 Pillow >=7.2.0
-# streamlit == 0.72.0
-streamlit-nightly
+streamlit == 0.72.0
+# streamlit-nightly
 plotly
