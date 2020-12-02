@@ -15,9 +15,11 @@ from util.release_helper import create_static_notes
 VERSION = '.'.join(st.__version__.split('.')[:2])
 
 # Begin release updates
+from demos.file_uploader import file_uploader
 
 previous_version = "0.71.0"
 demo_pages = {
+    "Consolidate Re-runs for File Uploader": file_uploader
 }
 
 st.set_page_config(
@@ -41,6 +43,7 @@ release_notes = f"""
 
 - 🌈 Establish a framework for theming and migrate existing components.
 - 📱 Improve the sidebar experience for mobile devices.
+- 🧰 Consolidate re-runs for File Uploader 
 
 """
 # End release updates
