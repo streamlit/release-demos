@@ -6,19 +6,19 @@ import pandas as pd
 def file_uploader():
 
     st.write("""
-    ## File Uploader: Consolidating Re-runs for Multiple Files
-    
+    ## File Uploader: Consolidating Reruns for Multiple Files
+
     In prior versions of Streamlit, each time a file was uploaded
     a re-run occurred. If multiple files were selected as a batch to upload,
-    it would trigger multiple re-runs for each file in the batch. 
-    
+    it would trigger multiple re-runs for each file in the batch.
+
     With this release of Streamlit, we are consolidating re-runs for files uploaded in a
     batch.
     """)
 
     st.write("""
     ### Case #1
-    
+
     Select multiple files for upload and note that the dataframe shown below changes
     after all the files have finished uploading. The change in the dataframe indicates
     a re-run
@@ -41,7 +41,7 @@ def file_uploader():
 
     Select a large file for upload and while the large file is uploading
     hit the 'Browse Files' button again and select some additional files to upload.
-    The dataframe values should change only after all the files have finished uploading. 
+    The dataframe values should change only after all the files have finished uploading.
     The change in the dataframe indicates a re-run
     """)
     with st.echo("below"):
