@@ -29,6 +29,8 @@ st.set_page_config(
 contributors = [
     "nicolaskruchten",
     "hendrik-teuber-by",
+    "SimonBiggs",
+    "tobyglei",
 ]
 
 intro = """
