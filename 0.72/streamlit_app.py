@@ -34,16 +34,16 @@ contributors = [
 ]
 
 intro = """
-This release focuses on continued cleanup and setting up a framework to enable
-future work on theming. For more details, please check out our
-[roadmap](https://github.com/streamlit/streamlit/wiki/Roadmap)
+This release focuses on continued cleanup and getting our framework ready for
+exciting new features like State and Theming. For more details, please check out our
+[roadmap](https://github.com/streamlit/streamlit/wiki/Roadmap).
 """
 
 release_notes = f"""
 ---
 **Notable Changes**
 
-- 🌈 Establish a framework for theming and migrate existing components.
+- 🌈 Establish a framework to enable future work on theming.
 - 📱 Improve the sidebar experience for mobile devices.
 - 🧰 Updated [`st.file_uploader`](https://docs.streamlit.io/en/0.72.0/api.html#streamlit.file_uploader) to reduce reruns
 
