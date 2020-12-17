@@ -32,7 +32,7 @@ contributors = [
 
 intro = """
 For this release, we focused on bug fixes and our infrastructure, including
-partial support for Python 3.9!
+partial support for Python 3.9.
 """
 
 release_notes = f"""
@@ -41,8 +41,11 @@ release_notes = f"""
 
 - 🐍 Streamlit can now be installed on Python 3.9. Streamlit components are not
 yet compatible with Python 3.9 and must use version 3.8 or earlier.
-- 🐙 Remove Git integration for Git versions 2.7.0 or earlier.
-- 🧰 Handle unexpected closing of uploaded files for [`st.file_uploader`](https://docs.streamlit.io/en/0.72.0/api.html#streamlit.file_uploader).
+- 🧱 Streamlit Components now allows same origin, enabling features provided by
+the browser such as a webcam component.
+- 🐙 Fix Streamlit Sharing deploy experience for users running on Git versions
+2.7.0 or earlier.
+- 🧰 Handle unexpected closing of uploaded files for [`st.file_uploader`](https://docs.streamlit.io/en/0.73.0/api.html#streamlit.file_uploader).
 
 """
 # End release updates
