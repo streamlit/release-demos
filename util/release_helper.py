@@ -31,15 +31,15 @@ def create_static_notes(contributors, previous_version, current_version):
         - If you'd like to know what _exactly_ went into this release, check out the [commit
         diff](https://github.com/streamlit/streamlit/compare/{previous_version}...{st.__version__}).
         - If you're curious, please see the source code in [Github](https://github.com/streamlit/release-demos/tree/{current_version}/{current_version}).
-
-        ### Thanks for Contributing
+        
     """)
 
-    generate_contributors(contributors)
-    st.write(" ")
+    if len(contributors):
+        st.write("### Thanks for Contributing")
+        generate_contributors(contributors)
+        st.write(" ")
+
     st.write(f"""
-
-
         As always, thank you to [all our contributors](https://github.com/streamlit/streamlit/graphs/contributors) who help make Streamlit awesome!
 
         ---
