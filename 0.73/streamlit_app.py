@@ -43,7 +43,7 @@ release_notes = f"""
 yet compatible with Python 3.9 and must use version 3.8 or earlier.
 - 🧱 Streamlit Components now allows same origin, enabling features provided by
 the browser such as a webcam component.
-- 🐙 Fix Streamlit Sharing deploy experience for users running on Git versions
+- 🐙 Fix Streamlit sharing deploy experience for users running on Git versions
 2.7.0 or earlier.
 - 🧰 Handle unexpected closing of uploaded files for [`st.file_uploader`](https://docs.streamlit.io/en/0.73.0/api.html#streamlit.file_uploader).
 

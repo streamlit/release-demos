@@ -31,18 +31,21 @@ contributors = [
     # "nicolaskruchten",
 ]
 
-intro = """
-For this release, we focused on bug fixes and our infrastructure.
+intro = f"""
+This release focused on stabilizing our code base with bug fixes and infrastructure improvements.
+This includes the stabilization of
+[`st.file_uploader`](https://docs.streamlit.io/en/0.74.0/api.html#streamlit.file_uploader).
 """
 
 release_notes = f"""
 ---
 **Notable Changes**
 
-- 📊 Bokeh charts is no longer duplicated when the page loads.
+- 💾 [`st.file_uploader`](https://docs.streamlit.io/en/0.74.0/api.html#streamlit.file_uploader)
+has been stabilized and the deprecation warning and associated configuration option
+(`deprecation.showfileUploaderEncoding`) has been removed.
+- 📊 [`st.bokeh_chart`](https://docs.streamlit.io/en/0.74.0/api.html#streamlit.bokeh_chart) is no longer duplicated when the page loads.
 - 🎈 Fixed page icon to support emojis with variants (i.e. 🤦‍♀️ vs 🤦🏼‍♀️) or dashes (i.e 🌙 - crescent-moon).
-- 💾 File uploader has been stabilized and the deprecation warning
-and associated configuration option (`deprecation.showfileUploaderEncoding`) has been removed.
 """
 # End release updates
 
