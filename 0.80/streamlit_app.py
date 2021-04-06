@@ -14,8 +14,14 @@ from util.release_helper import create_static_notes
 
 VERSION = '.'.join(st.__version__.split('.')[:2])
 
+from demos.anchors import anchors
+from demos.layout_demo import layout_demo
+
 previous_version = "0.79.0"
-demo_pages = {}
+demo_pages = {
+    "Anchor tags": anchors,
+    "Bug Fixes: Horizontal Layout": layout_demo
+}
 
 st.set_page_config(
     page_title=f"New features in Streamlit {VERSION}",
@@ -30,20 +36,23 @@ contributors = [
 ]
 
 intro = f"""
-This release focused on stabilizing our code base with bug fixes and visual tweaks.
+This release launches Secrets Management and Anchor Tags features as well as improvements to Horizontal Layouts 
+and several bug fixes.
 """
 
 release_notes = f"""
 ---
 **Features**
 
-- If you're in the Streamlit for Teams beta, we made a few updates to how secrets work. Check the beta docs for more info!
-- Dataframes now displays timezones for all DateTime and Time columns, and shows the time with the timezone applied, rather than in UTC
+- 🔐 Streamlit now support Secrets management for apps deployed to Streamlit Sharing! Check out our blog post(add link)
+- ⚓️ Titles and headers now come with automatically generated anchor links
 
-**Notable Bug Fixes**
+**Other Changes**
 
-- Various improvement to column alignment in `st.beta_columns`
-- Removed the long-deprecated `format` param from `st.image`, and replaced with `output_format`.
+- Added `allow-downloads` capability to custom components ([#3040](https://github.com/streamlit/streamlit/issues/3040))
+- Fixed a bug which resulted in markdown tables not being rendered correctly with dark theme ([#3020](https://github.com/streamlit/streamlit/issues/3020))
+- Fixed a bug where the color picker in the Custom Theme picker did not support click and drag (#2970)
+- `st.write` now can render objects which have a `_repr_html_` property ([#1117](https://github.com/streamlit/streamlit/issues/1117))
 
 """
 # End release updates
