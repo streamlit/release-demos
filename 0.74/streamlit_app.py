@@ -17,36 +17,35 @@ VERSION = '.'.join(st.__version__.split('.')[:2])
 # Begin release updates
 from demos.file_uploader import file_uploader
 
-previous_version = "0.72.0"
+previous_version = "0.73.0"
 demo_pages = {
     # "Consolidate Reruns for File Uploader": file_uploader
 }
 
 st.set_page_config(
     page_title=f"New features in Streamlit {VERSION}",
+    page_icon="random"
 )
 
 contributors = [
-    "nicolaskruchten",
+    # "nicolaskruchten",
 ]
 
-intro = """
-For this release, we focused on bug fixes and our infrastructure, including
-partial support for Python 3.9.
+intro = f"""
+This release focused on stabilizing our code base with bug fixes and infrastructure improvements.
+This includes the stabilization of
+[`st.file_uploader`](https://docs.streamlit.io/en/0.74.0/api.html#streamlit.file_uploader).
 """
 
 release_notes = f"""
 ---
 **Notable Changes**
 
-- 🐍 Streamlit can now be installed on Python 3.9. Streamlit components are not
-yet compatible with Python 3.9 and must use version 3.8 or earlier.
-- 🧱 Streamlit Components now allows same origin, enabling features provided by
-the browser such as a webcam component.
-- 🐙 Fix Streamlit sharing deploy experience for users running on Git versions
-2.7.0 or earlier.
-- 🧰 Handle unexpected closing of uploaded files for [`st.file_uploader`](https://docs.streamlit.io/en/0.73.0/api.html#streamlit.file_uploader).
-
+- 💾 [`st.file_uploader`](https://docs.streamlit.io/en/0.74.0/api.html#streamlit.file_uploader)
+has been stabilized and the deprecation warning and associated configuration option
+(`deprecation.showfileUploaderEncoding`) has been removed.
+- 📊 [`st.bokeh_chart`](https://docs.streamlit.io/en/0.74.0/api.html#streamlit.bokeh_chart) is no longer duplicated when the page loads.
+- 🎈 Fixed page icon to support emojis with variants (i.e. 🤦‍♀️ vs 🤦🏼‍♀️) or dashes (i.e 🌙 - crescent-moon).
 """
 # End release updates
 
