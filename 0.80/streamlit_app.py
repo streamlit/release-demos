@@ -24,8 +24,7 @@ demo_pages = {
 }
 
 st.set_page_config(
-    page_title=f"New features in Streamlit {VERSION}",
-    page_icon="random"
+    page_title=f"New features in Streamlit {VERSION}"
 )
 
 contributors = [
