@@ -32,7 +32,8 @@ contributors = [
     "nrontsis",
     "sachitv",
     "SimonBiggs",
-    "F1nnM"
+    "F1nnM",
+    "erumoico"
 ]
 
 intro = f"""
