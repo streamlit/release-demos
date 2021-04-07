@@ -1,4 +1,4 @@
 pandas >=0.21.0
 numpy
 Pillow >=7.2.0
-streamlit-0.79.0-py2.py3-none-any.whl
+streamlit-0.80.0-py2.py3-none-any.whl
