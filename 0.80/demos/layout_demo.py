@@ -11,7 +11,7 @@ def layout_demo():
     # Produce 3 images and put them into 3 columns next to each other, scaling them automatically to columns width
     cols = st.beta_columns(3)
     for col in cols:
-        image = Image.open('./images/mountain.jpg')
+        image = Image.open('images/mountain.jpg')
         col.image(image, use_column_width=True)
 
     st.markdown('''Photo by <a href="https://unsplash.com/@tdederichs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Torsten Dederichs</a> on <a href="https://unsplash.com/t/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>''', unsafe_allow_html=True)
