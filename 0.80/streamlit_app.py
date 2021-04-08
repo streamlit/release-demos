@@ -36,8 +36,7 @@ contributors = [
 ]
 
 intro = f"""
-This release launches Secrets Management and Anchor Tags features as well as improvements to Horizontal Layouts 
-and several bug fixes.
+This release launches Secrets Management and Anchor Tags features as well as bug fixes and improvements.
 """
 
 release_notes = f"""
@@ -45,14 +44,13 @@ release_notes = f"""
 **Features**
 
 - 🔐 Streamlit now support Secrets management for apps deployed to Streamlit Sharing! Check out our blog post(add link)
-- ⚓️ Titles and headers now come with automatically generated anchor links
+- ⚓️ Titles and headers now come with automatically generated anchor links. Just hover over any title and click the 🔗 to get the link!
 
 **Other Changes**
 
 - Added `allow-downloads` capability to custom components ([#3040](https://github.com/streamlit/streamlit/issues/3040))
-- Fixed a bug which resulted in markdown tables not being rendered correctly with dark theme ([#3020](https://github.com/streamlit/streamlit/issues/3020))
-- Fixed a bug where the color picker in the Custom Theme picker did not support click and drag (#2970)
-- `st.write` now can render objects which have a `_repr_html_` property ([#1117](https://github.com/streamlit/streamlit/issues/1117))
+- Fixed a markdown tables bug in dark theme ([#3020](https://github.com/streamlit/streamlit/issues/3020))
+- Improved color picker widget in the Custom Theme dialog ([#2970](https://github.com/streamlit/streamlit/issues/2970))
 
 """
 # End release updates

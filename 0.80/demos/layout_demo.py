@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+from PIL import Image
 
 
 def layout_demo():
@@ -8,17 +9,17 @@ def layout_demo():
     [Fix for image galleries not being the same size](https://github.com/streamlit/streamlit/issues/3013)
     ''')
     # Produce 3 images and put them into 3 columns next to each other, scaling them automatically to columns width
-    with st.echo():
-        [col.image(img, use_column_width=True) for col, img in zip(st.beta_columns(3), np.zeros((3, 250, 250, 3)))]
+    cols = st.beta_columns(3)
+    for col in cols:
+        image = Image.open('./images/mountain.jpg')
+        col.image(image, use_column_width=True)
+
+    st.markdown('''Photo by <a href="https://unsplash.com/@tdederichs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Torsten Dederichs</a> on <a href="https://unsplash.com/t/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>''', unsafe_allow_html=True)
 
     st.markdown('---')
 
     st.markdown('''
-    [Fix for column vertical column alignment](https://github.com/streamlit/streamlit/issues/2716)
-    ''')
-
-    st.markdown('''
-    [Fix gap not working on Safari](https://github.com/streamlit/streamlit/pull/3042)
+    [Fix for spacing in Safari at smaller viewports not working correctly](https://github.com/streamlit/streamlit/pull/3042)
     ''')
 
     with st.echo():
@@ -40,5 +41,3 @@ def layout_demo():
             min_retweets = st.number_input('Minimum retweets', value=0)
         with col5:
             min_hearts = st.number_input('Minimum hearts', value=0)
-
-
