@@ -43,7 +43,7 @@ release_notes = f"""
 ---
 **Features**
 
-- 🔐 Streamlit now support Secrets management for apps deployed to Streamlit Sharing! Check out our blog post(add link)
+- 🔐 Streamlit now support Secrets management for apps deployed to Streamlit Sharing! 
 - ⚓️ Titles and headers now come with automatically generated anchor links. Just hover over any title and click the 🔗 to get the link!
 
 **Other Changes**
