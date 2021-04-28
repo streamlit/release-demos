@@ -26,6 +26,33 @@ apps = [
     ("Traingenerator", "Johannes Rieke", "https://traingenerator.jrieke.com/"),
 ]
 
+components = [
+    ("3dmol", "José Manuel Nápoles", "https://github.com/napoles-uach/streamlit_3dmol"),
+    ("Ace", "Okld", "https://share.streamlit.io/okld/streamlit-ace/demo/"),
+    ("AgGrid", "Pablo Fonseca", "https://share.streamlit.io/pablocfonseca/streamlit-aggrid/main/examples/example.py"),
+    ("Agraph", "Christian Klose", "https://share.streamlit.io/chrischross/inspirationals/main/main.py"),
+    ("Annotated Text", "Thiago Teixeira", "https://github.com/tvst/st-annotated-text"),
+    ("Bokeh Events", "Ashish Shukla", "https://github.com/ash2shukla/streamlit-bokeh-events"),
+    ("Cropper", "Turner Anderson", "https://github.com/turner-anderson/streamlit-cropper"),
+    ("D3 Demo", "Fanilo Andrianasolo", "https://github.com/andfanilo/streamlit-d3-demo"),
+    ("Discourse", "Okld", "https://share.streamlit.io/okld/streamlit-discourse-demo/main/app.py"),
+    ("Disqus", "Okld", "https://share.streamlit.io/okld/streamlit-disqus-demo/main/app.py"),
+    ("Drawable Canvas", "Fanilo Andrianasolo", "https://share.streamlit.io/andfanilo/streamlit-drawable-canvas-demo/master/app.py"),
+    ("Echarts", "Fanilo Andrianasolo", "https://share.streamlit.io/andfanilo/streamlit-echarts-demo/master/app.py"),
+    ("Embedcode", "Randy Zwitch", "https://share.streamlit.io/randyzwitch/streamlit-embedcode/examples/streamlit_app.py"),
+    ("Folium", "Randy Zwitch", "https://share.streamlit.io/randyzwitch/streamlit-folium/examples/streamlit_app.py"),
+    ("HiPlot", "Facebook Research", "https://github.com/facebookresearch/hiplot"),
+    ("Jina", "Jina", "https://github.com/jina-ai/streamlit-jina"),
+    ("Lottie", "Fanilo Andrianasolo", "https://share.streamlit.io/andfanilo/streamlit-lottie-demo/master/app.py"),
+    ("Observable", "Alex Garcia", "https://streamlit-observable.herokuapp.com/?section=Introduction"),
+    ("Pandas Profiling", "Okld", "https://github.com/okld/streamlit-pandas-profiling"),
+    ("Player", "Okld", "https://share.streamlit.io/okld/streamlit-player-demo/main/app.py"),
+    ("spaCy", "Explosion", "https://share.streamlit.io/ines/spacy-streamlit-demo/master/app.py"),
+    ("Terran Timelines", "Pento Group", "https://github.com/pento-group/streamlit-terran-timeline/"),
+    ("Vega-Lite", "Dominik Moritz", "https://github.com/domoritz/streamlit-vega-lite"),
+    ("WebRTC", "Yuichiro Tachibana", "https://share.streamlit.io/whitphx/streamlit-webrtc-example/main/app.py"),
+]
+
 
 def forms_demo():
     st.image(
@@ -37,7 +64,7 @@ def forms_demo():
         """
         # Try out `st.form`!
 
-        We built a super-secret algorithm to recommend a Streamlit app based on your personality. The problem: It takes a long time to run. That's why we use a form to bundle all the input widgets 👇
+        We built a super-secret algorithm to recommend a Streamlit app or component based on your personality. The problem: It takes a long time to run. That's why we use a form to bundle all the input widgets 👇
         """
     )
 
@@ -58,9 +85,15 @@ def forms_demo():
     if submitted:
         with st.spinner("🤓 Crunching numbers..."):
             time.sleep(2)
-        app_name, app_author, app_url = random.choice(apps)
+        use_component = random.choice([True, False])
+        if use_component:
+            desc = "a component"
+            name, author, url = random.choice(components)
+        else:
+            desc = "an app"
+            name, author, url = random.choice(apps)
         st.success(
-            f"☘️ The algorithm recommends this app to you: **[{app_name}]({app_url}) by {app_author}** (find more cool apps in [our gallery](https://streamlit.io/gallery)!)"
+            f"☘️ The algorithm recommended {desc} to you: **[{name}]({url}) by {author}** (find more cool apps & components in [our gallery](https://streamlit.io/gallery)!)"
         )
 
         st.info(
