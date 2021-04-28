@@ -1,35 +1,28 @@
 import sys
 from pathlib import Path
+
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 
 try:
     sys.path.remove(str(parent))
-except ValueError: # Already removed
+except ValueError:  # Already removed
     pass
 
 import streamlit as st
 from util.release_helper import create_static_notes
 
-VERSION = '.'.join(st.__version__.split('.')[:2])
+VERSION = ".".join(st.__version__.split(".")[:2])
 
 from demos.forms_demo import forms_demo
 
 previous_version = "0.80.0"
 demo_pages = {"st.form": forms_demo}
 
-st.set_page_config(
-    page_title=f"New features in Streamlit {VERSION}"
-)
+st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
 
-contributors = [
-    "RedFrez",
-    "brendalf",
-    "SimonBiggs",
-    "bensodenkamp",
-    "mgilbir"
-]
+contributors = ["RedFrez", "brendalf", "SimonBiggs", "bensodenkamp", "mgilbir"]
 
 intro = f"""
 This release launches the form containers and caption features as well as bug fixes and improvements.
@@ -51,11 +44,13 @@ release_notes = f"""
 """
 # End release updates
 
-def draw_main_page():
-    st.write(f"""
-    # Welcome to Streamlit {VERSION}! 👋
-    """)
 
+def draw_main_page():
+    st.write(
+        f"""
+        # Welcome to Streamlit {VERSION}! 👋
+        """
+    )
 
     st.write(intro)
 
