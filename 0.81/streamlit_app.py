@@ -16,9 +16,10 @@ from util.release_helper import create_static_notes
 VERSION = ".".join(st.__version__.split(".")[:2])
 
 from demos.forms_demo import forms_demo
+from demos.caption_demo import caption_demo
 
 previous_version = "0.80.0"
-demo_pages = {"st.form": forms_demo}
+demo_pages = {"st.form": forms_demo, "st.caption": caption_demo}
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
 
@@ -67,10 +68,9 @@ if len(pages):
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
     if "page" in query_params and query_params["page"][0] == "forms_demo":
-        index = 1
+        selected_demo = st.sidebar.radio("", pages, 1, key="pages")
     else:
-        index = 0
-    selected_demo = st.sidebar.radio("", pages, index)
+        selected_demo = st.sidebar.radio("", pages, key="pages")
 else:
     selected_demo = "Release Notes"
 
