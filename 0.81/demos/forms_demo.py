@@ -23,7 +23,7 @@ def forms_demo():
         st.write("Click **Submit** to get your recommendation!")
         st.selectbox(
             "Your favorite streamlit call",
-            ["st.form", "st.balloons 🎈 ", "st.submit_button", "st.write"],
+            ["st.form", "st.balloons 🎈 ", "st.form_submit_button", "st.write"],
         )
         st.text_input("Your favorite thing to build streamlit apps for")
         st.slider("How excited you are about forms", 0, 11, 10)
