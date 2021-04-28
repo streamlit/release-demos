@@ -97,5 +97,5 @@ def forms_demo():
         )
 
         st.info(
-            "💡 With `st.form`, this app (and our complex algorithm!) only reruns when you hit the submit button, not at each widget interaction. [Check out the blog post to learn how it works!]()"
+            "💡 With `st.form`, this app (and our complex algorithm!) only reruns when you hit the submit button, not at each widget interaction. [Check out the blog post to learn how it works!](https://blog.streamlit.io/introducing-submit-button-and-forms/)"
         )
