@@ -17,9 +17,14 @@ VERSION = ".".join(st.__version__.split(".")[:2])
 
 from demos.forms_demo import forms_demo
 from demos.caption_demo import caption_demo
+from demos.theming_demo import theming_demo
 
 previous_version = "0.80.0"
-demo_pages = {"st.form": forms_demo, "st.caption": caption_demo}
+demo_pages = {
+    "st.form": forms_demo,
+    "st.caption": caption_demo,
+    "Theming improvements": theming_demo,
+}
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
 
