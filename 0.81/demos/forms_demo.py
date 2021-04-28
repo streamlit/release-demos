@@ -2,6 +2,30 @@ import random
 import time
 import streamlit as st
 
+apps = [
+    (
+        "Analyzing Your Goodreads Reading Habits",
+        "https://share.streamlit.io/tylerjrichards/streamlit_goodreads_app/books.py",
+    ),
+    (
+        "Bayesian Deep Learning for Galaxy Zoo DECaLS",
+        "https://share.streamlit.io/mwalmsley/galaxy-poster/gz_decals_mike_walmsley.py",
+    ),
+    (
+        "Gravitational Wave Quickview",
+        "https://share.streamlit.io/jkanner/streamlit-dataview/master/app.py/+/",
+    ),
+    (
+        "NYC Uber Ridesharing Data",
+        "https://share.streamlit.io/streamlit/demo-uber-nyc-pickups/",
+    ),
+    (
+        "Streamlit Cheat Sheet",
+        "https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py",
+    ),
+    ("Traingenerator", "https://traingenerator.jrieke.com/"),
+]
+
 
 def forms_demo():
     st.image(
@@ -34,8 +58,9 @@ def forms_demo():
     if submitted:
         with st.spinner("🤓 Crunching numbers..."):
             time.sleep(2)
+        app_name, app_url = random.choice(apps)
         st.success(
-            "☘️ The algorithm recommends this app to you: [Traingenerator](https://traingenerator.jrieke.com/) (find more cool apps in [our gallery](https://streamlit.io/gallery)!)"
+            f"☘️ The algorithm recommends this app to you: [{app_name}]({app_url}) (find more cool apps in [our gallery](https://streamlit.io/gallery)!)"
         )
 
         st.info(
