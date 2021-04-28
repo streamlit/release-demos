@@ -34,13 +34,6 @@ def forms_demo():
     if submitted:
         with st.spinner("🤓 Crunching numbers..."):
             time.sleep(2)
-        # fortunes = [
-        #     "🥠 You will become an even better Streamlit developer",
-        #     "🥠 You will use forms in all of your Streamlit apps",
-        #     "🥠 You will tell all of your friends and colleagues how cool Streamlit is",
-        #     "🥠 You will create a very popular Streamlit app",
-        # ]
-        # block_methods = [st.error, st.warning, st.info, st.success]
         st.success(
             "☘️ The algorithm recommends this app to you: [Traingenerator](https://traingenerator.jrieke.com/) (find more cool apps in [our gallery](https://streamlit.io/gallery)!)"
         )
