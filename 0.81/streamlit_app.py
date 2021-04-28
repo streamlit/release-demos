@@ -65,7 +65,12 @@ pages = list(demo_pages.keys())
 if len(pages):
     pages.insert(0, "Release Notes")
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
-    selected_demo = st.sidebar.radio("", pages)
+    query_params = st.experimental_get_query_params()
+    if "page" in query_params and query_params["page"][0] == "forms_demo":
+        index = 1
+    else:
+        index = 0
+    selected_demo = st.sidebar.radio("", pages, index)
 else:
     selected_demo = "Release Notes"
 
