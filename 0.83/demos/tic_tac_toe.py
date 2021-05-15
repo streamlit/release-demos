@@ -29,6 +29,17 @@ def checkWin(board):
 
 
 def tic_tac_toe():
+    st.write(
+        """
+        # 👾 Tic Tac Toe
+        
+        This app uses `st.session_state` to store the entire game state (= 
+        board values, next player, done flag). Any click on the buttons below is handled 
+        through the new `on_change` callbacks, passing the "board position" as arguments 
+        to the callback.
+        """
+    )
+    st.write("")
 
     # TODO: One issue here is that we cannot do `if not st.session_state` because the
     #   tic tac toe page here is only accessed after the frontpage has been loaded.
