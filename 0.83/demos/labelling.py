@@ -9,10 +9,9 @@ def labelling():
         """
         # 🏷️ Data Labelling
         
-        This app uses `st.session_state` to store the entire game state (= 
-        board values, next player, done flag). Any click on the buttons below is handled 
-        through the new `on_change` callbacks, passing the "board position" as arguments 
-        to the callback.
+        This app allows you to assign labels to images for use in machine learning. It 
+        stores the annotation results plus a list of remaining images in 
+        `st.session_state`.
         """
     )
 
@@ -26,23 +25,23 @@ def labelling():
         st.session_state.files = files
         st.session_state.current_image = "cat.1.jpg"
 
-    def annotate():
-        annotation_response = st.session_state.annotation_response
-        st.session_state.annotations[
-            st.session_state.current_image
-        ] = annotation_response
-        random_index = random.randint(0, len(st.session_state.files) - 1)
-        st.session_state.current_image = st.session_state.files[random_index]
+    def annotate(label):
+        st.session_state.annotations[st.session_state.current_image] = label
+        # TODO: Handle when all are done!
+        st.session_state.current_image = random.choice(st.session_state.files)
         st.session_state.files.remove(st.session_state.current_image)
 
     image_path = abs_file_path + "/" + st.session_state.current_image
+    # TODO: Fix width here. Maybe just show quadratic crop?
+    st.image(image_path, width=300)
 
-    st.image(image_path, caption="Please input whether this is a dog or a cat")
-
-    annotation_response = st.selectbox(
-        key="annotation_response", label="", options=["cat", "dog"]
-    )
-    st.button(label="Next", on_change=annotate)
+    col1, col2 = st.beta_columns(2)
+    col1.button("This is a dog! 🐶", on_change=annotate, args=("dog",))
+    col2.button("This is a cat! 🐱", on_change=annotate, args=("cat",))
+    # annotation_response = st.selectbox(
+    #     key="annotation_response", label="", options=["cat", "dog"]
+    # )
+    # st.button(label="Next", on_change=annotate)
 
     st.markdown("---")
     st.header("Annotations")
