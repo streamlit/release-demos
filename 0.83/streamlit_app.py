@@ -23,7 +23,7 @@ previous_version = "0.82.0"
 demo_pages = {
     "Tic Tac Toe": tic_tac_toe,
     "Todo List": todo_list,
-    "Labelling": labelling,
+    "Data Labelling": labelling,
 }
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
