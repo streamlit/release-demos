@@ -7,11 +7,11 @@ import streamlit as st
 def labelling():
     st.write(
         """
-        # 🏷️ Data Labelling
+        # 🐾 Data Labelling
         
-        This app allows you to assign labels to images for use in machine learning. It 
-        stores the annotation results plus a list of remaining images in 
-        `st.session_state`.
+        This app allows you to assign labels to images (e.g. for machine learning). It 
+        uses `st.session_state` to store the annotation results and the list of 
+        remaining images.
         """
     )
 
