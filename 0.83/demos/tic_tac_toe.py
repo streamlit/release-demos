@@ -52,20 +52,23 @@ def tic_tac_toe():
     if "board" not in st.session_state:
         st.session_state.board = np.full((3, 3), ".", dtype=str)
         st.session_state.next_player = "X"
-        st.session_state.done = False
+        st.session_state.winner = None
 
     # Define callbacks to handle button clicks.
     def handle_click(i, j):
-        if not st.session_state.done:
+        if not st.session_state.winner:
             st.session_state.board[i, j] = st.session_state.next_player
             st.session_state.next_player = (
                 "O" if st.session_state.next_player == "X" else "X"
             )
             winner = checkWin(st.session_state.board)
             if winner != ".":
-                st.session_state.done = True
-                st.write(f"{winner} won the game!")
-                st.balloons()
+                # st.session_state.done = True
+                # TODO: There's a bug here when I call a normal st. command. Is this not
+                #   possible in callbacks? Why not?
+                # st.write(f"{winner} won the game!")
+                # st.balloons()
+                st.session_state.winner = winner
 
     # Show one button for each field.
     cols = st.beta_columns(3)
@@ -77,3 +80,6 @@ def tic_tac_toe():
                 on_change=handle_click,
                 args=(i, j),
             )
+
+    if st.session_state.winner:
+        st.success(f"Congrats! {st.session_state.winner} won the game! 🎈")
