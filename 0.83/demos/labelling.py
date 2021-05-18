@@ -7,14 +7,16 @@ import streamlit as st
 def labelling():
     st.write(
         """
-        # 🐾 Data Labelling
+        ## 🐾 Data Labelling
         
-        This app allows you to assign labels to images (e.g. for machine learning). It 
-        uses `st.session_state` to store the annotation results & remaining images, 
-        and the new `on_change` callback to process the button clicks.
+        This is one for all machine learning fans: Label some images and all of your 
+        annotations are preserved in `st.session_state`!
         """
     )
 
+    # This app allows you to assign labels to images (e.g. for machine learning). It
+    #         uses `st.session_state` to store the annotation results & remaining images,
+    #         and the new `on_change` callback to process the button clicks.
     script_path = os.path.dirname(__file__)
     rel_path = "images"
     abs_file_path = script_path + "/" + rel_path

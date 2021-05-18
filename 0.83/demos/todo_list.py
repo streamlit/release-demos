@@ -4,19 +4,21 @@ import streamlit as st
 def todo_list():
     st.write(
         """
-        # ✅ Todo List
+        ## ✅ Todo List
         
-        This app stores a list of todo items in `st.session_state`. Additionally, it 
-        uses the new `on_change` callback to add a new item only when the value of the 
-        text field below changed.
+        We already added a few TODOs for you 😉 They are stored as a list in 
+        `st.session_state`. Also, the `on_change` callback is used to add new items only
+        when the text input changes.
         """
     )
+    # This app stores a list of todo items in `st.session_state`. Additionally, it
+    #     uses the new `on_change` callback to add a new item only when the value of the
+    #     text field below changed.
 
     # Define initial state.
     if "todos" not in st.session_state:
         st.session_state.todos = [
-            {"description": "Try out this TODO app", "done": True},
-            {"description": "Play some Tic Tac Toe", "done": False},
+            {"description": "Play some Tic Tac Toe", "done": True},
             {"description": "Read the blog post about session state", "done": False},
         ]
 
@@ -47,6 +49,7 @@ def write_todo_list(todos):
     col1, col2 = st.beta_columns([0.1, 0.9])
     col1.write("*Done?*")
     col2.write("*Description*")
+    all_done = True
     for i, todo in enumerate(todos):
         done = col1.checkbox("", todo["done"], key=str(i))
         if done:
@@ -55,7 +58,11 @@ def write_todo_list(todos):
             )
         else:
             format_str = "{}"
+            all_done = False
         col2.markdown(
             format_str.format(todo["description"]),
             unsafe_allow_html=True,
         )
+
+    if all_done:
+        st.success("Nice job on finishing all TODO items! Enjoy your day! 🎈")
