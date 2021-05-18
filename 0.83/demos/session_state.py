@@ -14,7 +14,7 @@ def session_state():
     )
     st.write(
         """
-        # Session State
+        # Try out `st.session_state`!
 
         One of the longest & most highly requested features is finally here! Session 
         state allows you to preserve information throughout a browser session. 
