@@ -69,6 +69,7 @@ if len(pages):
     query_params = st.experimental_get_query_params()
     st.write(query_params)
     if "page" in query_params and query_params["page"][0] == "headliner":
+        st.write("shortcut")
         selected_demo = st.sidebar.radio("", pages, 1, key="pages")
     else:
         selected_demo = st.sidebar.radio("", pages, key="pages")
