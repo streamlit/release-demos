@@ -76,7 +76,7 @@ if len(pages):
     st.write(index)
 
     st.sidebar.radio(
-        "", ["option 1", "option 2", "option 3"], index=index, key="radio123"
+        "", ["option 1", "option 2", "option 3"], index=1, key="radio123"
     )
     selected_demo = st.sidebar.radio("", pages, index)
 else:
