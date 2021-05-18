@@ -40,10 +40,10 @@ def all_in_one():
     st.write("Counter:", st.session_state.counter)
     st.button("Plus one!", on_change=increment)
 
-    if st.session_state.counter >= 100:
-        st.success("King of counting there! Your trophy for reaching 100: 🏆")
-    elif st.session_state.counter >= 20:
-        st.warning("You made it to 20! Keep going to win a prize 🎈")
+    if st.session_state.counter >= 50:
+        st.success("King of counting there! Your trophy for reaching 50: 🏆")
+    elif st.session_state.counter >= 10:
+        st.warning("You made it to 10! Keep going to win a prize 🎈")
 
     st.write("---")
     tic_tac_toe()
