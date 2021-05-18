@@ -31,8 +31,13 @@ def pagination():
 
     if st.session_state.page < 4:
         col3.button(">", on_change=next_page)
+    else:
+        col3.write("")  # this makes the empty column show up on mobile
+
     if st.session_state.page > 0:
         col1.button("<", on_change=prev_page)
+    else:
+        col1.write("")  # this makes the empty column show up on mobile
 
     # col2.caption("")
     col2.write(f"**Page: {1+st.session_state.page} of {5}**")
