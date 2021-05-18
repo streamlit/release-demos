@@ -13,8 +13,8 @@ def pagination():
         """
         ## 📑 Pagination
         
-        Too much data to display? Now you can paginate through a table (or any other 
-        content), storing the current page number in `st.session_state`. 
+        Too much data to display? Now you can paginate through items (e.g. a table), 
+        storing the current page number in `st.session_state`. 
         """
     )
     st.write("")
