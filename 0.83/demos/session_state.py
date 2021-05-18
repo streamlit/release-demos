@@ -45,7 +45,7 @@ def show():
     st.write("---")
     labelling.show()
     st.caption(
-        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/labelling.py)"
+        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/labelling.py) – Images from [Kaggle Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/overview)"
     )
 
     st.write("---")
