@@ -16,10 +16,12 @@ from util.release_helper import create_static_notes
 VERSION = ".".join(st.__version__.split(".")[:2])
 
 from demos import session_state
+from demos import fake
 
 previous_version = "0.82.0"
 demo_pages = {
-    "Session State": session_state.show,
+    # "Session State": session_state.show,
+    "Fake": fake.show
 }
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
@@ -57,6 +59,8 @@ def draw_main_page():
 
     create_static_notes(contributors, previous_version, VERSION)
 
+
+st.radio("", ["option 1", "option 2", "option 3"], index=1, key="radio123")
 
 # Draw sidebar
 pages = list(demo_pages.keys())
