@@ -69,16 +69,15 @@ if len(pages):
     query_params = st.experimental_get_query_params()
     st.write(query_params)
     if "page" in query_params and query_params["page"][0] == "forms_demo":
-        st.write("shortcut")
-        page_index = 1
+        selected_demo = st.sidebar.radio("", pages, key="pages")
     else:
-        page_index = 0
-    st.write(page_index)
+        selected_demo = st.sidebar.radio("", pages, 1, key="pages")
+    # st.write(page_index)
 
-    st.sidebar.radio(
-        "", ["option 1", "option 2", "option 3"], index=page_index, key="radio123"
-    )
-    selected_demo = st.sidebar.radio("", pages, page_index)
+    # st.sidebar.radio(
+    #     "", ["option 1", "option 2", "option 3"], index=page_index, key="radio123"
+    # )
+    # , page_index)
 else:
     selected_demo = "Release Notes"
 
