@@ -67,12 +67,12 @@ if len(pages):
     pages.insert(0, "Release Notes")
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
-    st.write(query_params)
     if "page" in query_params and query_params["page"][0] == "headliner":
-        st.write("shortcut")
-        selected_demo = st.sidebar.radio("", pages, 1, key="pages")
-    else:
-        selected_demo = st.sidebar.radio("", pages, key="pages")
+        if "page_selector" not in st.session_state:
+            st.session_state.page_selector = 1
+    selected_demo = st.sidebar.radio("", pages, key="page_selector")
+    # else:
+    #     selected_demo = st.sidebar.radio("", pages, key="pages")
 else:
     selected_demo = "Release Notes"
 
