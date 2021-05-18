@@ -76,7 +76,7 @@ if len(pages):
     else:
         index = 0
     st.write(index)
-    selected_demo = st.sidebar.radio("", pages, index, key="pages")
+    selected_demo = st.sidebar.radio("", pages, index)
 else:
     selected_demo = "Release Notes"
 
