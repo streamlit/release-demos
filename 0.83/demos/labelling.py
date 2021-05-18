@@ -13,10 +13,7 @@ def labelling():
         annotations are preserved in `st.session_state`!
         """
     )
-
-    # This app allows you to assign labels to images (e.g. for machine learning). It
-    #         uses `st.session_state` to store the annotation results & remaining images,
-    #         and the new `on_change` callback to process the button clicks.
+    
     script_path = os.path.dirname(__file__)
     rel_path = "images"
     abs_file_path = script_path + "/" + rel_path
@@ -29,13 +26,11 @@ def labelling():
 
     def annotate(label):
         st.session_state.annotations[st.session_state.current_image] = label
-        # TODO: Handle when all are done!
         if st.session_state.files:
             st.session_state.current_image = random.choice(st.session_state.files)
             st.session_state.files.remove(st.session_state.current_image)
 
     image_path = abs_file_path + "/" + st.session_state.current_image
-    # TODO: Fix width here. Maybe just show quadratic crop?
 
     st.write("")
     col1, col2 = st.beta_columns(2)
@@ -56,15 +51,3 @@ def labelling():
             )
         st.write("### Annotations")
         st.write(st.session_state.annotations)
-    # annotation_response = st.selectbox(
-    #     key="annotation_response", label="", options=["cat", "dog"]
-    # )
-    # st.button(label="Next", on_change=annotate)
-
-    # st.markdown("---")
-    # st.header("Annotations")
-    # st.write(st.session_state.annotations)
-
-    # if len(st.session_state.files) == 0:
-    #     st.warning("Finished Annotation")
-    #     st.stop()

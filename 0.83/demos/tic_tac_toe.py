@@ -37,10 +37,6 @@ def tic_tac_toe():
         uses the new `on_change` callback to handle button clicks.
         """
     )
-    # This app uses `st.session_state` to store the entire game state (=
-    #     board values, next player, done flag). Any click on the buttons below is handled
-    #     through the new `on_change` callbacks, passing the "board position" as arguments
-    #     to the callback.
     st.write("")
 
     # TODO: One issue here is that we cannot do `if not st.session_state` because the

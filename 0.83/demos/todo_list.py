@@ -11,9 +11,6 @@ def todo_list():
         when the text input changes.
         """
     )
-    # This app stores a list of todo items in `st.session_state`. Additionally, it
-    #     uses the new `on_change` callback to add a new item only when the value of the
-    #     text field below changed.
 
     # Define initial state.
     if "todos" not in st.session_state:
