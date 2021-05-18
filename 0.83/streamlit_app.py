@@ -67,12 +67,16 @@ if len(pages):
     pages.insert(0, "Release Notes")
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
+    # TODO: This doesn't work yet. Locally it actually works, but on Streamlit Sharing 
+    #   it doesn't somehow. The query params are actually read and parsed correctly, 
+    #   but it doesn't manage to set the index based on it. Seems to be a weird 
+    #   interaction between the widget value in session state and value given in arg.
+    #   See if this is fixed in final session state version.
     if "page" in query_params and query_params["page"][0] == "headliner":
-        # if "page_selector" not in st.session_state:
-        st.session_state.page_selector = "Fake"
-    selected_demo = st.sidebar.radio("", pages, key="page_selector")
-    # else:
-    #     selected_demo = st.sidebar.radio("", pages, key="pages")
+        index = 1
+    else:
+        index = 0
+    selected_demo = st.sidebar.radio("", pages, index, key="pages")
 else:
     selected_demo = "Release Notes"
 
