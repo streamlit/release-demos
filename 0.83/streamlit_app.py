@@ -60,7 +60,7 @@ def draw_main_page():
     create_static_notes(contributors, previous_version, VERSION)
 
 
-st.radio("", ["option 1", "option 2", "option 3"], index=1, key="radio123")
+st.sidebar.radio("", ["option 1", "option 2", "option 3"], index=1, key="radio123")
 
 # Draw sidebar
 pages = list(demo_pages.keys())
