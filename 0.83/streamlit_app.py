@@ -15,16 +15,15 @@ from util.release_helper import create_static_notes
 
 VERSION = ".".join(st.__version__.split(".")[:2])
 
-from demos.tic_tac_toe import tic_tac_toe
-
+# from demos.tic_tac_toe import tic_tac_toe
 # from demos.todo_list import todo_list
 # from demos.labelling import labelling
 from demos.session_state import session_state
 
 previous_version = "0.82.0"
 demo_pages = {
-    "Session State": session_state,
-    "Tic Tac Toe": tic_tac_toe,
+    "SessionState": session_state,
+    # "Tic Tac Toe": tic_tac_toe,
     # "Todo List": todo_list,
     # "Data Labelling": labelling,
 }
@@ -73,11 +72,10 @@ if len(pages):
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
     if "page" in query_params and query_params["page"][0] == "demo":
-        st.write("shortcut")
         index = 1
     else:
         index = 0
-    selected_demo = st.sidebar.radio("", pages, "Session State", key="pages")
+    selected_demo = st.sidebar.radio("", pages, index, key="pages")
 else:
     selected_demo = "Release Notes"
 
