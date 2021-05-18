@@ -78,7 +78,7 @@ if len(pages):
     st.sidebar.radio(
         "", ["option 1", "option 2", "option 3"], page_index=1, key="radio123"
     )
-    selected_demo = st.sidebar.radio("", pages, index)
+    selected_demo = st.sidebar.radio("", pages, page_index)
 else:
     selected_demo = "Release Notes"
 
