@@ -5,7 +5,7 @@ from .todo_list import todo_list
 from .labelling import labelling
 
 
-def all_in_one():
+def session_state():
     # https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/bowling_1f3b3.png
     # https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/joystick_1f579-fe0f.png
     st.image(
@@ -51,5 +51,3 @@ def all_in_one():
     todo_list()
     st.write("---")
     labelling()
-
-    st.write("---")
