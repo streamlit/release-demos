@@ -69,7 +69,7 @@ if len(pages):
     query_params = st.experimental_get_query_params()
     if "page" in query_params and query_params["page"][0] == "headliner":
         # if "page_selector" not in st.session_state:
-        st.session_state.page_selector = "Session State"
+        st.session_state.page_selector = "Fake"
     selected_demo = st.sidebar.radio("", pages, key="page_selector")
     # else:
     #     selected_demo = st.sidebar.radio("", pages, key="pages")
