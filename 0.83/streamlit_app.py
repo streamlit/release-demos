@@ -22,7 +22,7 @@ from demos.session_state import session_state
 
 previous_version = "0.82.0"
 demo_pages = {
-    "SessionState": session_state,
+    "Session State": session_state,
     # "Tic Tac Toe": tic_tac_toe,
     # "Todo List": todo_list,
     # "Data Labelling": labelling,
