@@ -68,8 +68,8 @@ if len(pages):
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
     if "page" in query_params and query_params["page"][0] == "headliner":
-        if "page_selector" not in st.session_state:
-            st.session_state.page_selector = 1
+        # if "page_selector" not in st.session_state:
+        st.session_state.page_selector = 1
     selected_demo = st.sidebar.radio("", pages, key="page_selector")
     # else:
     #     selected_demo = st.sidebar.radio("", pages, key="pages")
