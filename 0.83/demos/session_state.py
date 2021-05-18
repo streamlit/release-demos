@@ -26,15 +26,33 @@ def show():
 
     st.write("---")
     counter.show()
-    st.caption("[View code]()")
+    st.caption(
+        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/counter.py)"
+    )
+
     st.write("---")
     tic_tac_toe.show()
+    st.caption(
+        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/tic_tac_toe.py)"
+    )
+
     st.write("---")
     todo_list.show()
+    st.caption(
+        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/todo_list.py)"
+    )
+
     st.write("---")
     labelling.show()
+    st.caption(
+        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/labelling.py)"
+    )
+
     st.write("---")
     pagination.show()
+    st.caption(
+        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/pagination.py)"
+    )
 
 
 if __name__ == "__main__":
