@@ -1,12 +1,12 @@
 import streamlit as st
 
-from .tic_tac_toe import tic_tac_toe
-from .todo_list import todo_list
-from .labelling import labelling
-from .pagination import pagination
+from . import tic_tac_toe
+from . import todo_list
+from . import labelling
+from . import pagination
 
 
-def session_state():
+def show():
     # https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/bowling_1f3b3.png
     # https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/joystick_1f579-fe0f.png
     st.image(
@@ -47,10 +47,14 @@ def session_state():
         st.warning("You made it to 10! Keep going to win a prize 🎈")
 
     st.write("---")
-    tic_tac_toe()
+    tic_tac_toe.show()
     st.write("---")
-    todo_list()
+    todo_list.show()
     st.write("---")
-    labelling()
+    labelling.show()
     st.write("---")
-    pagination()
+    pagination.show()
+
+
+if __name__ == "__main__":
+    show()

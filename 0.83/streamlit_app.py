@@ -15,19 +15,11 @@ from util.release_helper import create_static_notes
 
 VERSION = ".".join(st.__version__.split(".")[:2])
 
-# from demos.tic_tac_toe import tic_tac_toe
-# from demos.todo_list import todo_list
-# from demos.labelling import labelling
-from demos.pagination import pagination
-from demos.session_state import session_state
+from demos import session_state
 
 previous_version = "0.82.0"
 demo_pages = {
-    "Session State": session_state,
-    # "Tic Tac Toe": tic_tac_toe,
-    # "Todo List": todo_list,
-    # "Data Labelling": labelling,
-    "Pagination": pagination,
+    "Session State": session_state.show,
 }
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")

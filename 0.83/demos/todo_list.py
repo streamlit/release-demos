@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def todo_list():
+def show():
     st.write(
         """
         ## ✅ Todo List
@@ -63,3 +63,7 @@ def write_todo_list(todos):
 
     if all_done:
         st.success("Nice job on finishing all TODO items! Enjoy your day! 🎈")
+
+
+if __name__ == "__main__":
+    show()

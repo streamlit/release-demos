@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import functools
 
 
 # From: https://stackoverflow.com/questions/39922967/python-determine-tic-tac-toe-winner
@@ -28,7 +27,7 @@ def checkWin(board):
     return checkDiagonals(board)
 
 
-def tic_tac_toe():
+def show():
     st.write(
         """
         ## 👾 Tic Tac Toe
@@ -82,3 +81,7 @@ def tic_tac_toe():
 
     if st.session_state.winner:
         st.success(f"Congrats! {st.session_state.winner} won the game! 🎈")
+
+
+if __name__ == "__main__":
+    show()

@@ -4,7 +4,7 @@ import random
 import streamlit as st
 
 
-def labelling():
+def show():
     st.write(
         """
         ## 🐾 Data Labelling
@@ -13,7 +13,7 @@ def labelling():
         annotations are preserved in `st.session_state`!
         """
     )
-    
+
     script_path = os.path.dirname(__file__)
     rel_path = "images"
     abs_file_path = script_path + "/" + rel_path
@@ -51,3 +51,7 @@ def labelling():
             )
         st.write("### Annotations")
         st.write(st.session_state.annotations)
+
+
+if __name__ == "__main__":
+    show()

@@ -8,7 +8,7 @@ def load_data():
     return pd.read_csv("0.83/demos/heroes_information.csv")
 
 
-def pagination():
+def show():
     st.write(
         """
         ## 📑 Pagination
@@ -48,4 +48,4 @@ def pagination():
 
 
 if __name__ == "__main__":
-    pagination()
+    show()
