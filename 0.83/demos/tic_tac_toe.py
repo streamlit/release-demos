@@ -55,6 +55,7 @@ def tic_tac_toe():
     # Define callbacks to handle button clicks.
     def handle_click(i, j):
         if not st.session_state.winner:
+            # TODO: Handle the case when nobody wins but the game is over!
             st.session_state.board[i, j] = st.session_state.next_player
             st.session_state.next_player = (
                 "O" if st.session_state.next_player == "X" else "X"

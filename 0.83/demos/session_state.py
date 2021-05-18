@@ -3,6 +3,7 @@ import streamlit as st
 from .tic_tac_toe import tic_tac_toe
 from .todo_list import todo_list
 from .labelling import labelling
+from .pagination import pagination
 
 
 def session_state():
@@ -51,3 +52,5 @@ def session_state():
     todo_list()
     st.write("---")
     labelling()
+    st.write("---")
+    pagination()
