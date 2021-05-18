@@ -70,8 +70,8 @@ def tic_tac_toe():
                 st.session_state.winner = winner
 
     # Show one button for each field.
-    cols = st.beta_columns(3)
     for i, row in enumerate(st.session_state.board):
+        cols = st.beta_columns([0.1, 0.1, 0.1, 0.7])
         for j, field in enumerate(row):
             cols[j].button(
                 field,
