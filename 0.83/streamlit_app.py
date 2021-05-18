@@ -20,8 +20,8 @@ from demos import fake
 
 previous_version = "0.82.0"
 demo_pages = {
-    # "Session State": session_state.show,
-    "Fake": fake.show
+    "Session State": session_state.show,
+    # "Fake": fake.show
 }
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
