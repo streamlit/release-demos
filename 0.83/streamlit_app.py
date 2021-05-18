@@ -70,13 +70,13 @@ if len(pages):
     st.write(query_params)
     if "page" in query_params and query_params["page"][0] == "forms_demo":
         st.write("shortcut")
-        index = 1
+        page_index = 1
     else:
-        index = 0
-    st.write(index)
+        page_index = 0
+    st.write(page_index)
 
     st.sidebar.radio(
-        "", ["option 1", "option 2", "option 3"], index=1, key="radio123"
+        "", ["option 1", "option 2", "option 3"], page_index=1, key="radio123"
     )
     selected_demo = st.sidebar.radio("", pages, index)
 else:
