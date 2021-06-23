@@ -32,8 +32,8 @@ def show():
         """
         ## 👾 Tic Tac Toe
         
-        Let's play! This demo stores the entire game state in `st.session_state` and 
-        uses the new callbacks to handle button clicks.
+        Let's play! This demo stores the entire game state (as a dict) in 
+        `st.session_state` and uses the new callbacks to handle button clicks.
         """
     )
     st.write("")
