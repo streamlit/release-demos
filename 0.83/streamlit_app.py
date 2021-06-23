@@ -16,12 +16,10 @@ from util.release_helper import create_static_notes
 VERSION = ".".join(st.__version__.split(".")[:2])
 
 from demos import session_state
-from demos import fake
 
 previous_version = "0.82.0"
 demo_pages = {
     "Session State": session_state.show,
-    # "Fake": fake.show
 }
 
 st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
@@ -67,11 +65,14 @@ if len(pages):
     pages.insert(0, "Release Notes")
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
-    # TODO: This doesn't work yet. Locally it actually works, but on Streamlit Sharing 
-    #   it doesn't somehow. The query params are actually read and parsed correctly, 
-    #   but it doesn't manage to set the index based on it. Seems to be a weird 
+    # TODO: This doesn't work yet. Locally it actually works, but on Streamlit Sharing
+    #   it doesn't somehow. The query params are actually read and parsed correctly,
+    #   but it doesn't manage to set the index based on it. Seems to be a weird
     #   interaction between the widget value in session state and value given in arg.
     #   See if this is fixed in final session state version.
+    st.write(query_params)
+    if "page" in query_params:
+        st.write(query_params["page"])
     if "page" in query_params and query_params["page"][0] == "headliner":
         index = 1
     else:
