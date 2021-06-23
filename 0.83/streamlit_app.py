@@ -71,10 +71,11 @@ if len(pages):
         idx = 0
     # TODO: This works right now, but it doesn't work if I set key="pages" here.
     #   The idx above is correct, so doesn't seem like it has to do with query_params,
-    #   but rather with session state + the default value for the widget. Is this 
-    #   intended behavior or a bug? Could be confusing for users, especially if they 
-    #   don't use session state at all (i.e. especially new users). Try this out in a 
-    #   smaller example. 
+    #   but rather with session state + the default value for the widget. Is this
+    #   intended behavior or a bug? Could be confusing for users, especially if they
+    #   don't use session state at all (i.e. especially new users). Try this out in a
+    #   smaller example. What's also very strange: It works locally (even with
+    #   key="pages") but it doesn't work on Sharing.
     selected_demo = st.sidebar.radio("", pages, idx)
 else:
     selected_demo = "Release Notes"
