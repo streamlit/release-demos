@@ -65,9 +65,6 @@ if len(pages):
     pages.insert(0, "Release Notes")
     st.sidebar.title(f"Streamlit v{VERSION} Demos")
     query_params = st.experimental_get_query_params()
-    
-    if "page" in query_params:
-        st.write(query_params["page"])
     if "page" in query_params and query_params["page"][0] == "headliner":
         idx = 1
     else:
