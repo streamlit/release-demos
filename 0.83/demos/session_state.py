@@ -18,7 +18,7 @@ def show():
         """
         # Try out Session State!
 
-        One of the longest & most highly requested features is finally here! Session 
+        One of the most highly requested Streamlit features is finally here! Session 
         state allows you to preserve information throughout a browser session. 
         Below are some ideas for how to use it. 
         """
