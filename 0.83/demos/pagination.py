@@ -30,12 +30,12 @@ def show():
     col1, col2, col3, _ = st.beta_columns([0.1, 0.17, 0.1, 0.63])
 
     if st.session_state.page < 4:
-        col3.button(">", on_change=next_page)
+        col3.button(">", on_click=next_page)
     else:
         col3.write("")  # this makes the empty column show up on mobile
 
     if st.session_state.page > 0:
-        col1.button("<", on_change=prev_page)
+        col1.button("<", on_click=prev_page)
     else:
         col1.write("")  # this makes the empty column show up on mobile
 

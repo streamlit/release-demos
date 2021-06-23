@@ -33,7 +33,7 @@ def show():
         ## 👾 Tic Tac Toe
         
         Let's play! This demo stores the entire game state in `st.session_state` and 
-        uses the new `on_change` callback to handle button clicks.
+        uses the new callbacks to handle button clicks.
         """
     )
     st.write("")
@@ -75,7 +75,7 @@ def show():
             cols[j].button(
                 field,
                 key=f"{i}-{j}",
-                on_change=handle_click,
+                on_click=handle_click,
                 args=(i, j),
             )
 

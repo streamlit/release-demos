@@ -6,7 +6,8 @@ def show():
         """
         ## 💯 Counter
         
-        The most basic example: Store a count in `st.session_state` and increment when clicked.
+        The most basic example: Store a count in `st.session_state` and increment when 
+        clicked.
         """
     )
     if "counter" not in st.session_state:
@@ -16,7 +17,7 @@ def show():
         st.session_state.counter += 1
 
     st.write("Counter:", st.session_state.counter)
-    st.button("Plus one!", on_change=increment)
+    st.button("Plus one!", on_click=increment)
 
     if st.session_state.counter >= 50:
         st.success("King of counting there! Your trophy for reaching 50: 🏆")

@@ -43,8 +43,8 @@ def show():
                 "– Remaining:",
                 len(st.session_state.files),
             )
-            st.button("This is a dog! 🐶", on_change=annotate, args=("dog",))
-            st.button("This is a cat! 🐱", on_change=annotate, args=("cat",))
+            st.button("This is a dog! 🐶", on_click=annotate, args=("dog",))
+            st.button("This is a cat! 🐱", on_click=annotate, args=("cat",))
         else:
             st.success(
                 f"🎈 Done! All {len(st.session_state.annotations)} images annotated."
