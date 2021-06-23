@@ -74,11 +74,11 @@ if len(pages):
     if "page" in query_params:
         st.write(query_params["page"])
     if "page" in query_params and query_params["page"][0] == "headliner":
-        index = 1
+        idx = 1
     else:
-        index = 0
-    st.write(index)
-    selected_demo = st.sidebar.radio("", pages, 1, key="pages")
+        idx = 0
+    st.write(idx)
+    selected_demo = st.sidebar.radio("", pages, idx, key="pages")
 else:
     selected_demo = "Release Notes"
 
