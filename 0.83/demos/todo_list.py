@@ -17,7 +17,7 @@ def show():
         st.session_state.todos = [
             {"description": "Play some Tic Tac Toe", "done": True},
             {
-                "description": "Read the [blog post](https://blog.streamlit.io/session-state-for-streamlit/) about session state",
+                "description": "Read the [blog post about session state](https://blog.streamlit.io/session-state-for-streamlit/)",
                 "done": False,
             },
         ]
