@@ -16,7 +16,10 @@ def show():
     if "todos" not in st.session_state:
         st.session_state.todos = [
             {"description": "Play some Tic Tac Toe", "done": True},
-            {"description": "Read the blog post about session state", "done": False},
+            {
+                "description": "Read the [blog post](https://blog.streamlit.io/session-state-for-streamlit/) about session state",
+                "done": False,
+            },
         ]
 
     # Define callback when text_input changed.
