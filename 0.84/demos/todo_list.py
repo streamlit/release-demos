@@ -4,7 +4,7 @@ import streamlit as st
 def show():
     st.write(
         """
-        ## ✅ Todo List
+        ## ✅ To-do List
         
         We already added a few TODOs for you 😉 They are stored as a list in 
         `st.session_state`. Also, the `on_change` callback is used to add new items only
