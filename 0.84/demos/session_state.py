@@ -29,31 +29,31 @@ def show():
     st.write("---")
     counter.show()
     st.caption(
-        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/counter.py)"
+        "[View code](https://github.com/streamlit/release-demos/blob/0.84/0.84/demos/counter.py)"
     )
 
     st.write("---")
     tic_tac_toe.show()
     st.caption(
-        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/tic_tac_toe.py)"
+        "[View code](https://github.com/streamlit/release-demos/blob/0.84/0.84/demos/tic_tac_toe.py)"
     )
 
     st.write("---")
     todo_list.show()
     st.caption(
-        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/todo_list.py)"
+        "[View code](https://github.com/streamlit/release-demos/blob/0.84/0.84/demos/todo_list.py)"
     )
 
     st.write("---")
     labelling.show()
     st.caption(
-        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/labelling.py) – Images from [Kaggle Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/overview)"
+        "[View code](https://github.com/streamlit/release-demos/blob/0.84/0.84/demos/labelling.py) – Images from [Kaggle Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/overview)"
     )
 
     st.write("---")
     pagination.show()
     st.caption(
-        "[View code](https://github.com/streamlit/release-demos/blob/0.83/0.83/demos/pagination.py)"
+        "[View code](https://github.com/streamlit/release-demos/blob/0.84/0.84/demos/pagination.py)"
     )
 
 
