@@ -22,7 +22,7 @@ def show():
         state allows you to preserve information throughout a browser session. 
         Below are some ideas for how to use it. 
         
-        More infos in the [blog post](https://blog.streamlit.io/session-state-for-streamlit/).
+        More info in the [blog post](https://blog.streamlit.io/session-state-for-streamlit/).
         """
     )
 
