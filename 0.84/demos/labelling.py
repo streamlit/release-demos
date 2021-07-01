@@ -15,11 +15,9 @@ def show():
     )
 
     script_path = os.path.dirname(__file__)
-    st.write(script_path)
     rel_path = "images"
     abs_file_path = script_path + "/" + rel_path
     files = os.listdir(abs_file_path)
-    st.write(files)
 
     if "annotations" not in st.session_state:
         st.session_state.annotations = {}
@@ -40,7 +38,6 @@ def show():
 
     st.write("")
     col1, col2 = st.beta_columns(2)
-    st.write(image_path)
     col1.image(image_path, width=300)
     with col2:
         if st.session_state.files:
@@ -58,8 +55,6 @@ def show():
             )
         st.write("### Annotations")
         st.write(st.session_state.annotations)
-
-    st.write(st.session_state.files)
 
 
 if __name__ == "__main__":
