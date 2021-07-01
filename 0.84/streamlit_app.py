@@ -27,7 +27,7 @@ st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
 contributors = []
 
 intro = f"""
-This release launches ...
+This release launches session state as well as bug fixes and improvements.
 """
 
 release_notes = f"""
@@ -39,6 +39,11 @@ release_notes = f"""
 **Notable Changes**
 
 - 🪄 `st.text_input` now has an `autocomplete` parameter to allow password managers to be used
+
+**Other Changes**
+
+- Using st.set_page_config to assign the page title no longer appends “Streamlit” to that title ([#3467](https://github.com/streamlit/streamlit/pull/3467))
+- NumberInput: disable plus/minus buttons when the widget is already at its max (or min) value ([#3493](https://github.com/streamlit/streamlit/pull/3493))
 
 """
 # End release updates
