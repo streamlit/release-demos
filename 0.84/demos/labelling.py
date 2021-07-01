@@ -36,6 +36,7 @@ def show():
 
     st.write("")
     col1, col2 = st.beta_columns(2)
+    st.write(image_path)
     col1.image(image_path, width=300)
     with col2:
         if st.session_state.files:
