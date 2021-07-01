@@ -19,6 +19,7 @@ def show():
     rel_path = "images"
     abs_file_path = script_path + "/" + rel_path
     files = os.listdir(abs_file_path)
+    st.write(files)
 
     if "annotations" not in st.session_state:
         st.session_state.annotations = {}
@@ -52,6 +53,8 @@ def show():
             )
         st.write("### Annotations")
         st.write(st.session_state.annotations)
+
+    st.write(st.session_state.files)
 
 
 if __name__ == "__main__":
