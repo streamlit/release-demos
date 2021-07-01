@@ -15,6 +15,7 @@ def show():
     )
 
     script_path = os.path.dirname(__file__)
+    st.write(script_path)
     rel_path = "images"
     abs_file_path = script_path + "/" + rel_path
     files = os.listdir(abs_file_path)
