@@ -47,8 +47,6 @@ def write_todo_list(todos):
     "Display the todo list (mostly layout stuff, no state)."
     st.write("")
     col1, col2, _ = st.beta_columns([0.05, 0.8, 0.15])
-    # col1.write("*Done?*")
-    # col2.write("*Description*")
     all_done = True
     for i, todo in enumerate(todos):
         done = col1.checkbox("", todo["done"], key=str(i))

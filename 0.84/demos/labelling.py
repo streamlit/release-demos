@@ -30,7 +30,6 @@ def show():
             st.session_state.current_image = random.choice(st.session_state.files)
             st.session_state.files.remove(st.session_state.current_image)
 
-    # image_path = abs_file_path + "/" + st.session_state.current_image
     image_path = (
         "https://github.com/streamlit/release-demos/raw/0.84/0.84/demos/images/"
         + st.session_state.current_image

@@ -38,13 +38,6 @@ def show():
     )
     st.write("")
 
-    # TODO: One issue here is that we cannot do `if not st.session_state` because the
-    #   tic tac toe page here is only accessed after the frontpage has been loaded.
-    #   Currently, st.session_state evaluates to True after the 1st run, even if there
-    #   was nothing stored in it. Is this how it should be? This is contrary to `dict`!
-    # if not st.session_state:
-    #     print("hello")
-
     # Initialize state.
     if "board" not in st.session_state:
         st.session_state.board = np.full((3, 3), ".", dtype=str)
@@ -61,11 +54,6 @@ def show():
             )
             winner = checkWin(st.session_state.board)
             if winner != ".":
-                # st.session_state.done = True
-                # TODO: There's a bug here when I call a normal st. command. Is this not
-                #   possible in callbacks? Why not?
-                # st.write(f"{winner} won the game!")
-                # st.balloons()
                 st.session_state.winner = winner
 
     # Show one button for each field.
