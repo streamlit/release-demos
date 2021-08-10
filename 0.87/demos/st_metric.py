@@ -19,7 +19,7 @@ def show():
 
     st.write("---")
     st.write("`st.metric` looks especially nice in combination with `st.columns`:")
-    col1, col2, col3 = st.beta_columns(3)
+    col1, col2, col3 = st.columns(3)
     col1.metric("Metric 1", "1.2k", "5%")
     col2.metric("Metric 2", 456, "-8%")
     col3.metric("Metric 2", 0.75, "0.12")
