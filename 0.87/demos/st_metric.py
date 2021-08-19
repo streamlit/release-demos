@@ -40,7 +40,7 @@ def show():
     st.write("---")
 
     st.write("Let's look at some data from the Iris Dataset")
-    iris = load_dataset('iris.csv')
+    iris = load_dataset('0.87/iris.csv')
 
     avg_sepal_length = iris['sepallength'].mean()
     avg_sepal_width = iris['sepalwidth'].mean()

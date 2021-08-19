@@ -34,7 +34,7 @@ release_notes = f"""
 ---
 **Highlights**
 
-- 🔢  Introducing `st.metric`, an API for displaying KPIs. Check out the [demo app]() showcasing the functionality
+- 🔢  Introducing `st.metric`, an API for displaying KPIs
 
 **Other Changes**
 
