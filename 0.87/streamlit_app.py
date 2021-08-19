@@ -27,22 +27,21 @@ st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
 contributors = []
 
 intro = f"""
-This release launches ...
+This release launches `st.metric` 🎉
 """
 
 release_notes = f"""
 ---
 **Highlights**
 
-- ...
-
-**Notable Changes**
-
-- ...
+- 🔢  Introducing `st.metric`, an API for displaying KPIs. Check out the [demo app]() showcasing the functionality
 
 **Other Changes**
 
-- ...
+- 🐞  Bug Fixes: File uploader retains state upon expander closing [#3557](https://github.com/streamlit/streamlit/issues/3557),  
+setIn Error with st.empty [#3659](https://github.com/streamlit/streamlit/issues/3659), 
+Missing IFrame embeds in docs [#3706](https://github.com/streamlit/streamlit/issues/3706), 
+Fix error writing certain PNG files [#3597](https://github.com/streamlit/streamlit/issues/3597)
 
 """
 # End release updates
