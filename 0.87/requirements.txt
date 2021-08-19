@@ -1,1 +1,1 @@
-./0.87/streamlit-0.86.0-py2.py3-none-any.whl
+streamlit==0.87.0
