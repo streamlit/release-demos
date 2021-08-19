@@ -82,7 +82,7 @@ def show():
         col2.metric("Median Script Execution Time", "0.55ms", "-0.15", delta_color="inverse")
 
     st.write("---")
-    st.write("Want to use `st.metric`? Have a look in our [docs]() for the full API details!")
+    st.write("Want to use `st.metric`? Have a look in our [docs](https://docs.streamlit.io/en/stable/api.html?highlight=metric#streamlit.metric) for the full API details!")
 
 
 if __name__ == "__main__":
