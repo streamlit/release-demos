@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import altair as alt
 
 
 def show():
@@ -10,22 +12,75 @@ def show():
         """
         # Try out `st.metric`!
 
-        It lets you to display a number in big bold font in your app. Really useful 
-        for KPIs or other important metrics.
+        Display KPIs or important metrics in big bold font in your app
+        ---
         """
     )
 
-    st.metric("Streamlit version", 0.87, "0.01")
+    st.subheader('API')
+    st.write("Here's an example which shows the API and `st.metric` in action")
+    with st.echo():
+        st.metric(label="Streamlit version", value=0.87, delta="0.01")
 
     st.write("---")
-    st.write("`st.metric` looks especially nice in combination with `st.columns`:")
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Metric 1", "1.2k", "5%")
-    col2.metric("Metric 2", 456, "-8%")
-    col3.metric("Metric 2", 0.75, "0.12")
+    st.subheader("Use in columns")
+    st.write("`st.metric` looks especially nice in combination with `st.columns`. Let's look at some financial data")
+
+    with st.echo():
+        col1, col2, col3 = st.columns(3)
+        col1.metric("SPDR S&P 500", "$437.8", "-$1.25")
+        col2.metric("FTEC", "$121.10", "0.46%")
+        col3.metric("BTC", "$46,583.91", "+4.87%")
 
     st.write("---")
-    st.write("Want to use it? Have a look in our [docs]()!")
+
+    st.write("Let's look at some data from the Iris Dataset")
+    # st.subheader('Iris Dataset')
+
+    iris = pd.read_csv('iris.csv')
+
+    avg_sepal_length = iris['sepallength'].mean()
+    avg_sepal_width = iris['sepalwidth'].mean()
+
+
+    with st.echo():
+        col1, col2 = st.columns(2)
+        col1.metric(label="Average Sepal Length", value="%.2f" % avg_sepal_length)
+        col2.metric(label="Average Sepal Width", value="%.2f" % avg_sepal_width)
+
+    hist = alt.Chart(iris).mark_bar().encode(
+        x=alt.X('sepallength'),
+        y=alt.Y('count()', title=None), color='Species'
+    ).properties(
+        title='Iris Sepal Length',
+    ).configure_legend(
+        orient='bottom'
+    )
+
+    col1.altair_chart(hist, use_container_width=True)
+
+    hist = alt.Chart(iris).mark_bar().encode(
+        x=alt.X('sepalwidth'),
+        y=alt.Y('count()', title=None), color='Species'
+    ).properties(
+        title='Iris Sepal Width',
+    ).configure_legend(
+        orient='bottom'
+    )
+
+    col2.altair_chart(hist, use_container_width=True)
+
+    st.write("---")
+
+    st.write('''Sometimes, an increase in a metric can mean a bad thing. 
+    And a decrease in a metric can be a good. Simply use `delta_color="inverse"` to invert colors for ⬆️ and ⬇️''')
+    with st.echo():
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Average Query Latency", "1.99ms", "0.25ms", delta_color='inverse')
+        col2.metric("Median Script Execution Time", "0.55ms", "-0.15", delta_color='inverse')
+
+    st.write("---")
+    st.write("Want to use `st.metric`? Have a look in our [docs]() for the full API details!")
 
 
 if __name__ == "__main__":
