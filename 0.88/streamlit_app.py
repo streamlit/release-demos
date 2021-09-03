@@ -35,7 +35,7 @@ release_notes = f"""
 
 With `st.download_button` you can now seamlessly use download functionality both locally and on [Streamlit Cloud](https://streamlit.io/cloud). 
 
-Check out the radio buttons in the sidebar to play with some samples and head over to [the blog](blog.streamlit.io/0-88-0-release-notes/) for more info!
+Check out the radio buttons in the sidebar to play with some samples and head over to [the blog](https://blog.streamlit.io/0-88-0-release-notes/) for more info!
 
 ## 🧩 Other notable updates
 
