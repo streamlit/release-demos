@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 
 def show():
@@ -76,7 +75,7 @@ def show():
 
     st.markdown('---')
 
-    st.subheader('Downloading CSV Dataframes')
+    st.subheader('Download a dataframe converted to a CSV')
 
     with st.echo():
         df = pd.read_csv("browser_data.csv")
