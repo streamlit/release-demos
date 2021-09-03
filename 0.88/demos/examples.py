@@ -40,7 +40,7 @@ def show():
     st.subheader('Download from a File Pointer')
 
     with st.echo():
-        with open("blue-jay.jpg", "rb") as fp:
+        with open("0.88/blue-jay.jpg", "rb") as fp:
             btn = st.download_button(
                 label="Download IMAGE",
                 data=fp,
@@ -78,7 +78,7 @@ def show():
     st.subheader('Download a dataframe converted to a CSV')
 
     with st.echo():
-        df = pd.read_csv("browser_data.csv")
+        df = pd.read_csv("0.88/browser_data.csv")
 
         @st.cache
         def convert_df(df):
