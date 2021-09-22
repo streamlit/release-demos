@@ -23,16 +23,19 @@ def show():
     st.code("""
     get_help_link = https://support.google.com/googlenest/troubleshooter/7211062?hl=en
     menu_items = {'Get help': get_help_link}
-    st.set_page_config(menu_items=menu_items) """)
+    st.set_page_config(menu_items=menu_items)
+    """)
 
     st.caption("Perhaps you should check out our Get help & Report a bug links 😉!")
     
     st.write("""You can also update the content inside the About dialog with Markdown!""")
 
-    st.code("""about_info = ''' ## My Custom App 
+    st.code("""
+    about_info = ''' ## My Custom App 
     This app uses our ML model to demostrate churn prediction '''
     menu_items = {'About': about_info}
-    st.set_page_config(menu_items=menu_items)""")
+    st.set_page_config(menu_items=menu_items)
+    """)
 
     st.image("0.89/demos/about.jpeg", caption="Example about dialog. Tip: Check out the About dialog for this app!")
 
