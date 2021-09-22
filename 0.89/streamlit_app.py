@@ -21,7 +21,7 @@ from demos import hamburger_menu, experimental_cache
 previous_version = "0.88.0"
 demo_pages = {
     "Hamburger Menu Configuration": hamburger_menu.show,
-    "Experiemental Cache Primitives": experimental_cache.show,
+    "Experimental Cache Primitives": experimental_cache.show,
 }
 
 about_info = ''' ## New in 0.89! Edit this content!
