@@ -1,4 +1,6 @@
 pandas >=0.21.0
 numpy
 Pillow >=7.2.0
+sqlalchemy
+psycopg2
 ./0.89/streamlit-0.89.0-py2.py3-none-any.whl

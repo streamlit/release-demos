@@ -20,17 +20,24 @@ from demos import hamburger_menu, experimental_cache
 
 previous_version = "0.88.0"
 demo_pages = {
-    "Hamburger Menu": hamburger_menu.show,
+    "Hamburger Menu Configuration": hamburger_menu.show,
     "Experiemental Cache Primitives": experimental_cache.show,
 }
 
-st.set_page_config(page_title=f"New features in Streamlit {VERSION}")
+about_info = ''' ## New in 0.89! Edit this content!
+Edit the About page with [`set_page_config`](https://docs.streamlit.io/en/0.89.0/api.html?highlight=set_page_config#streamlit.set_page_config).'''
+st.set_page_config(
+    page_title=f"New features in Streamlit {VERSION}",
+    menu_items={
+        'About': about_info,
+        'Get help': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        'Report a bug': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    }
+)
 
 contributors = []
 
-intro = f"""
-This release launches `st.metric` 🎉
-"""
+intro = ""
 
 release_notes = f"""
 ---

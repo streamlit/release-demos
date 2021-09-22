@@ -1,28 +1,39 @@
 import streamlit as st
 
-st.markdown(" ## Hamburger Menu Customization!")
-st.write("-------------------------------------------------------------------------------")
+def show():
+    st.markdown("# Hamburger Menu Configuration")
+    st.write("-------------------------------------------------------------------------------")
 
-st.write("Here is the new, original hamburger menu without customization in developer mode.")
-st.image("original.png")
-st.markdown("**As one can see, there is now a developer menu in grey in developer mode!**")
-st.write("-------------------------------------------------------------------------------")
+    st.write("""
+    The latest version of the hamburger menu allows developers to configure their menu items for the user.
+    """)
 
-st.write("Here is the new, original hamburger menu without customization as a viewer.")
-st.image("original_viewer.png")
-st.write("-------------------------------------------------------------------------------")
+    col1, col2 = st.columns(2)
+    col1.image("0.89/demos/original.png", caption="The grey section offers developer-specific features")
+    col2.image("0.89/demos/original_viewer.png", caption="Visitors of the app will see a simplified menu")
 
-st.write(" If one wants to show information about their app, one can do that through this feature!")
-st.image("about.jpeg", "This is an example!")
+    st.write("-------------------------------------------------------------------------------")
 
-st.code("""about_info = ''' ## My Custom App 
-This app uses our ML model to demostrate churn prediction '''
-menu_items = {'About': about_info}
-st.set_page_config(menu_items=menu_items)""")
-st.write("-------------------------------------------------------------------------------")
+    st.write("""
+    ## Configuring the Menu
+    
+    In addition to developer-specific menu items, we allow developers to override the menu items
+    for "Report a bug" and "Get help" with their own custom links.""")
 
-st.write("If one wants to override links, one can do that through the `'Get help'` or `'Report a bug'` key")
-st.code("""
-get_help_link = https://support.google.com/googlenest/troubleshooter/7211062?hl=en
-menu_items = {'Get help': get_help_link}
-st.set_page_config(menu_items=menu_items) """)
+    st.code("""
+    get_help_link = https://support.google.com/googlenest/troubleshooter/7211062?hl=en
+    menu_items = {'Get help': get_help_link}
+    st.set_page_config(menu_items=menu_items) """)
+
+    st.caption("Perhaps you should check out our Get help & Report a bug links 😉!")
+    
+    st.write("""You can also update the content inside the About dialog with Markdown!""")
+
+    st.code("""about_info = ''' ## My Custom App 
+    This app uses our ML model to demostrate churn prediction '''
+    menu_items = {'About': about_info}
+    st.set_page_config(menu_items=menu_items)""")
+
+    st.image("0.89/demos/about.jpeg", caption="Example about dialog. Tip: Check out the About dialog for this app!")
+
+    

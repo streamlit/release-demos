@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from .db import RNA
 
 def show():
+    st.markdown("# Experimental Cache Primitives")
     st.markdown("### @st.experimental_memo")
 
     st.write("**Caches expensive computation.** It is *much faster* than `@st.cache`. (Like: an order of magnitude faster in many cases).")
@@ -17,7 +18,7 @@ def show():
         def read_csv(path) -> pd.DataFrame:
             return pd.read_csv(path)
 
-        df = read_csv("browser_data.csv")
+        df = read_csv("0.89/demos/browser_data.csv")
 
     st.write("It does *not* support `hash_funcs`. Instead, unhashable function parameters must be prefixed with '_' to prevent hashing:")
 
@@ -56,7 +57,7 @@ def show():
             engine = create_engine(url)
             return sessionmaker(engine)
 
-    st.title("🥒 memo + singleton demo")
+    st.markdown("## 🥒 memo + singleton demo")
 
     st.markdown(f"""
     Browse RNA sequences from the public [RNAcentral Postgres database](https://rnacentral.org/help/public-database).
@@ -135,7 +136,3 @@ def show():
     st.write(results)
 
     # (It's safe to mutate results - it won't affect the cache.)
-
-
-
-
