@@ -17,8 +17,8 @@ def show():
     st.write("""
     ## Configuring the Menu
     
-    In addition to developer-specific menu items, we allow developers to override the menu items
-    for "Report a bug" and "Get help" with their own custom links.""")
+    In addition to developer-specific menu items, we allow developers to override the menu items for
+    "Report a bug" and "Get help" with their own custom links or completely remove them.""")
 
     st.code("""
     get_help_link = https://support.google.com/googlenest/troubleshooter/7211062?hl=en
