@@ -28,6 +28,12 @@ def show():
             # The _sessionmaker parameter will not be hashed
             pass
 
+    with st.expander("What makes a parameter hashable?"):
+        st.markdown("""In general, **hashable parameters are composed of pure data**.
+        Basic Python datatypes (primitives, lists, dicts, etc), files, numpy
+        and pandas types - these are all hashable. Custom objects are generally
+        *not* hashable.""")
+
     st.write(
         "Under the hood, it uses `pickle` to store cached data. "
         "You can mutate the results of a memoized function without changing the cache:")
