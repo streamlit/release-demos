@@ -47,4 +47,4 @@ def show():
     filters = st.selectbox("...and now, apply a filter!", filters_to_funcs.keys())
     
     if picture:
-        st.image(filters_to_funcs(filters)(picture), channels="BGR")
+        st.image(filters_to_funcs[filters](picture), channels="BGR")
