@@ -17,7 +17,7 @@ VERSION = ".".join(st.__version__.split(".")[:2])
 from demos import orchestrator
 
 demo_pages = {
-    "Camera Input demo": orchestrator.show_examples,
+    "st.camera_input": orchestrator.show_examples,
 }
 
 
