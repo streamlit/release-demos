@@ -37,7 +37,7 @@ def show():
 
     picture = st.camera_input("Take a picture")
 
-    filters = st.sidebar.radio("Choose a filter", ["none", "invert", "hdr", "sketch", "gray"])
+    filters = st.sidebar.selectbox("Choose a filter", ["none", "invert", "hdr", "sketch", "gray"])
 
     if picture:
         st.image(eval(filters)(picture), channels="BGR")
