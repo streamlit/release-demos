@@ -37,7 +37,6 @@ def show():
 
     picture = st.camera_input("First, take a picture...")
 
-    filters = st.selectbox("...and now, apply a filter!", ["none", "invert", "hdr", "sketch", "gray"])
     filters_to_funcs = {
         "No filter": none,
         "Invert": invert,
@@ -45,6 +44,7 @@ def show():
         "Sketch": sketch,
         "Grayscale": gray
     }
-
+    filters = st.selectbox("...and now, apply a filter!", filters_to_funcs.keys())
+    
     if picture:
-        st.image(filters_to_funcs(filter)(picture), channels="BGR")
+        st.image(filters_to_funcs(filters)(picture), channels="BGR")
