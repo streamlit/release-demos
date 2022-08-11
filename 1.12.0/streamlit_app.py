@@ -45,10 +45,11 @@ icon("📊")
 """
 # Charts demo
 
-In Streamlit 1.12.0, we gave our built-in charting commands a new look and parameters
-`x` and `y`! Read more in our 
-[blog post](https://blog.streamlit.io/built-in-charts-get-a-new-look-and-parameters/). You can find the code for 
-this demo [here](https://github.com/streamlit/release-demos/blob/master/1.12.0/streamlit_app.py).
+In [Streamlit 1.12.0](https://discuss.streamlit.io/t/version-1-12-0/29078), we gave our 
+built-in charts a new look and parameters `x` and `y`! Read more in our 
+[blog post](https://blog.streamlit.io/built-in-charts-get-a-new-look-and-parameters/). 
+You can find the code for this demo 
+[here](https://github.com/streamlit/release-demos/blob/master/1.12.0/streamlit_app.py).
 """
 
 colored_header("🧶 st.line_chart")

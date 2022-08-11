@@ -1,2 +1,2 @@
-streamlit-nightly
+streamlit==1.12.0
 vega-datasets==0.9.0
