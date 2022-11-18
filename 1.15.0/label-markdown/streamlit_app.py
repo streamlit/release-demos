@@ -70,7 +70,7 @@ with col1:
 
 with col2:
     st.header("Fancy Labels :nail_care::skin-tone-3::")
-    st.write("New, **limited** Markdown enabled :smile:")    
+    st.write("New, Markdown enabled :smile:")    
     st.markdown("""---""")
 
     st.subheader("Button Labels:")
