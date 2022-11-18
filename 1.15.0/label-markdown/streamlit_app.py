@@ -38,17 +38,17 @@ What's your favorite `code` language? :computer:
 
 with col1:
     st.header("Regular Labels:")
-    st.write("Previously, no markdown enabled :cry:")
+    st.write("Previously, no Markdown enabled :cry:")
     st.markdown("""---""")
 
     st.subheader("Button Labels:")
-    st.write("`st.button` & `st.download_button` without markdown (emoji icons work, shortcodes not supported):")
+    st.write("`st.button` & `st.download_button` without Markdown (emoji icons work, shortcodes not supported):")
     st.button("Go Button")
     st.download_button('Download random text', text_contents)
     st.markdown("""---""")
 
     st.subheader("Widget/Expander/Tab Labels:")
-    st.write("[Widgets](https://docs.streamlit.io/library/api-reference/widgets), `st.metric`, `st.expander` & `st.tabs` without markdown")
+    st.write("[Widgets](https://docs.streamlit.io/library/api-reference/widgets), `st.metric`, `st.expander` & `st.tabs` without Markdown")
     st.color_picker('Instructions: Pick a Color:', '#3E55CB')
     st.selectbox("How would you like to be contacted?",
         ("Corgi Stampede", "Home phone", "Mobile phone"))
@@ -70,7 +70,7 @@ with col1:
 
 with col2:
     st.header("Fancy Labels :nail_care::skin-tone-3::")
-    st.write("New, **limited** markdown enabled :smile:")    
+    st.write("New, **limited** Markdown enabled :smile:")    
     st.markdown("""---""")
 
     st.subheader("Button Labels:")
