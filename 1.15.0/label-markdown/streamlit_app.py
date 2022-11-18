@@ -1,9 +1,9 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config("Widget Labels Markdown Demo", "⚙️", initial_sidebar_state="collapsed")
 
-st.title(":gear: Widget Label Markdown Demo")
+st.title(":gear: Widget Labels Markdown Demo")
 
 col1, col2 = st.columns(2, gap="large")
 text_contents = '''This is some text'''
