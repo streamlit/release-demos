@@ -3,12 +3,22 @@ import streamlit as st
 from streamlit_extras.markdownlit import mdlit
 from streamlit_extras.switch_page_button import switch_page
 
+
+def icon(emoji: str):
+    """Shows an emoji as a Notion-style page icon."""
+    st.write(
+        f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
+        unsafe_allow_html=True,
+    )
+
+
 TITLE = "Streamlit theme for Altair charts!"
 ICON = "🎨"
 
 st.set_page_config(page_title=TITLE, page_icon=ICON)
 
-st.title(ICON + " " + TITLE)
+icon(ICON)
+st.title(TITLE)
 ALTAIR_ICON_URL = "https://avatars.githubusercontent.com/u/22396732?s=200&v=4"
 
 mdlit(
