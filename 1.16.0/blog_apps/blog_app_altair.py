@@ -2,11 +2,12 @@ import altair as alt
 import streamlit as st
 from vega_datasets import data
 
+st.write(st.get_option("theme"))
+st.write(st.get_option("theme.base"))
+
 
 @st.experimental_memo
-def get_chart(use_container_width: bool):
-    import altair as alt
-    from vega_datasets import data
+def get_chart():
 
     source = data.cars()
 
@@ -25,13 +26,19 @@ def get_chart(use_container_width: bool):
 
     with tab1:
         st.altair_chart(
-            chart, use_container_width=use_container_width, theme="streamlit"
+            chart,
+            theme="streamlit",
+            use_container_width=True,
         )
     with tab2:
-        st.altair_chart(chart, use_container_width=use_container_width, theme=None)
+        st.altair_chart(
+            chart,
+            theme=None,
+            use_container_width=True,
+        )
 
 
 try:
-    get_chart(use_container_width=True)
+    get_chart()
 except Exception as e:
     st.exception(e)
