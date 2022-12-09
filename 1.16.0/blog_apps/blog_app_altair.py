@@ -2,9 +2,6 @@ import altair as alt
 import streamlit as st
 from vega_datasets import data
 
-st.write(st.get_option("theme"))
-st.write(st.get_option("theme.base"))
-
 
 @st.experimental_memo
 def get_chart():
