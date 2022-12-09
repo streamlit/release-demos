@@ -1,0 +1,8 @@
+./plotlyStreamlit/streamlit-1.13.0-py2.py3-none-any.whl
+plotly
+numpy
+pandas
+plotly-express
+statsmodels
+xarray
+streamlit-extras
