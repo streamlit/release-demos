@@ -38,7 +38,7 @@ if show:
 
 mdlit(
     """
-Read more in the dedicated @(streamlit)(Streamlit blog post)(https://blog.streamlit.io/).
+Read more in the dedicated @(🎈)(Streamlit blog post)(https://blog.streamlit.io/).
 
 Oh and if you liked this demo, you might as well like our @(👯)(twin demo for Altair)(https://altair.streamlit.app)!\n
 """
