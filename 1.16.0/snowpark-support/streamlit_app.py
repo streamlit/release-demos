@@ -63,5 +63,5 @@ st.info(
 "---"
 
 st.caption(
-    "[Code for this demo](https://github.com/streamlit/release-demos/blob/master/1.16.0/colored-text/streamlit_app.py)"
+    "[Code for this demo](https://github.com/streamlit/release-demos/blob/master/1.16.0/snowpark-support/streamlit_app.py)"
 )
