@@ -10,6 +10,7 @@ def icon(emoji: str):
     )
 
 
+st.set_page_config("Snowpark & PySpark support", "🏂")
 icon("🏂")
 """
 # Snowpark & PySpark support
