@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-
 st.write(
     f'<span style="font-size: 78px; line-height: 1">🪆</span>',
     unsafe_allow_html=True,
@@ -25,6 +24,10 @@ This is possible up to one level of nesting in the main area of the app but not 
 sidebar ([read more](https://docs.streamlit.io/knowledge-base/using-streamlit/why-streamlit-restrict-nested-columns)). 
 Below are some examples for the types of layouts you can create now!
 """
+
+st.caption(
+    "[Code for this demo](https://github.com/streamlit/release-demos/blob/master/1.18.0/columns_in_columns/streamlit_app.py)"
+)
 
 "---"
 
