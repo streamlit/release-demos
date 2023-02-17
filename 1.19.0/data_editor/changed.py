@@ -16,4 +16,5 @@ df["Classification"] = df["Classification"].astype("category")
 df["Habitat"] = df["Habitat"].astype("category")
 
 st.experimental_data_editor(df, key="data_editor")
+st.write("Here's the session state:")
 st.write(st.session_state["data_editor"])
