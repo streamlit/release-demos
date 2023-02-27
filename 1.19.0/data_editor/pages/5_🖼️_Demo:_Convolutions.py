@@ -58,7 +58,7 @@ KERNELS = {
     "Erasor": np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]]),
 }
 
-CURRENT_DIRECTORY = "1.19.0/data_editor/images"
+CURRENT_DIRECTORY = "1.19.0/data_editor/images/"
 
 image_options_to_path = {
     "Camping": CURRENT_DIRECTORY + "camping.png",
