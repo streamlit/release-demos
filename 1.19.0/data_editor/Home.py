@@ -22,7 +22,11 @@ st.markdown(
     " cells and edit them. Curious how that looks like? You're in the right place."
 )
 
-st.markdown("We cooked some demos to show you how it works!")
+st.markdown(
+    "We cooked some demos (code is available"
+    " [here](https://github.com/streamlit/release-demos/tree/master/1.19.0/data_editor) to show you"
+    " how it works!"
+)
 
 show = st.button("Jump into the demos!")
 if show:
