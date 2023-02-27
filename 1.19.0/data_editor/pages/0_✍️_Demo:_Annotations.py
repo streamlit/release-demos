@@ -40,9 +40,6 @@ df.sentiment = df.sentiment.cat.add_categories(("☯ Neutral", "😤 Negative"))
 
 annotated = st.experimental_data_editor(df)
 
-left, right = st.columns(2)
-left.download_button(
-    "⬇️ Download as .csv", annotated.to_csv(), "annotated.csv", use_container_width=True
+st.download_button(
+    "⬇️ Download annotations as .csv", annotated.to_csv(), "annotated.csv", use_container_width=True
 )
-with right:
-    st.button("📙 Write into database", use_container_width=True)

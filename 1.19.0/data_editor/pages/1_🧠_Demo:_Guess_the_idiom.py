@@ -9,7 +9,9 @@ st.title("🧠 Guess the idiom")
 st.caption("This is a demo of the `st.experimental_data_editor`.")
 st.write("")
 
-"""We put together a set of idioms. Your task is to guess the missing words! Can you make it to the end?"""
+"""We put together a set of idioms. Idioms are phrases or expressions that have a special meaning. For example when we say "it's raining cats and dogs" we don't actually mean that cats and dogs are falling from the sky. Instead, we mean that it's raining very hard.
+
+Give a try and guess the missing words in the following (rather famous) idioms!"""
 random.seed(0)
 
 idioms = [

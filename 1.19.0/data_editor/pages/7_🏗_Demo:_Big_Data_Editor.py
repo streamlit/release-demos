@@ -14,7 +14,7 @@ st.caption("This is a demo of the `st.experimental_data_editor`.")
 """ Wanna use st.experimental_data_editor with a million rows dataset? No problem!"""
 
 
-@st.cache_data(max_entries=2)
+@st.cache_resource(max_entries=2)
 def get_fake_data():
     from faker import Faker
 
@@ -36,7 +36,6 @@ def get_fake_data():
 
 @st.cache_resource(max_entries=4)
 def get_profile_dataset(number_of_items: int = 100) -> pd.DataFrame:
-
     new_data = []
     fake_profile_data = get_fake_data()
 
@@ -56,7 +55,7 @@ def get_profile_dataset(number_of_items: int = 100) -> pd.DataFrame:
     return profile_df
 
 
-dataset = get_profile_dataset(int(1e6))
+dataset = get_profile_dataset(int(1e5))
 st.write("Length of dataset: ", len(dataset))
 with st.form("data_editor_form"):
     st.caption("Edit the dataframe below")

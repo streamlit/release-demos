@@ -58,8 +58,7 @@ KERNELS = {
     "Erasor": np.array([[0, 0, 0], [0, 0, 0], [0, 0, 0]]),
 }
 
-CURRENT_DIRECTORY = "data-editor-usecases/"
-# CURRENT_DIRECTORY = "./"
+CURRENT_DIRECTORY = "1.19.0/data_editor/images"
 
 image_options_to_path = {
     "Camping": CURRENT_DIRECTORY + "camping.png",
@@ -69,7 +68,7 @@ image_options_to_path = {
     "Salmon": CURRENT_DIRECTORY + "salmon.png",
 }
 
-kernel_options = list(KERNELS.keys())  # + ["Custom  ✏️"]
+kernel_options = list(KERNELS.keys())
 
 
 left, right = st.columns((2.1, 4.5))
@@ -91,7 +90,7 @@ with right:
     )
     st.caption("👇 Edit the kernel below and see the effect on the convolved image")
     kernel = KERNELS[chosen_kernel]
-    kernel = pd.DataFrame(kernel)  # , columns=[" ", "  ", "   "], index=[" ", "  ", "   "])
+    kernel = pd.DataFrame(kernel)
     kernel = st.experimental_data_editor(kernel, use_container_width=True)
 
 convolved = convolve(image, kernel)
