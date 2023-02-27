@@ -24,8 +24,8 @@ st.markdown(
 
 st.markdown(
     "We cooked some demos (code is available"
-    " [here](https://github.com/streamlit/release-demos/tree/master/1.19.0/data_editor) to show you"
-    " how it works!"
+    " [here](https://github.com/streamlit/release-demos/tree/master/1.19.0/data_editor)) to show"
+    " you how it works!"
 )
 
 show = st.button("Jump into the demos!")
