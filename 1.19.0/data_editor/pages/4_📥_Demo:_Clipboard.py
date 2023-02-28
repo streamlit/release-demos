@@ -27,7 +27,7 @@ with left:
 
 with right:
     st.write(
-        """Want to fill it real quick? Just copy the data from [this Google Sheet]({GOOGLE_SHEET_URL}) and paste it in!"""
+        f"""Want to fill it real quick? Just copy the data from [this Google Sheet]({GOOGLE_SHEET_URL}) and paste it in!"""
     )
 
     names = [
