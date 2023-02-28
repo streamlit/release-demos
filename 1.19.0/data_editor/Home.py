@@ -34,6 +34,6 @@ if show:
 
 st.markdown(
     """
-Read more in the dedicated :balloon: [Streamlit blog post](https://blog.streamlit.io/) and in our [docs](https://docs.streamlit.io).
+Read more in the dedicated :balloon: [Streamlit blog post](https://blog.streamlit.io/editable-dataframes-are-here) and in our [docs](https://docs.streamlit.io/library/api-reference/widgets/st.experimental_data_editor).
 """
 )
