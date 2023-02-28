@@ -52,7 +52,7 @@ def get_label(progress: float) -> str:
     if progress == 0:
         return "Replace 'None's with your guesses... Hint: first missing is `and` :wink:"
     elif progress > 0 and progress < 1:
-        return "Now you got it! Keep going.. :fire:"
+        return "Now you got it! Keep going... :fire:"
 
     else:
         return "🤩"
