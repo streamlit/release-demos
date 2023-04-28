@@ -3,11 +3,13 @@ import streamlit as st
 from datetime import timedelta
 
 st.set_page_config(
-    page_title='st.connection for SQL',
+    page_title='SQLConnection',
     page_icon='🏰'
 )
 
-st.title('🏰 st.connection for SQL')
+st.title('🏰 SQLConnection')
+
+st.info("`SQLConnection` can load data from any SQL dialect with 4 lines of code", icon="💡")
 
 connection_secrets = """
 # .streamlit/secrets.toml
@@ -15,18 +17,30 @@ connection_secrets = """
 url = "sqlite:///pets.db"
 """
 
-st.subheader("Init")
+st.subheader("Setup")
 
 """
-Initialize the connection:
+This example uses a local SQLite database that sits alongside the app. The only extra dependency installed is [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy).
+
+```sh
+pip install SQLAlchemy==1.4
+```
+
+`.streamlit/secrets.toml` looks like this:
+"""
+
+st.code(connection_secrets, language='toml')
+
+"""
+Now you can initialize the connection in one line of code:
 """
 with st.echo():
+    import streamlit as st
     conn = st.experimental_connection('pets_db', type='sql')
 
+    # View the connection contents.
     conn
 
-"secrets.toml looks like this:"
-st.code(connection_secrets, language='toml')
 
 st.subheader("Use session for writes and transactions")
 
@@ -53,10 +67,10 @@ st.subheader("query() for common cases")
 """
 For a typical use case where you just need to query and cache some data, it's much simpler.
 Just use `conn.query()`. By default it caches the result without expiration, or you can add a TTL.
-This also support parameters, pagination, date conversions, etc (see the full docs).
+This also support parameters, pagination, date conversions, and more
+(see the [full docs](https://docs.streamlit.io/library/api-reference/connections/st.connections.sqlconnection#sqlconnectionquery)).
 
-By default, `query()` returns a `pandas.DataFrame`. We also intend to easily support other common
-return formats, like `pyarrow.Table`.
+`query()` returns a `pandas.DataFrame`.
 """
 
 with st.echo():

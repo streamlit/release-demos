@@ -1,32 +1,21 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title='st.connection Preview',
+    page_title='st.experimental_connection',
     page_icon='🔌'
 )
 
-st.title("🔌 Introducing st.connection")
+st.title("🔌 st.experimental_connection")
 
 """
-## Quickly and easily connect your app to data and APIs!
+We're very excited to release `st.experimental_connection()`, which makes it easy to connect your Streamlit apps to data and APIs with a fraction of the code.
 
-### Setting up connections is PAINFUL 🤕
-
-Connecting to data sources and APIs is one of the most annoying parts when building data apps. It typically requires finding and installing
-external packages, figuring out how to manage your credentials securely outside of code, and finding the right methods to get data out in
-the format you need. Not forgetting the need to add Streamlit caching capabilities! For example you can see the 14 lines of code in our
-[MySQL tutorial here](https://docs.streamlit.io/knowledge-base/tutorials/databases/mysql#write-your-streamlit-app) - using a mysql.connector,
-st.cache_resource, st.cache_data, managing a cursor, and converting the row result format!
-
-### Meet `st.connection` 🥂
-
-We're very excited to release st.connection, which makes it easy to connect your Streamlit apps to data and APIs, with a fraction of the code.
-With st.connection, the MySQL example above becomes just 4 lines of code:
+With st.experimental_connection, connecting to a SQL database becomes just 4 lines of code:
 """
 
 tab1, tab2 = st.tabs([
-    "🚀 With st.connection",
-    "🐢 Compare to today"
+    "🚀 With st.experimental_connection",
+    "🐢 How it worked before"
 ])
 
 with tab1:
@@ -40,7 +29,7 @@ st.dataframe(pet_owners)
     )
 
 with tab2:
-    "Sourced from [Streamlit's MySQL tutorial](https://docs.streamlit.io/knowledge-base/tutorials/databases/mysql#write-your-streamlit-app)"
+    "Compared to [Streamlit's original MySQL tutorial](https://web.archive.org/web/20230330050343/https://docs.streamlit.io/knowledge-base/tutorials/databases/mysql#write-your-streamlit-app)"
 
     st.code("""
 import streamlit as st
@@ -68,26 +57,14 @@ for row in rows:
 
 ### What's included
 
-st.connection includes:
+st.experimental_connection includes:
 
-- `st.connection()` factory method to initialize ready-to-use data connection objects
-- Concrete implementations in Streamlit for a few key data sources
+- `st.experimental_connection()` factory method to initialize ready-to-use data connection objects
+- Concrete implementations built into Streamlit for SQL and Snowpark
+- Easy to install connections for [cloud file storage](https://github.com/streamlit/files-connection) and [Google Sheets](https://github.com/streamlit/gsheets-connection)
 - An extendable `BaseConnection` class to easily build (and share) new connection types!
 
-Here are the included connections it supports today:
+👈 Pick a data source to see how easy it is!
 
-- Many SQL dialects (MySQL, Postgres, Snowflake, BigQuery, Microsoft SQL Server, ...)
-- Snowflake Snowpark
-- Cloud file storage (S3, GCS, Azure Blob Storage, ...)
-- And more coming very very soon!
-
-### View the code
-
-Find the WIP feature code in [feature/st.experimental_connection branch](https://github.com/streamlit/streamlit/tree/feature/st.experimental_connection) of streamlit/streamlit
-- [Connection classes](https://github.com/streamlit/streamlit/tree/feature/st.experimental_connection/lib/streamlit/connections)
-- [Factory function](https://github.com/streamlit/streamlit/blob/feature/st.experimental_connection/lib/streamlit/runtime/connection_factory.py)
-
-👈 Dive in
-
-**This preview is shared for feedback purposes only and is not intended for any production-like use.**
+[Learn more in the API docs.](https://docs.streamlit.io/library/api-reference/connections)
 """

@@ -5,7 +5,7 @@ import duckdb
 import pandas as pd
 
 class DuckDBConnection(ExperimentalBaseConnection[duckdb.DuckDBPyConnection]):
-    """Basic st.connection implementation for DuckDB"""
+    """Basic st.experimental_connection implementation for DuckDB"""
 
     def _connect(self, **kwargs) -> duckdb.DuckDBPyConnection:
         if 'database' in kwargs:
