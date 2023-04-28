@@ -1,7 +1,7 @@
 .DS_Store
 secrets.toml
 
-test-files/*
+test-files/
 *.db
 
 # Byte-compiled / optimized / DLL files

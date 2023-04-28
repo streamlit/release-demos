@@ -2,7 +2,7 @@ import streamlit as st
 
 import os
 from tempfile import NamedTemporaryFile
-from files_connection import FilesConnection
+from st_files_connection import FilesConnection
 import pandas as pd
 
 st.set_page_config(
@@ -41,7 +41,7 @@ local, s3, s3_other, gcs, gcs_other = st.tabs(
 with local:
     st.write("## Working with local files")
     with st.echo():
-        from files_connection import FilesConnection
+        from st_files_connection import FilesConnection
         conn = st.experimental_connection('local', type=FilesConnection)
         conn
 
