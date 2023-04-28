@@ -8,7 +8,7 @@ st.set_page_config(
 st.title('🏗️ Build your own Connection')
 
 
-st.info("`st.experimental_connection()` makes it easy to build, use and share your own connection implementations.", icon="💡")
+st.info("`ExperimentalBaseConnection` makes it easy to build, use and share your own connection implementations.", icon="💡")
 
 """
 You can build your own Connection by extending the [built-in ExperimentalBaseConnection.](https://docs.streamlit.io/library/api-reference/connections/st.connections.experimentalbaseconnection)
