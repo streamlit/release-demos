@@ -159,7 +159,7 @@ with s3_other:
 
     st.write(
         "You can also use credentials stored in `~/.aws/config` or `AWS_ACCESS_KEY_ID` & "
-        "`AWS_SECRET_ACCES_KEY` environment variables. This example uses that approach"
+        "`AWS_SECRET_ACCES_KEY` environment variables. This example uses that approach "
         "rather than Streamlit secrets."
     )
 
