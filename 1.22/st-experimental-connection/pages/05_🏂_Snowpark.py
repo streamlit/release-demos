@@ -16,7 +16,7 @@ st.info("`SnowparkConnection` makes it easy to connect to Snowflake and Snowpark
 """
 A SnowparkConnection example is shown here, but won't work in the Cloud app since it needs local Snowflake credentials.
 To use it, you can:
-- Clone [this app](https://github.com/streamlit/release-demos/tree/master/1.22.0/st-experimental-connection) locally
+- Clone [this app](https://github.com/streamlit/release-demos/tree/master/1.22/st-experimental-connection) locally
 - Run `pip install "streamlit>=1.22" "snowflake-snowpark-python[pandas]"` or equivalent
 - Set up local credentials for your Snowflake account.
 """

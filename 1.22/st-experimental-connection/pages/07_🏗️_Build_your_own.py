@@ -14,7 +14,7 @@ st.info("`ExperimentalBaseConnection` makes it easy to build, use and share your
 You can build your own Connection by extending the [built-in ExperimentalBaseConnection.](https://docs.streamlit.io/library/api-reference/connections/st.connections.experimentalbaseconnection)
 To demonstrate this, this app has a simple [DuckDB](https://duckdb.org/) Connection built in.
 You can view the connection source code
-[here](https://github.com/streamlit/release-demos/blob/master/1.22.0/st-experimental-connection/duckdb_connection/connection.py).
+[here](https://github.com/streamlit/release-demos/blob/master/1.22/st-experimental-connection/duckdb_connection/connection.py).
 """
 
 """
@@ -68,7 +68,7 @@ def query(self, query: str, ttl: int = 3600, **kwargs) -> pd.DataFrame:
 with st.expander("To show it's that easy, see the DuckDB code running here :rocket:"):
     """
     You can view the DuckDB connection source code
-    [here](https://github.com/streamlit/release-demos/blob/master/1.22.0/st-experimental-connection/duckdb_connection/connection.py).
+    [here](https://github.com/streamlit/release-demos/blob/master/1.22/st-experimental-connection/duckdb_connection/connection.py).
     """
 
     with st.echo():
