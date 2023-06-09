@@ -15,8 +15,8 @@ def get_chart_1590(use_container_width: bool):
     # Source of land data
     source = alt.topo_feature(data.world_110m.url, 'countries')
     
-    chart = # Layering and configuring the components
-    alt.layer(
+    # Layering and configuring the components
+    chart = alt.layer(
         alt.Chart(sphere).mark_geoshape(fill='lightblue'),
         alt.Chart(graticule).mark_geoshape(stroke='white', strokeWidth=0.5),
         alt.Chart(source).mark_geoshape(fill='ForestGreen', stroke='black')
