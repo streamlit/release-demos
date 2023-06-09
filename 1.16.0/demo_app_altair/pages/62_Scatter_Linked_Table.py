@@ -39,8 +39,8 @@ def get_chart_4167(use_container_width: bool):
     origin = ranked_text.encode(text='Origin:N').properties(title='Origin')
     text = alt.hconcat(horsepower, mpg, origin) # Combine data tables
     
-    chart = # Build chart
-    alt.hconcat(
+    # Build chart
+    chart = alt.hconcat(
         points,
         text
     ).resolve_legend(
