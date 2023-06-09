@@ -51,8 +51,8 @@ def get_chart_44361(use_container_width: bool):
         nearest
     )
     
-    chart = # Put the five layers into a chart and bind the data
-    alt.layer(
+    # Put the five layers into a chart and bind the data
+    chart = alt.layer(
         line, selectors, points, rules, text
     ).properties(
         width=600, height=300
