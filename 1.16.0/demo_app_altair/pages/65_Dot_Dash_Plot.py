@@ -36,8 +36,8 @@ def get_chart_16817(use_container_width: bool):
         color=alt.condition(brush, 'Origin', alt.value('lightgrey'))
     )
     
-    chart = # Build the chart
-    y_ticks | (points & x_ticks)
+    chart =  y_ticks | (points & x_ticks) # Build the chart
+   
     
     tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
     
