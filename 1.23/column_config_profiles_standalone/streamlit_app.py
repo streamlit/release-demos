@@ -28,15 +28,15 @@ def get_profile_dataset(number_of_items: int = 100, seed: int = 0) -> pd.DataFra
         profile = fake.profile()
         new_data.append(
             {
-                "name": profile["name"],
                 "avatar": f"https://picsum.photos/400/200?lock={i}",
+                "name": profile["name"],
                 "age": calculate_age(profile["birthdate"]),
-                "gender": random.choice(["male", "female", "other", None]),
                 "active": random.choice([True, False]),
+                "daily_activity": np.random.rand(25),
                 "homepage": profile["website"][0],
                 "email": profile["mail"],
                 "activity": np.random.randint(2, 90, size=25),
-                "daily_activity": np.random.rand(25),
+                "gender": random.choice(["male", "female", "other", None]),
                 "birthdate": profile["birthdate"],
                 "status": round(random.uniform(0, 1), 2),
             }
