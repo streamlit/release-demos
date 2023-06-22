@@ -61,60 +61,66 @@ def get_profile_dataset(number_of_items: int = 100, seed: int = 0) -> pd.DataFra
     return profile_df
 
 
-column_configuration = {
-    "name": st.column_config.TextColumn(
-        "Name", help="The name of the user", max_chars=100
-    ),
-    "avatar": st.column_config.ImageColumn("Avatar", help="The user's avatar"),
-    "active": st.column_config.CheckboxColumn("Is Active?", help="Is the user active?"),
-    "homepage": st.column_config.LinkColumn(
-        "Homepage", help="The homepage of the user"
-    ),
-    "gender": st.column_config.SelectboxColumn(
-        "Gender", options=["male", "female", "other"]
-    ),
-    "age": st.column_config.NumberColumn(
-        "Age",
-        min_value=0,
-        max_value=120,
-        format="%d years",
-        help="The user's age",
-    ),
-    "activity": st.column_config.LineChartColumn(
-        "Activity (1 year)",
-        help="The user's activity over the last 1 year",
-        width="large",
-        y_min=0,
-        y_max=100,
-    ),
-    "daily_activity": st.column_config.BarChartColumn(
-        "Activity (daily)",
-        help="The user's activity in the last 25 days",
-        width="medium",
-        y_min=0,
-        y_max=1,
-    ),
-    "status": st.column_config.ProgressColumn(
-        "Status", min_value=0, max_value=1, format="%.2f"
-    ),
-    "birthdate": st.column_config.DateColumn(
-        "Birthdate",
-        help="The user's birthdate",
-        min_value=date(1920, 1, 1),
-    ),
-    "email": st.column_config.TextColumn(
-        "Email",
-        help="The user's email address",
-        validate="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$",
-    ),
-}
-
 col1, col2 = st.columns(2)
 editable = col1.checkbox("Make it editable", value=False)
 new_rows = col2.checkbox("Let me add new rows", value=False, disabled=not editable)
 
+table = st.empty()
+
+with st.echo("below"):
+    column_configuration = {
+        "name": st.column_config.TextColumn(
+            "Name", help="The name of the user", max_chars=100
+        ),
+        "avatar": st.column_config.ImageColumn("Avatar", help="The user's avatar"),
+        "active": st.column_config.CheckboxColumn(
+            "Is Active?", help="Is the user active?"
+        ),
+        "homepage": st.column_config.LinkColumn(
+            "Homepage", help="The homepage of the user"
+        ),
+        "gender": st.column_config.SelectboxColumn(
+            "Gender", options=["male", "female", "other"]
+        ),
+        "age": st.column_config.NumberColumn(
+            "Age",
+            min_value=0,
+            max_value=120,
+            format="%d years",
+            help="The user's age",
+        ),
+        "activity": st.column_config.LineChartColumn(
+            "Activity (1 year)",
+            help="The user's activity over the last 1 year",
+            width="large",
+            y_min=0,
+            y_max=100,
+        ),
+        "daily_activity": st.column_config.BarChartColumn(
+            "Activity (daily)",
+            help="The user's activity in the last 25 days",
+            width="medium",
+            y_min=0,
+            y_max=1,
+        ),
+        "status": st.column_config.ProgressColumn(
+            "Status", min_value=0, max_value=1, format="%.2f"
+        ),
+        "birthdate": st.column_config.DateColumn(
+            "Birthdate",
+            help="The user's birthdate",
+            min_value=date(1920, 1, 1),
+        ),
+        "email": st.column_config.TextColumn(
+            "Email",
+            help="The user's email address",
+            validate="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$",
+        ),
+    }
+
+
 if editable:
-    edited_data = st.data_editor(
+    edited_data = table.data_editor(
         get_profile_dataset(),
         column_config=column_configuration,
         use_container_width=True,
@@ -126,7 +132,7 @@ if editable:
         st.dataframe(edited_data, use_container_width=True)
 
 else:
-    st.dataframe(
+    table.dataframe(
         get_profile_dataset(),
         column_config=column_configuration,
         use_container_width=True,

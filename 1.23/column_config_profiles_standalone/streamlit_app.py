@@ -108,8 +108,8 @@ if editable:
         num_rows="dynamic" if new_rows else "fixed",
     )
 
-    with st.expander("Edited Data"):
-        st.dataframe(edited_data, use_container_width=True)
+    # with st.expander("Edited Data"):
+    #     st.dataframe(edited_data, use_container_width=True)
 
 else:
     st.dataframe(
@@ -118,3 +118,4 @@ else:
         use_container_width=True,
         hide_index=True,
     )
+
