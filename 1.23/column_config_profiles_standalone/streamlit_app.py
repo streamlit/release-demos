@@ -95,27 +95,10 @@ column_configuration = {
     ),
 }
 
-col1, col2 = st.columns(2)
-editable = col1.checkbox("Make it editable", value=False)
-new_rows = col2.checkbox("Let me add new rows", value=False, disabled=not editable)
-
-if editable:
-    edited_data = st.data_editor(
-        get_profile_dataset(),
-        column_config=column_configuration,
-        use_container_width=True,
-        hide_index=True,
-        num_rows="dynamic" if new_rows else "fixed",
-    )
-
-    # with st.expander("Edited Data"):
-    #     st.dataframe(edited_data, use_container_width=True)
-
-else:
-    st.dataframe(
-        get_profile_dataset(),
-        column_config=column_configuration,
-        use_container_width=True,
-        hide_index=True,
-    )
-
+st.data_editor(
+    get_profile_dataset(),
+    column_config=column_configuration,
+    use_container_width=True,
+    hide_index=True,
+    num_rows="fixed",
+)
