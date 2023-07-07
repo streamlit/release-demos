@@ -33,8 +33,7 @@ def get_chart_96623(use_container_width: bool):
     # blue highlights on the transformed data
     highlight = base.transform_filter(brush)
     
-    chart = # layer the two charts & repeat
-    alt.layer(
+    chart = alt.layer( # layer the two charts & repeat
         background,
         highlight,
         data=source
