@@ -12,7 +12,7 @@ def get_empty_grid() -> pd.DataFrame:
 st.set_page_config(layout="wide", page_title="Data Editor", page_icon="🧮")
 
 st.title("📥 Clipboard")
-st.caption("This is a demo of the `st.experimental_data_editor`.")
+st.caption("This is a demo of the `st.data_editor`.")
 GOOGLE_SHEET_URL = (
     "https://docs.google.com/spreadsheets/d/1Z0zd-5dF_HfqUaDDq4BWAOnsdlGCjkbTNwDZMBQ1dOY/edit#gid=0"
 )
@@ -23,7 +23,7 @@ with left:
     """Here's an empty grid... It's not yet super useful."""
 
     empty_grid = pd.DataFrame(np.zeros((20, 4))).replace(0, "").astype(str)
-    df = st.experimental_data_editor(empty_grid, use_container_width=True, height=600)
+    df = st.data_editor(empty_grid, use_container_width=True, height=600)
 
 with right:
     st.write(

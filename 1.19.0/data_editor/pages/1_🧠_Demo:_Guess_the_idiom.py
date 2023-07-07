@@ -6,7 +6,7 @@ import streamlit as st
 st.set_page_config(layout="centered", page_title="Data Editor", page_icon="🧮")
 
 st.title("🧠 Guess the idiom")
-st.caption("This is a demo of the `st.experimental_data_editor`.")
+st.caption("This is a demo of the `st.data_editor`.")
 st.write("")
 
 """We put together a set of idioms. Idioms are phrases or expressions that have a special meaning. For example when we say "it's raining cats and dogs" we don't actually mean that cats and dogs are falling from the sky. Instead, we mean that it's raining very hard.
@@ -41,7 +41,7 @@ for index, idiom in enumerate(idioms):
     masked_words.append((index, mask_index, mask_word))
     df.loc[index][mask_index] = None
 
-response = st.experimental_data_editor(df, use_container_width=True)
+response = st.data_editor(df, use_container_width=True)
 
 for index, mask_index, mask_word in masked_words:
     if response.loc[index][mask_index] == mask_word:
@@ -75,4 +75,5 @@ with st.expander("See solutions"):
         pd.DataFrame([idiom.split() for idiom in idioms])
         .fillna("")
         .style.background_gradient(),  # .to_numpy()
+        use_container_width=True,
     )

@@ -10,7 +10,7 @@ from streamlit_extras.colored_header import ST_COLOR_PALETTE
 
 st.set_page_config(layout="centered", page_title="Data Editor", page_icon="🧮")
 st.title("🔢 Matrix Operations")
-st.caption("This is a demo of the `st.experimental_data_editor`.")
+st.caption("This is a demo of the `st.data_editor`.")
 add_vertical_space(2)
 BLANK_COLUMNS_CONFIG = {i: {"title": ""} for i in range(4)}
 
@@ -33,7 +33,7 @@ def operation_interface(
 
     with a:
         st.caption("A")
-        A = st.experimental_data_editor(
+        A = st.data_editor(
             np.array([[0, 0, 2], [1, 3, 4], [3, 4, 4]]),
             use_container_width=True,
             key=f"{key_prefix}_A",
@@ -45,7 +45,7 @@ def operation_interface(
 
     with b:
         st.caption("B")
-        B = st.experimental_data_editor(
+        B = st.data_editor(
             np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]]),
             use_container_width=True,
             key=f"{key_prefix}_B",

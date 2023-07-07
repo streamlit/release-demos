@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(layout="centered", page_title="Data Editor", page_icon="🧮")
 
 st.title("✍️ Annotations")
-st.caption("This is a demo of the `st.experimental_data_editor`.")
+st.caption("This is a demo of the `st.data_editor`.")
 
 st.write("")
 
@@ -38,7 +38,7 @@ df.sentiment = df.sentiment.astype("category")
 df.sentiment = df.sentiment.cat.add_categories(("☯ Neutral", "😤 Negative"))
 
 
-annotated = st.experimental_data_editor(df)
+annotated = st.data_editor(df, hide_index=True, use_container_width=True, disabled=["tweet", "author"])
 
 st.download_button(
     "⬇️ Download annotations as .csv", annotated.to_csv(), "annotated.csv", use_container_width=True

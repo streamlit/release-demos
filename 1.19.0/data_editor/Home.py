@@ -17,7 +17,7 @@ icon(":partying_face:")
 st.title("Data Editor has arrived!")
 
 st.markdown(
-    "Streamlit just unveiled the marvelous 🧮 **st.experimental_data_editor** in its latest 1.19"
+    "Streamlit just unveiled the marvelous 🧮 **st.data_editor** in its latest 1.19"
     " release. It looks like a dataframe... except it's more: it's editable! Users can click on"
     " cells and edit them. Curious how that looks like? You're in the right place."
 )
@@ -34,6 +34,6 @@ if show:
 
 st.markdown(
     """
-Read more in the dedicated :balloon: [Streamlit blog post](https://blog.streamlit.io/editable-dataframes-are-here) and in our [docs](https://docs.streamlit.io/library/api-reference/widgets/st.experimental_data_editor).
+Read more in the dedicated :balloon: [Streamlit blog post](https://blog.streamlit.io/editable-dataframes-are-here) and in our [docs](https://docs.streamlit.io/library/api-reference/widgets/st.data_editor).
 """
 )

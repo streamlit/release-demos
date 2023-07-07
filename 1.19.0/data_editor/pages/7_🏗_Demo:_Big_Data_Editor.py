@@ -9,9 +9,9 @@ random.seed(0)
 
 st.set_page_config(layout="centered", page_title="Data Editor", page_icon="🧮")
 st.title("🏗 Big Data Editor")
-st.caption("This is a demo of the `st.experimental_data_editor`.")
+st.caption("This is a demo of the `st.data_editor`.")
 
-""" Wanna use st.experimental_data_editor with a million rows dataset? No problem!"""
+""" Wanna use st.data_editor with a million rows dataset? No problem!"""
 
 
 @st.cache_resource(max_entries=2)
@@ -59,7 +59,7 @@ dataset = get_profile_dataset(int(1e5))
 st.write("Length of dataset: ", len(dataset))
 with st.form("data_editor_form"):
     st.caption("Edit the dataframe below")
-    edited = st.experimental_data_editor(dataset, use_container_width=True)
+    edited = st.data_editor(dataset, use_container_width=True)
     submit_button = st.form_submit_button("Submit")
 
 if submit_button:

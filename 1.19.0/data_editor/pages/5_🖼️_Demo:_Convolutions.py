@@ -8,7 +8,7 @@ from scipy import ndimage
 st.set_page_config(layout="centered", page_title="Data Editor", page_icon="🧮")
 st.title("🖼️ Convolutions")
 st.caption(
-    "This is a demo of the `st.experimental_data_editor`. Inspired from [this beautiful piece from"
+    "This is a demo of the `st.data_editor`. Inspired from [this beautiful piece from"
     " Victor Powell](https://setosa.io/ev/image-kernels/)."
 )
 
@@ -91,7 +91,7 @@ with right:
     st.caption("👇 Edit the kernel below and see the effect on the convolved image")
     kernel = KERNELS[chosen_kernel]
     kernel = pd.DataFrame(kernel)
-    kernel = st.experimental_data_editor(kernel, use_container_width=True)
+    kernel = st.data_editor(kernel, use_container_width=True)
 
 convolved = convolve(image, kernel)
 st.caption("Convolved image")

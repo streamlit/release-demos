@@ -6,7 +6,7 @@ from streamlit_extras.altex import _chart
 st.set_page_config(layout="centered", page_title="Data Editor", page_icon="🧮")
 
 st.title("📊 Data to Chart")
-st.caption("This is a demo of the `st.experimental_data_editor`.")
+st.caption("This is a demo of the `st.data_editor`.")
 
 "Let viewers edit your data and see how that impacts the rest of the app!"
 
@@ -63,7 +63,7 @@ def get_active_hist(df: pd.DataFrame) -> alt.Chart:
 
 with st.echo():
     df = get_data()
-    edited_df = st.experimental_data_editor(
+    edited_df = st.data_editor(
         df,
         use_container_width=True,
         num_rows="dynamic",
