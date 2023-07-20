@@ -35,13 +35,13 @@ with tab2:
 import streamlit as st
 import mysql.connector
 
-@st.experimental_singleton
+@st.cache_resource
 def init_connection():
     return mysql.connector.connect(**st.secrets["mysql"])
 
 conn = init_connection()
 
-@st.experimental_memo(ttl=600)
+@st.cache_data(ttl=600)
 def run_query(query):
     with conn.cursor() as cur:
         cur.execute(query)
