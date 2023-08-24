@@ -41,10 +41,6 @@ def get_prompt():
     return st.chat_input(placeholder="Who won the Women's U.S. Open in 2018?")
 
 def handle_chat(prompt, openai_api_key, msgs, memory):
-    if not openai_api_key:
-        st.info("Please add your OpenAI API key to continue.")
-        st.stop()
-
     llm = ChatOpenAI(
         model_name="gpt-3.5-turbo", 
         openai_api_key=openai_api_key, 
@@ -69,7 +65,7 @@ def handle_chat(prompt, openai_api_key, msgs, memory):
 
 # Initializing the app
 initialize_page()
-openai_api_key = st.sidebar.text_input("**Enter OpenAI API Key**", type="password")
+openai_api_key = st.secrets['OPENAI_API_KEY']
 msgs = StreamlitChatMessageHistory()
 memory = ConversationBufferMemory(
     chat_memory=msgs, 
