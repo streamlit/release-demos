@@ -1,0 +1,5 @@
+# streamlit==1.26
+streamlit-nightly
+langchain
+openai
+duckduckgo-search
