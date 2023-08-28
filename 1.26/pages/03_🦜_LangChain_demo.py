@@ -6,8 +6,6 @@ from langchain.memory import ConversationBufferMemory
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain.tools import DuckDuckGoSearchRun
 
-st.info("Add a brief description of the functionality demonstrated on this page here")
-
 @st.cache_data
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
@@ -15,7 +13,6 @@ def icon(emoji: str):
         f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
         unsafe_allow_html=True,
     )
-
 
 def initialize_page():
     st.set_page_config(
@@ -67,6 +64,7 @@ def handle_chat(prompt, openai_api_key, msgs, memory):
 
 # Initializing the app
 initialize_page()
+st.info("Add a brief description of the functionality demonstrated on this page here")
 openai_api_key = st.secrets['OPENAI_API_KEY']
 msgs = StreamlitChatMessageHistory()
 memory = ConversationBufferMemory(
