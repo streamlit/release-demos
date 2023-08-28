@@ -6,7 +6,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain.tools import DuckDuckGoSearchRun
 
-st.write("Add a brief description of the functionality demonstrated on this page here")
+st.info("Add a brief description of the functionality demonstrated on this page here")
 
 @st.cache_data
 def icon(emoji: str):
