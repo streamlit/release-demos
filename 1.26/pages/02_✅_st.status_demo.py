@@ -7,17 +7,7 @@ st.set_page_config(
     layout="wide"
 )
 
-@st.cache_data
-def icon(emoji: str):
-    """Shows an emoji as a Notion-style page icon."""
-    st.write(
-        f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
-        unsafe_allow_html=True,
-    )
-
-
-icon(":white_check_mark:")
-st.title("Status Panel Demo", anchor=False)
+st.title(":white_check_mark: Status Panel Demo", anchor=False)
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
     [
@@ -33,7 +23,8 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
 )
 
 with tab1:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab demonstrates a basic use case of the `st.status` widget. Click 'Run' to initiate a data download operation, displayed without any status label updates.",
+            icon="💡")
     if st.button("Run", key="tab1"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=False):
@@ -44,7 +35,8 @@ with tab1:
                 st.write("Downloading data...")
                 time.sleep(1)
 with tab2:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab showcases the `st.status` widget with a dynamic label update. Click 'Run' to initiate a data download operation; the status label will update upon successful completion.",
+            icon="💡")
     if st.button("Run", key="tab2"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=True) as status:
@@ -58,7 +50,8 @@ with tab2:
 
 
 with tab3:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab demonstrates the functionality of `st.status` to collapse upon task completion. Click 'Run' to initiate a data download; the status widget will collapse after successful download.",
+            icon="💡")
     if st.button("Run", key="tab3"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=True) as status:
@@ -71,7 +64,8 @@ with tab3:
                 status.update(label="Download successful.", expanded=False)
 
 with tab4:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab illustrates how the `st.status` widget handles errors. Click 'Run' to initiate a data download. The status label will switch to an error state if the download fails.",
+            icon="💡")
     if st.button("Run", key="tab4"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=True) as status:
@@ -84,9 +78,9 @@ with tab4:
                 status.update(label="Download failed.", state="error")
 
 with tab5:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab demonstrates the use of `st.status` without a context manager. Click 'Run' to initiate a data download operation. The widget will function as expected even without a context manager.",
+            icon="💡")
     if st.button("Run", key="tab5"):
-        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             status = st.status("Downloading data...", expanded=True)
             status.write("Searching for data...")
@@ -99,16 +93,15 @@ with tab5:
                 label="Download successful.", state="complete", expanded=False
             )
 with tab6:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab displays an `st.status` widget without a label or state. Click 'Run' to view an empty status widget.",  icon="💡")
     if st.button("Run", key="tab6"):
-        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             st.status("Empty status...")
 
 with tab7:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab shows how the `st.status` widget displays a 'complete' state. Click 'Run' to initiate a data download operation. The status will indicate completion when the task is done.",
+            icon="💡")
     if st.button("Run", key="tab7"):
-        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             with st.status("Download sucessful.", state="complete", expanded=True):
                 st.write("Searching for data...")
@@ -116,9 +109,9 @@ with tab7:
                 st.write("Downloading data...")
 
 with tab8:
-    st.write("Brief description of what happens when you click 'Run'")
+    st.info("This tab demonstrates how the `st.status` widget reacts to uncaught exceptions. Click 'Run' to initiate a data download operation. An exception will be thrown, affecting the status widget.",
+            icon="💡")
     if st.button("Run", key="tab8"):
-        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             with st.status("Downloading data...") as status:
                 st.write("Searching for data...")
