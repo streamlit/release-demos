@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches the features :red[st.status] and :red[st.toggle], and includes bug fixes and improvements.
+This release launches the features :red[`st.status`] and :red[`st.toggle`], and includes bug fixes and improvements.
 """
 
 release_notes = f"""
