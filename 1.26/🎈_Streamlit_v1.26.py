@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches the features :red[`st.status`] and :red[`st.toggle`], and includes bug fixes and improvements.
+This release launches the features `st.status` and `st.toggle`, and includes bug fixes and improvements.
 """
 
 release_notes = f"""
@@ -18,7 +18,7 @@ release_notes = f"""
 **Highlights**
 
 - 🤖 Introducing `st.status` to display output from long-running processes and external API calls ([#7140](https://github.com/streamlit/streamlit/pull/7140)). Works great with `st.chat_message`. See our [documentation](https://docs.streamlit.io/library/api-reference/status/st.status) for how to use this feature.
-- 🚥 Introducing [st.toggle](https://docs.streamlit.io/library/api-reference/widgets/st.toggle) — an alternative to `st.checkbox` when you need an on/off switch.
+- 🚥 Introducing [`st.toggle`](https://docs.streamlit.io/library/api-reference/widgets/st.toggle) — an alternative to `st.checkbox` when you need an on/off switch.
 
 **Notable Changes**
 
