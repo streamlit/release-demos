@@ -2,7 +2,7 @@ import time
 import streamlit as st
 
 st.set_page_config(
-    page_title='Status Demo',
+    page_title='st.status demo',
     page_icon='✅',
     layout="wide"
 )
