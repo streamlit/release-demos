@@ -2,7 +2,7 @@ import time
 import streamlit as st
 
 st.set_page_config(
-    page_title='Status Demo',
+    page_title='st.status demo',
     page_icon='✅',
     layout="wide"
 )
@@ -33,6 +33,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(
 )
 
 with tab1:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab1"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=False):
@@ -43,6 +44,7 @@ with tab1:
                 st.write("Downloading data...")
                 time.sleep(1)
 with tab2:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab2"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=True) as status:
@@ -56,6 +58,7 @@ with tab2:
 
 
 with tab3:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab3"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=True) as status:
@@ -68,6 +71,7 @@ with tab3:
                 status.update(label="Download successful.", expanded=False)
 
 with tab4:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab4"):
         with st.echo(code_location="below"):
             with st.status("Downloading data...", expanded=True) as status:
@@ -80,7 +84,9 @@ with tab4:
                 status.update(label="Download failed.", state="error")
 
 with tab5:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab5"):
+        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             status = st.status("Downloading data...", expanded=True)
             status.write("Searching for data...")
@@ -93,12 +99,16 @@ with tab5:
                 label="Download successful.", state="complete", expanded=False
             )
 with tab6:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab6"):
+        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             st.status("Empty status...")
 
 with tab7:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab7"):
+        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             with st.status("Download sucessful.", state="complete", expanded=True):
                 st.write("Searching for data...")
@@ -106,7 +116,9 @@ with tab7:
                 st.write("Downloading data...")
 
 with tab8:
+    st.write("Brief description of what happens when you click 'Run'")
     if st.button("Run", key="tab8"):
+        st.write("Brief description of what happens when you click 'Run'")
         with st.echo(code_location="below"):
             with st.status("Downloading data...") as status:
                 st.write("Searching for data...")

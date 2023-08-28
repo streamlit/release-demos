@@ -14,7 +14,6 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
 
-
 def initialize_page():
     st.set_page_config(
         page_title="LangChain: Chat with search", 
@@ -65,6 +64,7 @@ def handle_chat(prompt, openai_api_key, msgs, memory):
 
 # Initializing the app
 initialize_page()
+st.info("Add a brief description of the functionality demonstrated on this page here")
 openai_api_key = st.secrets['OPENAI_API_KEY']
 msgs = StreamlitChatMessageHistory()
 memory = ConversationBufferMemory(
