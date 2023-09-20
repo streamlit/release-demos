@@ -14,26 +14,26 @@ def icon(emoji: str):
 
 
 icon(":partying_face:")
-st.title("Data Editor has arrived!")
+st.title("You're in!")
 
 st.markdown(
-    "Streamlit just unveiled the marvelous 🧮 **st.data_editor** in its latest 1.19"
-    " release. It looks like a dataframe... except it's more: it's editable! Users can click on"
-    " cells and edit them. Curious how that looks like? You're in the right place."
+    "Welcome! EduX just unveiled the marvelous 🧮 **st.data_pathway** in its latest 1.19"
+    " release. Student pathways... except it's more: it's editable! Students can"
+    " now discuss and edit their pathway catered to their needs. Let's get started."
 )
 
 st.markdown(
-    "We cooked some demos (code is available"
-    " [here](https://github.com/streamlit/release-demos/tree/master/1.19.0/data_editor)) to show"
-    " you how it works!"
+    "Our algorithm is constantly calculating your best schedule seen ("
+    " [here](https://www.edux.ai/faq)) to demonstrate our"
+    " calculation process!"
 )
 
-show = st.button("Jump into the demos!")
+show = st.button("View your degree path!")
 if show:
-    switch_page("demo: annotations")
+    switch_page("demo: clipboard")
 
 st.markdown(
     """
-Read more in the dedicated :balloon: [Streamlit blog post](https://blog.streamlit.io/editable-dataframes-are-here) and in our [docs](https://docs.streamlit.io/library/api-reference/widgets/st.data_editor).
+Read more in our documentation section :smiley: [EduX Docs](https://www.edux.ai/docs)!
 """
 )
