@@ -59,7 +59,7 @@ with tab1:
 
 with tab2:
     st.subheader("Child Poverty Index vs Math Score", anchor=False)
-    st.caption("The relationship between Country's math scores and child poverty index appears strongly correlated.")
+    st.caption("The relationship between country's math scores and child poverty index appears strongly correlated.")
     st.scatter_chart(
         df,
         y='Math Score',
