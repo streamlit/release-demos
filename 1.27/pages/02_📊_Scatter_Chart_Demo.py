@@ -11,7 +11,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 @st.cache_data
 def load_data():
-    df_candy = pd.read_csv('census.csv')
+    df_candy = pd.read_csv('1.27/pages/census.csv')
     return df_candy
 
 df = load_data()
