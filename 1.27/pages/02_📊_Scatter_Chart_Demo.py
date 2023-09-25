@@ -11,8 +11,8 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 @st.cache_data
 def load_data():
-    df_candy = pd.read_csv('1.27/pages/census.csv')
-    return df_candy
+    df = pd.read_csv('1.27/pages/dataset.csv')
+    return df
 
 df = load_data()
 
@@ -43,8 +43,8 @@ with tab1:
 
         @st.cache_data
         def load_data():
-            df_candy = pd.read_csv('./census.csv')
-            return df_candy
+            df = pd.read_csv('census.csv')
+            return df
 
         df = load_data()
         st.scatter_chart(
@@ -63,8 +63,8 @@ with tab2:
         df,
         y='Math Score',
         x='Child Poverty Index',
-        color='Human Rights Council Democracy Index',
-        size='Country GDP per capita',
+        color='Region',
+        size='Human Rights Council Democracy Index',
         use_container_width=True
     )
     st.code(
@@ -74,8 +74,8 @@ with tab2:
 
         @st.cache_data
         def load_data():
-            df_candy = pd.read_csv('./census.csv')
-            return df_candy
+            df = pd.read_csv('census.csv')
+            return df
 
         df = load_data()
         st.scatter_chart(
@@ -95,10 +95,10 @@ with tab3:
 
     col1, col2, col3, col4 = st.columns(4)
 
-    x_axis = col1.selectbox('X-axis:', df.columns, index=0)
-    y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
-    color_dim = col3.selectbox('Color:', df.columns, index=3)
-    size_dim = col4.selectbox('Size:', df.columns, index=2)
+    x_axis = col1.selectbox('X-axis:', df.columns, index=3)
+    y_axis = col2.selectbox('Y-axis:', df.columns, index=2)
+    color_dim = col3.selectbox('Color:', df.columns, index=6)
+    size_dim = col4.selectbox('Size:', df.columns, index=4)
 
     st.scatter_chart(
         df,
@@ -114,8 +114,8 @@ with tab3:
 
         @st.cache_data
         def load_data():
-            df_candy = pd.read_csv('./census.csv')
-            return df_candy
+            df = pd.read_csv('census.csv')
+            return df
 
         df = load_data()
 
