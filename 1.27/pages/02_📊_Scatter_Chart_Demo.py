@@ -68,7 +68,7 @@ with tab2:
         color='Human Rights Council Democracy Index',
         use_container_width=True
     )
-    st.caption("💡 A high Human Rights Council Democracy Index indicates if a country is a Democracy")
+    st.caption("💡 A high Human Rights Council Democracy Index indicates that a country is a democracy")
     st.divider()
     st.code(
         """
