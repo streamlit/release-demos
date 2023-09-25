@@ -36,6 +36,7 @@ with tab1:
         y='Math Score',
         use_container_width=True
     )
+    st.divider()
     st.code(
         """
         import streamlit as st
@@ -110,6 +111,7 @@ with tab3:
         size=size_dim,
         use_container_width=True
     )
+    st.divider()
     st.code(
         """
         import streamlit as st
