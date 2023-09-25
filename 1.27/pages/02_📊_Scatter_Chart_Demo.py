@@ -44,7 +44,7 @@ with tab1:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('census.csv')
+            df = pd.read_csv('dataset.csv')
             return df
 
         df = load_data()
@@ -68,7 +68,7 @@ with tab2:
         color='Human Rights Council Democracy Index',
         use_container_width=True
     )
-    st.caption("💡 A high Human Rights Council score means democratic and a low number means not democratic")
+    st.caption("💡 A high Human Rights Council Democracy Index indicates if a country is a Democracy")
     st.divider()
     st.code(
         """
@@ -77,7 +77,7 @@ with tab2:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('census.csv')
+            df = pd.read_csv('dataset.csv')
             return df
 
         df = load_data()
