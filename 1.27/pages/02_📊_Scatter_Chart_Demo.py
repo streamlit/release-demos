@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 st.set_page_config(
     page_title='st.scatter_chart demo',
@@ -12,15 +11,13 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 @st.cache_data
 def load_data():
-    df = pd.DataFrame({
-        'Sales': np.random.randint(100, 1000, 20),
-        'Customer_Rating': np.random.uniform(1, 5, 20),
-        'Stock_Level': np.random.randint(0, 50, 20),
-        'Season': np.random.choice(["Spring", "Summer", "Fall", "Winter"], 20)
-    })
-    return df
+    df_candy = pd.read_csv('./census.csv')
+    return df_candy
 
-chart_data = load_data()
+df = load_data()
+
+with st.expander("Dataset"):
+    st.dataframe(df)
 
 tab1, tab2, tab3 = st.tabs(
     [
@@ -31,130 +28,110 @@ tab1, tab2, tab3 = st.tabs(
 )
 
 with tab1:
-    st.info("Basic scatter plot showing the relationship between Sales and Customer Ratings.", icon="💡")
+    st.subheader("Child Poverty Index vs Math Score", anchor=False)
+    st.caption("There seems to be a correlation between a high math score and a low child poverty index and vice versa.")
     st.scatter_chart(
-        chart_data,
-        x="Sales",
-        y="Customer_Rating"
+        df,
+        x='Child Poverty Index',
+        y='Math Score',
+        use_container_width=True
     )
     st.code(
         """
+        import streamlit as st
+        import pandas as pd
+
         @st.cache_data
         def load_data():
-            df = pd.DataFrame({
-                'Sales': np.random.randint(100, 1000, 20),
-                'Customer_Rating': np.random.uniform(1, 5, 20),
-                'Stock_Level': np.random.randint(0, 50, 20),
-                'Season': np.random.choice(["Spring", "Summer", "Fall", "Winter"], 20)
-            })
-            return df
+            df_candy = pd.read_csv('./census.csv')
+            return df_candy
 
-        chart_data = load_data()
-
+        df = load_data()
         st.scatter_chart(
-            chart_data,
-            x="Sales",
-            y="Customer_Rating"
+            df,
+            x='Child Poverty Index',
+            y='Math Score',
+            use_container_width=True
         )
         """
     )
 
 with tab2:
-    st.info("Seasonally-filtered scatter plot of Sales vs Customer Ratings, colored by Stock Levels.", icon="💡")
-    
-    selected_season = st.selectbox("Choose a season:", ["All", "Spring", "Summer", "Fall", "Winter"], key="season_tab2")
-    if selected_season != "All":
-        chart_data_filtered = chart_data[chart_data["Season"] == selected_season].reset_index(drop=True)
-    else:
-        chart_data_filtered = chart_data.reset_index(drop=True)
-
-    x_axis = "Sales"
-    y_axis = "Customer_Rating"
-    color_dim = "Stock_Level" 
-
+    st.subheader("Child Poverty Index vs Math Score", anchor=False)
+    st.caption("There seems to be a correlation between high math score, low child poverty index and high human rights council democracy index.")
     st.scatter_chart(
-        chart_data_filtered,
-        x=x_axis,
-        y=y_axis,
-        color=color_dim 
+        df,
+        y='Math Score',
+        x='Child Poverty Index',
+        color='Human Rights Council Democracy Index',
+        size='Country GDP per capita',
+        use_container_width=True
     )
     st.code(
         """
-        @st.cache_data 
+        import streamlit as st
+        import pandas as pd
+
+        @st.cache_data
         def load_data():
-            df = pd.DataFrame({
-                'Sales': np.random.randint(100, 1000, 20),
-                'Customer_Rating': np.random.uniform(1, 5, 20),
-                'Stock_Level': np.random.randint(0, 50, 20),
-                'Season': np.random.choice(["Spring", "Summer", "Fall", "Winter"], 20)
-            })
-            return df
+            df_candy = pd.read_csv('./census.csv')
+            return df_candy
 
-        chart_data = load_data()
-        selected_season = st.selectbox("Choose a season:", ["All", "Spring", "Summer", "Fall", "Winter"], key="season_tab2")
-
-        # Filter data based on selected season
-        if selected_season != "All": 
-            chart_data_filtered = chart_data[chart_data["Season"] == selected_season].reset_index(drop=True)
-        else:
-            chart_data_filtered = chart_data.reset_index(drop=True)
-
-        x_axis = "Sales"
-        y_axis = "Customer_Rating"
-        color_dim = "Stock_Level"
+        df = load_data()
         st.scatter_chart(
-            chart_data_filtered,
-            x=x_axis,
-            y=y_axis,
-            color=color_dim 
+            df,
+            y='Math Score',
+            x='Child Poverty Index',
+            color='Human Rights Council Democracy Index',
+            size='Country GDP per capita',
+            use_container_width=True
         )
         """
     )
 
 with tab3:
-    st.info("Dynamic scatter plot where you can choose the dimensions for X-axis, Y-axis, color, and size.", icon="💡")
-    
+    st.subheader("Dynamic Scatter Chart", anchor=False)
+    st.caption("Dynamic scatter plot where you can choose the dimensions for X-axis, Y-axis, color, and size.")
+
     col1, col2, col3, col4 = st.columns(4)
 
-    x_axis = col1.selectbox('X-axis:', chart_data.columns, index=0)
-    y_axis = col2.selectbox('Y-axis:', chart_data.columns, index=1)
-    color_dim = col3.selectbox('Color:', chart_data.columns, index=3)
-    size_dim = col4.selectbox('Size:', chart_data.columns, index=2)
+    x_axis = col1.selectbox('X-axis:', df.columns, index=0)
+    y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
+    color_dim = col3.selectbox('Color:', df.columns, index=3)
+    size_dim = col4.selectbox('Size:', df.columns, index=2)
 
     st.scatter_chart(
-        chart_data,
-        x=x_axis,
-        y=y_axis,
-        color=color_dim,
-        size=size_dim
+        df,
+        x=y_axis,
+        y=x_axis,
+        size=color_dim,
+        use_container_width=True
     )
     st.code(
         """
+        import streamlit as st
+        import pandas as pd
+
         @st.cache_data
         def load_data():
-            df = pd.DataFrame({
-                'Sales': np.random.randint(100, 1000, 20),
-                'Customer_Rating': np.random.uniform(1, 5, 20),
-                'Stock_Level': np.random.randint(0, 50, 20),
-                'Season': np.random.choice(["Spring", "Summer", "Fall", "Winter"], 20)
-            })
-            return df
+            df_candy = pd.read_csv('./census.csv')
+            return df_candy
 
-        chart_data = load_data()
+        df = load_data()
 
-        # User-controlled selectors for chart dimensions
         col1, col2, col3, col4 = st.columns(4)
-        x_axis = col1.selectbox('X-axis:', chart_data.columns, index=0)
-        y_axis = col2.selectbox('Y-axis:', chart_data.columns, index=1)
-        color_dim = col3.selectbox('Color:', chart_data.columns, index=3)
-        size_dim = col4.selectbox('Size:', chart_data.columns, index=2)
+
+        x_axis = col1.selectbox('X-axis:', df.columns, index=0)
+        y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
+        color_dim = col3.selectbox('Color:', df.columns, index=3)
+        size_dim = col4.selectbox('Size:', df.columns, index=2)
 
         st.scatter_chart(
-            chart_data,
-            x=x_axis,
-            y=y_axis,
-            color=color_dim,
-            size=size_dim
+            df,
+            x=y_axis,
+            y=x_axis,
+            size=color_dim,
+            use_container_width=True
         )
         """
     )
