@@ -67,6 +67,8 @@ with tab2:
         color='Human Rights Council Democracy Index',
         use_container_width=True
     )
+    st.caption("💡 A high Human Rights Council score means democratic and a low number means not democratic")
+    st.divider()
     st.code(
         """
         import streamlit as st
@@ -95,15 +97,15 @@ with tab3:
 
     col1, col2, col3, col4 = st.columns(4)
 
-    x_axis = col1.selectbox('X-axis:', df.columns, index=3)
+    x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
     y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
     color_dim = col3.selectbox('Color:', df.columns, index=6)
     size_dim = col4.selectbox('Size:', df.columns, index=4)
 
     st.scatter_chart(
         df,
-        x=y_axis,
-        y=x_axis,
+        x=x_axis,
+        y=y_axis,
         color=color_dim,
         size=size_dim,
         use_container_width=True
@@ -122,15 +124,15 @@ with tab3:
 
         col1, col2, col3, col4 = st.columns(4)
 
-        x_axis = col1.selectbox('X-axis:', df.columns, index=3)
+        x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
         y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
         color_dim = col3.selectbox('Color:', df.columns, index=6)
         size_dim = col4.selectbox('Size:', df.columns, index=4)
 
         st.scatter_chart(
             df,
-            x=y_axis,
-            y=x_axis,
+            x=x_axis,
+            y=y_axis,
             color=color_dim,
             size=size_dim,
             use_container_width=True
