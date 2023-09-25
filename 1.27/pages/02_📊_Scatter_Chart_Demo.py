@@ -29,7 +29,7 @@ tab1, tab2, tab3 = st.tabs(
 
 with tab1:
     st.subheader("Child Poverty Index vs Math Score", anchor=False)
-    st.caption("There seems to be a correlation between a high math score and a low child poverty index and vice versa.")
+    st.caption("The relationship between Country's Math scores and child poverty index appears strongly correlated.")
     st.scatter_chart(
         df,
         x='Child Poverty Index',
