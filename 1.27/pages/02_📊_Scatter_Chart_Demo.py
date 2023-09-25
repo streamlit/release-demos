@@ -29,7 +29,7 @@ tab1, tab2, tab3 = st.tabs(
 
 with tab1:
     st.subheader("Child Poverty Index vs Math Score", anchor=False)
-    st.caption("The relationship between Country's Math scores and child poverty index appears strongly correlated.")
+    st.caption("The relationship between Country's math scores and child poverty index appears strongly correlated.")
     st.scatter_chart(
         df,
         x='Child Poverty Index',
@@ -47,6 +47,7 @@ with tab1:
             return df
 
         df = load_data()
+
         st.scatter_chart(
             df,
             x='Child Poverty Index',
@@ -58,13 +59,12 @@ with tab1:
 
 with tab2:
     st.subheader("Child Poverty Index vs Math Score", anchor=False)
-    st.caption("There seems to be a correlation between high math score, low child poverty index and high human rights council democracy index.")
+    st.caption("The relationship between Country's math scores and child poverty index appears strongly correlated.")
     st.scatter_chart(
         df,
         y='Math Score',
         x='Child Poverty Index',
-        color='Region',
-        size='Human Rights Council Democracy Index',
+        color='Human Rights Council Democracy Index',
         use_container_width=True
     )
     st.code(
@@ -78,12 +78,12 @@ with tab2:
             return df
 
         df = load_data()
+
         st.scatter_chart(
             df,
             y='Math Score',
             x='Child Poverty Index',
             color='Human Rights Council Democracy Index',
-            size='Country GDP per capita',
             use_container_width=True
         )
         """
@@ -96,7 +96,7 @@ with tab3:
     col1, col2, col3, col4 = st.columns(4)
 
     x_axis = col1.selectbox('X-axis:', df.columns, index=3)
-    y_axis = col2.selectbox('Y-axis:', df.columns, index=2)
+    y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
     color_dim = col3.selectbox('Color:', df.columns, index=6)
     size_dim = col4.selectbox('Size:', df.columns, index=4)
 
@@ -104,7 +104,8 @@ with tab3:
         df,
         x=y_axis,
         y=x_axis,
-        size=color_dim,
+        color=color_dim,
+        size=size_dim,
         use_container_width=True
     )
     st.code(
@@ -114,23 +115,24 @@ with tab3:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('census.csv')
+            df = pd.read_csv('dataset.csv')
             return df
 
         df = load_data()
 
         col1, col2, col3, col4 = st.columns(4)
 
-        x_axis = col1.selectbox('X-axis:', df.columns, index=0)
+        x_axis = col1.selectbox('X-axis:', df.columns, index=3)
         y_axis = col2.selectbox('Y-axis:', df.columns, index=1)
-        color_dim = col3.selectbox('Color:', df.columns, index=3)
-        size_dim = col4.selectbox('Size:', df.columns, index=2)
+        color_dim = col3.selectbox('Color:', df.columns, index=6)
+        size_dim = col4.selectbox('Size:', df.columns, index=4)
 
         st.scatter_chart(
             df,
             x=y_axis,
             y=x_axis,
-            size=color_dim,
+            color=color_dim,
+            size=size_dim,
             use_container_width=True
         )
         """
