@@ -11,12 +11,17 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('1.27/pages/data_simplified.csv')
-    df = df.sort_values(by=['Median Income'])
-    st.write(df)
+    df = pd.read_csv('1.27/pages/data.csv')
+    df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
+    sorted_regions = df.groupby('Region in the US')['Average House Price'].mean().sort_values().index.tolist()
+    df['Region in the US'] = pd.Categorical(df['Region in the US'], categories=sorted_regions, ordered=True)
+    df = df.sort_values('Region in the US')
+    df = df.sort_values('Median Income', ascending=True)
     return df
 
 df = load_data()
+
+df['Region in the US'] = df['Region in the US'].astype(str)
 
 with st.expander("Dataset"):
     st.dataframe(df)
@@ -31,15 +36,16 @@ tab1, tab2, tab3 = st.tabs(
 
 with tab1:
     st.subheader("Dynamic Scatter Chart", anchor=False)
-    st.caption("Choose the dimensions for the chart's x-axis, y-axis, color, and size to explore the relationship between the geographic region of the US, average house price, average rent, and median income.") 
+    st.caption("Dynamic scatter plot where you can choose the dimensions for X-axis, Y-axis, color, and size.")
 
     col1, col2, col3, col4 = st.columns(4)
+    x_axis = col1.selectbox('X-axis:', df.columns, index=5, disabled=True)
+    y_axis = col2.selectbox('Y-axis:', df.columns, index=4)
+    color_dim = col3.selectbox('Color:', df.columns, index=1)
+    size_dim = col4.selectbox('Size:', df.columns, index=3)
 
-    x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
-    y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
-    color_dim = col3.selectbox('Color:', df.columns, index=2)
-    size_dim = col4.selectbox('Size:', df.columns, index=1)
-
+    df = df.sort_values('Median Income', ascending=True)
+    
     st.scatter_chart(
         df,
         x=x_axis,
@@ -57,7 +63,7 @@ with tab1:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('data_simplified.csv')
+            df = pd.read_csv('data.csv')
             return df
 
         df = load_data()
@@ -81,71 +87,71 @@ with tab1:
         """
     )
 
-# with tab2:
-#     st.subheader("Region in the US vs Average House price", anchor=False)
-#     st.caption("The chart shows some minimal correlation between Region in the US and Average House Price.")
-#     st.scatter_chart(
-#         df,
-#         x='Region in the US',
-#         y='Average House Price',
-#         color='Rank',
-#         height=800,
-#         use_container_width=True
-#     )
-#     st.caption("💡 Rank is by housing price")
-#     st.divider()
-#     st.code(
-#         """
-#         import streamlit as st
-#         import pandas as pd
+with tab2:
+    st.subheader("Region in the US vs Average House price", anchor=False)
+    st.caption("The chart shows some minimal correlation between Region in the US and Average House Price.")
+    st.scatter_chart(
+        df,
+        x='Region in the US',
+        y='Average House Price',
+        color='City',
+        height=800,
+        use_container_width=True
+    )
+    st.caption("💡 Rank is by housing price")
+    st.divider()
+    st.code(
+        """
+        import streamlit as st
+        import pandas as pd
 
-#         @st.cache_data
-#         def load_data():
-#             df = pd.read_csv('data_simplified.csv')
-#             return df
+        @st.cache_data
+        def load_data():
+            df = pd.read_csv('data.csv')
+            return df
 
-#         df = load_data()
+        df = load_data()
 
-#         st.scatter_chart(
-#             df,
-#             x='Region in the US',
-#             y='Average House Price',
-#             color='Rank',
-#             height=800,
-#             use_container_width=True
-#         )
-#         """
-#     )
+        st.scatter_chart(
+            df,
+            x='Region in the US',
+            y='Average House Price',
+            color='Rank',
+            height=800,
+            use_container_width=True
+        )
+        """
+    )
 
-# with tab3:
-#     st.subheader("Average Rent vs Region in the US", anchor=False)
-#     st.caption("This chart shows some positive correlation between Average Rent and Region in the US.")
-#     st.scatter_chart(
-#         df,
-#         x='Average Rent',
-#         y='Region in the US',
-#         height=600,
-#         use_container_width=True
-#     )
-#     st.divider()
-#     st.code(
-#         """
-#         import streamlit as st
-#         import pandas as pd
+with tab3:
+    st.subheader("Average Rent vs Region in the US", anchor=False)
+    st.caption("This chart shows some positive correlation between Average Rent and Region in the US.")
+    st.scatter_chart(
+        df,
+        x='Average Rent',
+        y='Region in the US',
+        height=600,
+        use_container_width=True
+    )
+    st.divider()
+    st.code(
+        """
+        import streamlit as st
+        import pandas as pd
 
-#         @st.cache_data
-#         def load_data():
-#             df = pd.read_csv('data_simplified.csv')
-#             return df
+        @st.cache_data
+        def load_data():
+            df = pd.read_csv('data.csv')
+            return df
 
-#         df = load_data()
+        df = load_data()
 
-#         st.scatter_chart(
-#             df,
-#             x='Average Rent',
-#             y='Region in the US',
-#             height=600,
-#             use_container_width=True
-#         )
-#         """
-#     )
+        st.scatter_chart(
+            df,
+            x='Average Rent',
+            y='Region in the US',
+            height=600,
+            use_container_width=True
+        )
+        """
+    )
