@@ -11,7 +11,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('1.27/pages/data.csv')
+    df = pd.read_csv('1.27/pages/data_simplified.csv')
     return df
 
 df = load_data()
@@ -55,7 +55,7 @@ with tab1:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('data.csv')
+            df = pd.read_csv('data_simplified.csv')
             return df
 
         df = load_data()
@@ -99,7 +99,7 @@ with tab2:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('data.csv')
+            df = pd.read_csv('data_simplified.csv')
             return df
 
         df = load_data()
@@ -133,7 +133,7 @@ with tab3:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('data.csv')
+            df = pd.read_csv('data_simplified.csv')
             return df
 
         df = load_data()
