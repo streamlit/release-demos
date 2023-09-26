@@ -13,6 +13,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 def load_data():
     df = pd.read_csv('1.27/pages/data_simplified.csv')
     df = df.sort_values(by=['Median Income'])
+    st.write(df)
     return df
 
 df = load_data()
