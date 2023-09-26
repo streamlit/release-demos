@@ -28,14 +28,14 @@ with st.expander("Dataset"):
 
 tab1, tab2 = st.tabs(
     [
-        "Multi-Dimensional Analysis",
+        "Multi-Dimensional Scatter Analysis",
         "Scatter Basics"
     ]
 )
 
 with tab1:
     st.subheader("Dynamic Scatter Chart", anchor=False)
-    st.caption("Dynamic scatter plot where you can choose the dimensions for X-axis, Y-axis, color, and size.")
+    st.caption("Choose the dimensions for X-axis, Y-axis, color, and size to explore the relationship between median income, median rent, geographic region, and median house price in the United States.")
 
     col1, col2, col3, col4 = st.columns(4)
     x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
