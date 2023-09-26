@@ -13,15 +13,23 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 def load_data():
     df = pd.read_csv('1.27/pages/data_simplified.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
+    df['Median Income'] = df['Median Income'].str.replace('$', '').str.replace(',', '').astype(int) 
+    
     sorted_regions = df.groupby('Region in the US')['Average House Price'].mean().sort_values().index.tolist()
     df['Region in the US'] = pd.Categorical(df['Region in the US'], categories=sorted_regions, ordered=True)
     df = df.sort_values('Region in the US')
-    df = df.sort_values('Median Income', ascending=True)
+
+    # Create income buckets
+    income_bins = [0, 50000, 100000, 150000, 200000, float('inf')]
+    income_labels = ['<50k', '50k-100k', '100k-150k', '150k-200k', '200k+']
+    df['Income Bucket'] = pd.cut(df['Median Income'], bins=income_bins, labels=income_labels, right=False)
+
+    df['Income Bucket'] = pd.Categorical(df['Income Bucket'], categories=income_labels, ordered=True)
+    df = df.sort_values('Income Bucket')
+
     return df
 
 df = load_data()
-
-df['Region in the US'] = df['Region in the US'].astype(str)
 
 with st.expander("Dataset"):
     st.dataframe(df)
