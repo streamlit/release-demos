@@ -52,8 +52,8 @@ with tab1:
     filtered_columns = [col for col in df.columns if col != 'Income Bucket']
     x_axis = col1.selectbox('X-axis:', filtered_columns, index=1, disabled=True)
     y_axis = col2.selectbox('Y-axis:', filtered_columns, index=0)
-    color_dim = col3.selectbox('Color:', filtered_columns, index=3)
-    size_dim = col4.selectbox('Size:', filtered_columns, index=2)
+    color_dim = col3.selectbox('Color:', filtered_columns, index=2)
+    size_dim = col4.selectbox('Size:', filtered_columns, index=3)
     
     st.scatter_chart(
         df,
