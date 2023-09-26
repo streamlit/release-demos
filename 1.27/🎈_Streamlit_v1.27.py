@@ -17,8 +17,8 @@ release_notes = f"""
 ---
 **Highlights**
 
-- ✨ Introducing `st.scatter_chart` — a new, simple chart element to build scatter charts Streamlit-y fast and easy! See our documentation.
-- 🔗 Introducing `st.link_button`! Want to open an external link in a new tab with a bit more pizazz than a plain text link? Check out our documentation to see how.
+- ✨ Introducing `st.scatter_chart` — a new, simple chart element to build scatter charts Streamlit-y fast and easy! See our [documentation](https://docs.streamlit.io/library/api-reference/charts/st.scatter_chart).
+- 🔗 Introducing `st.link_button`! Want to open an external link in a new tab with a bit more pizazz than a plain text link? Check out our [documentation](https://docs.streamlit.io/library/api-reference/widgets/st.link_button) to see how.
 - 🏃 Announcing the general availability of `st.rerun`, a command to interrupt your script and trigger an immediate rerun.
 
 **Notable Changes**
