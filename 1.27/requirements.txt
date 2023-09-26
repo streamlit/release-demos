@@ -1,2 +1,1 @@
-# streamlit==1.27
-streamlit-nightly
+streamlit==1.27
