@@ -50,10 +50,10 @@ with tab1:
     st.caption("Choose the dimension for the x-axis, y-axis, color, and size to explore average house price, average rent, geographic region, and median income in the United States.")
     col1, col2, col3, col4 = st.columns(4)
     filtered_columns = [col for col in df.columns if col != 'Income Bucket']
-    x_axis = col1.selectbox('X-axis:', df.columns, index=1, disabled=True)
-    y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
-    color_dim = col3.selectbox('Color:', df.columns, index=3)
-    size_dim = col4.selectbox('Size:', df.columns, index=2)
+    x_axis = col1.selectbox('X-axis:', filtered_columns, index=1, disabled=True)
+    y_axis = col2.selectbox('Y-axis:', filtered_columns, index=0)
+    color_dim = col3.selectbox('Color:', filtered_columns, index=3)
+    size_dim = col4.selectbox('Size:', filtered_columns, index=2)
     
     st.scatter_chart(
         df,
