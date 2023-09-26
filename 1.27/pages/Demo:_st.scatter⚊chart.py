@@ -9,7 +9,7 @@ st.set_page_config(
 
 st.title("📊 Scatter Chart Demo", anchor=False)
 
-# @st.cache_data
+@st.cache_data
 def load_data():
     df = pd.read_csv('1.27/pages/data_simplified.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
@@ -102,7 +102,6 @@ with tab2:
         df,
         x='Region in the US',
         y='Average House Price',
-        color='City',
         height=800,
         use_container_width=True
     )
