@@ -93,10 +93,10 @@ with tab1:
 
         col1, col2, col3, col4 = st.columns(4)
 
-        x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
+        x_axis = col1.selectbox('X-axis:', df.columns, index=1, disabled=True)
         y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
-        color_dim = col3.selectbox('Color:', df.columns, index=2)
-        size_dim = col4.selectbox('Size:', df.columns, index=3)
+        color_dim = col3.selectbox('Color:', df.columns, index=3)
+        size_dim = col4.selectbox('Size:', df.columns, index=2)
         
         st.scatter_chart(
             df,
@@ -151,7 +151,7 @@ with tab2:
         st.scatter_chart(
             df,
             x='Average Rent',
-            y='Region in the US',
+            y='Average House Price',
             height=600,
             use_container_width=True
         )
