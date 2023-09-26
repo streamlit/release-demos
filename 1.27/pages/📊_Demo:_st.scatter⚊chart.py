@@ -10,7 +10,7 @@ st.set_page_config(
 st.title("📊 st.scatter_chart Demo", anchor=False)
 st.write("Learn more about `st.scatter_chart` in [our docs](https://docs.streamlit.io/library/api-reference/charts/st.scatter_chart).")
 
-# @st.cache_data
+@st.cache_data
 def load_data():
     df = pd.read_csv('1.27/pages/data_simplified.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
@@ -34,6 +34,7 @@ df = load_data()
 
 df['Region in the US'] = df['Region in the US'].astype(str)
 
+st.info("This dataset provides a snapshot of the U.S. housing market and income statistics across various regions.", icon="💡")
 with st.expander("Dataset"):
     st.dataframe(df)
 
