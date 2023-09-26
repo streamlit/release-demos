@@ -36,10 +36,9 @@ df['Region in the US'] = df['Region in the US'].astype(str)
 with st.expander("Dataset"):
     st.dataframe(df)
 
-tab1, tab2, tab3 = st.tabs(
+tab1, tab2 = st.tabs(
     [
         "Multi-Dimensional Analysis",
-        "Custom Dimensions & Colors",
         "Scatter Basics"
     ]
 )
@@ -71,18 +70,33 @@ with tab1:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('data.csv')
+            df = pd.read_csv('1.27/pages/data_simplified.csv')
+            df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
+            df['Median Income'] = df['Median Income'].str.replace('$', '').str.replace(',', '').astype(int) 
+            
+            sorted_regions = df.groupby('Region in the US')['Average House Price'].mean().sort_values().index.tolist()
+            df['Region in the US'] = pd.Categorical(df['Region in the US'], categories=sorted_regions, ordered=True)
+            df = df.sort_values('Region in the US')
+        
+            # Create income buckets
+            income_bins = [0, 50000, 100000, 150000, 200000, float('inf')]
+            income_labels = ['<50k', '50k-100k', '100k-150k', '150k-200k', '200k+']
+            df['Income Bucket'] = pd.cut(df['Median Income'], bins=income_bins, labels=income_labels, right=False)
+        
+            df['Income Bucket'] = pd.Categorical(df['Income Bucket'], categories=income_labels, ordered=True)
+            df = df.sort_values('Income Bucket')
+        
             return df
 
         df = load_data()
 
         col1, col2, col3, col4 = st.columns(4)
 
-        x_axis = col1.selectbox('X-axis:', df.columns, index=5, disabled=True)
-        y_axis = col2.selectbox('Y-axis:', df.columns, index=2)
-        color_dim = col3.selectbox('Color:', df.columns, index=4)
-        size_dim = col4.selectbox('Size:', df.columns, index=3)
-
+        x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
+        y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
+        color_dim = col3.selectbox('Color:', df.columns, index=2)
+        size_dim = col4.selectbox('Size:', df.columns, index=1)
+        
         st.scatter_chart(
             df,
             x=x_axis,
@@ -96,40 +110,6 @@ with tab1:
     )
 
 with tab2:
-    st.subheader("Region in the US vs Average House price", anchor=False)
-    st.caption("The chart shows some minimal correlation between Region in the US and Average House Price.")
-    st.scatter_chart(
-        df,
-        x='Region in the US',
-        y='Average House Price',
-        height=800,
-        use_container_width=True
-    )
-    st.divider()
-    st.code(
-        """
-        import streamlit as st
-        import pandas as pd
-
-        @st.cache_data
-        def load_data():
-            df = pd.read_csv('data.csv')
-            return df
-
-        df = load_data()
-
-        st.scatter_chart(
-            df,
-            x='Region in the US',
-            y='Average House Price',
-            color='Rank',
-            height=800,
-            use_container_width=True
-        )
-        """
-    )
-
-with tab3:
     st.subheader("Average Rent vs Region in the US", anchor=False)
     st.caption("This chart shows some positive correlation between Average Rent and Region in the US.")
     st.scatter_chart(
@@ -147,7 +127,22 @@ with tab3:
 
         @st.cache_data
         def load_data():
-            df = pd.read_csv('data.csv')
+            df = pd.read_csv('1.27/pages/data_simplified.csv')
+            df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
+            df['Median Income'] = df['Median Income'].str.replace('$', '').str.replace(',', '').astype(int) 
+            
+            sorted_regions = df.groupby('Region in the US')['Average House Price'].mean().sort_values().index.tolist()
+            df['Region in the US'] = pd.Categorical(df['Region in the US'], categories=sorted_regions, ordered=True)
+            df = df.sort_values('Region in the US')
+        
+            # Create income buckets
+            income_bins = [0, 50000, 100000, 150000, 200000, float('inf')]
+            income_labels = ['<50k', '50k-100k', '100k-150k', '150k-200k', '200k+']
+            df['Income Bucket'] = pd.cut(df['Median Income'], bins=income_bins, labels=income_labels, right=False)
+        
+            df['Income Bucket'] = pd.Categorical(df['Income Bucket'], categories=income_labels, ordered=True)
+            df = df.sort_values('Income Bucket')
+        
             return df
 
         df = load_data()
