@@ -11,7 +11,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 # @st.cache_data
 def load_data():
-    df = pd.read_csv('1.27/pages/data.csv')
+    df = pd.read_csv('1.27/pages/data_simplified.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
     df['Median Income'] = df['Median Income'].str.replace('$', '').str.replace(',', '').astype(int) 
     
@@ -51,7 +51,7 @@ with tab1:
     col1, col2, col3, col4 = st.columns(4)
     x_axis = col1.selectbox('X-axis:', df.columns, index=5, disabled=True)
     y_axis = col2.selectbox('Y-axis:', df.columns, index=2)
-    color_dim = col3.selectbox('Color:', df.columns, index=1)
+    color_dim = col3.selectbox('Color:', df.columns, index=4)
     size_dim = col4.selectbox('Size:', df.columns, index=3)
     
     st.scatter_chart(
@@ -79,8 +79,8 @@ with tab1:
         col1, col2, col3, col4 = st.columns(4)
 
         x_axis = col1.selectbox('X-axis:', df.columns, index=5, disabled=True)
-        y_axis = col2.selectbox('Y-axis:', df.columns, index=4)
-        color_dim = col3.selectbox('Color:', df.columns, index=1)
+        y_axis = col2.selectbox('Y-axis:', df.columns, index=2)
+        color_dim = col3.selectbox('Color:', df.columns, index=4)
         size_dim = col4.selectbox('Size:', df.columns, index=3)
 
         st.scatter_chart(
@@ -106,7 +106,6 @@ with tab2:
         height=800,
         use_container_width=True
     )
-    st.caption("💡 Rank is by housing price")
     st.divider()
     st.code(
         """
