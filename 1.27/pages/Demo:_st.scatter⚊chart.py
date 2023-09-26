@@ -11,7 +11,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 # @st.cache_data
 def load_data():
-    df = pd.read_csv('./pages/data.csv')
+    df = pd.read_csv('1.27/pages/data.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
     df['Median Income'] = df['Median Income'].str.replace('$', '').str.replace(',', '').astype(int) 
     
