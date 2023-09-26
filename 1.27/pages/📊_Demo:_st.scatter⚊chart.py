@@ -38,15 +38,14 @@ with st.expander("Dataset"):
 
 tab1, tab2 = st.tabs(
     [
-        "Multi-Dimensional Analysis",
+        "Multi-Dimensional Scatter Analysis",
         "Scatter Basics"
     ]
 )
 
 with tab1:
     st.subheader("Dynamic Scatter Chart", anchor=False)
-    st.caption("Dynamic scatter plot where you can choose the dimensions for X-axis, Y-axis, color, and size.")
-
+    st.caption("Choose the dimension for the x-axis, y-axis, color, and size to explore average house price, average rent, geographic region, and median income in the United States.")
     col1, col2, col3, col4 = st.columns(4)
     x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
     y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
@@ -110,8 +109,8 @@ with tab1:
     )
 
 with tab2:
-    st.subheader("Average Rent vs Region in the US", anchor=False)
-    st.caption("This chart shows some positive correlation between Average Rent and Region in the US.")
+    st.subheader("Simple Scatter Chart", anchor=False)
+    st.caption("This chart shows some positive correlation between Average Rent and Region in the United States.")
     st.scatter_chart(
         df,
         x='Average Rent',
