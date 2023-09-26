@@ -11,7 +11,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('1.27/pages/data.csv')
+    df = pd.read_csv('1.27/pages/data_simplified.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
     sorted_regions = df.groupby('Region in the US')['Average House Price'].mean().sort_values().index.tolist()
     df['Region in the US'] = pd.Categorical(df['Region in the US'], categories=sorted_regions, ordered=True)
