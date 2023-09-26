@@ -113,7 +113,7 @@ with tab1:
 
 with tab2:
     st.subheader("Simple Scatter Chart", anchor=False)
-    st.caption("This chart shows some positive correlation between Average Rent and Region in the United States.")
+    st.caption("The chart shows some positive correlation between Average Rent and Average House Price")
     st.scatter_chart(
         df,
         x='Average Rent',
