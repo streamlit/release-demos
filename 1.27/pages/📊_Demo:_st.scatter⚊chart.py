@@ -95,7 +95,7 @@ with tab1:
         x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
         y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
         color_dim = col3.selectbox('Color:', df.columns, index=2)
-        size_dim = col4.selectbox('Size:', df.columns, index=1)
+        size_dim = col4.selectbox('Size:', df.columns, index=3)
         
         st.scatter_chart(
             df,
