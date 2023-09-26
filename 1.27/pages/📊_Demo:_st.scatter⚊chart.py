@@ -34,6 +34,7 @@ df = load_data()
 
 df['Region in the US'] = df['Region in the US'].astype(str)
 
+st.info("This dataset provides a snapshot of the U.S. housing market and income statistics across various regions.", icon="💡")
 with st.expander("Dataset"):
     st.dataframe(df)
 
@@ -48,10 +49,11 @@ with tab1:
     st.subheader("Dynamic Scatter Chart", anchor=False)
     st.caption("Choose the dimension for the x-axis, y-axis, color, and size to explore average house price, average rent, geographic region, and median income in the United States.")
     col1, col2, col3, col4 = st.columns(4)
-    x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
-    y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
-    color_dim = col3.selectbox('Color:', df.columns, index=2)
-    size_dim = col4.selectbox('Size:', df.columns, index=1)
+    filtered_columns = [col for col in df.columns if col != 'Income Bucket']
+    x_axis = col1.selectbox('X-axis:', filtered_columns, index=1, disabled=True)
+    y_axis = col2.selectbox('Y-axis:', filtered_columns, index=0)
+    color_dim = col3.selectbox('Color:', filtered_columns, index=2)
+    size_dim = col4.selectbox('Size:', filtered_columns, index=3)
     
     st.scatter_chart(
         df,
@@ -92,10 +94,10 @@ with tab1:
 
         col1, col2, col3, col4 = st.columns(4)
 
-        x_axis = col1.selectbox('X-axis:', df.columns, index=3, disabled=True)
+        x_axis = col1.selectbox('X-axis:', df.columns, index=1, disabled=True)
         y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
-        color_dim = col3.selectbox('Color:', df.columns, index=2)
-        size_dim = col4.selectbox('Size:', df.columns, index=1)
+        color_dim = col3.selectbox('Color:', df.columns, index=3)
+        size_dim = col4.selectbox('Size:', df.columns, index=2)
         
         st.scatter_chart(
             df,
@@ -111,11 +113,11 @@ with tab1:
 
 with tab2:
     st.subheader("Simple Scatter Chart", anchor=False)
-    st.caption("This chart shows some positive correlation between Average Rent and Region in the United States.")
+    st.caption("The chart shows some positive correlation between Average Rent and Average House Price")
     st.scatter_chart(
         df,
         x='Average Rent',
-        y='Region in the US',
+        y='Average House Price',
         height=600,
         use_container_width=True
     )
@@ -150,7 +152,7 @@ with tab2:
         st.scatter_chart(
             df,
             x='Average Rent',
-            y='Region in the US',
+            y='Average House Price',
             height=600,
             use_container_width=True
         )
