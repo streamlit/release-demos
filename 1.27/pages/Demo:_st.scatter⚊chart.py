@@ -29,7 +29,7 @@ tab1, tab2, tab3 = st.tabs(
 
 with tab1:
     st.subheader("Dynamic Scatter Chart", anchor=False)
-    st.caption("Dynamic scatter plot where you can choose the dimensions for X-axis, Y-axis, color, and size.")
+    st.caption("Choose the dimensions for the chart's x-axis, y-axis, color, and size to explore the relationship between the geographic region of the US, average house price, average rent, and median income.") 
 
     col1, col2, col3, col4 = st.columns(4)
 
