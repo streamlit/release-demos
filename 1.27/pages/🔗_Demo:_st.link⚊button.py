@@ -7,6 +7,7 @@ st.set_page_config(
 )
 
 st.title("🔗 Link Button Demo", anchor=False)
+st.write("Learn more about `st.link_button` in [our docs](https://docs.streamlit.io/library/api-reference/widgets/st.link_button).")
 
 st.info("Click the button below to explore the Streamlit gallery in a new tab.", icon="💡")
 
