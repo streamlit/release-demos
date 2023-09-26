@@ -12,7 +12,7 @@ st.title("📊 Scatter Chart Demo", anchor=False)
 @st.cache_data
 def load_data():
     df = pd.read_csv('1.27/pages/data_simplified.csv')
-    df.sort_values(by=['Median Income'],inplace=True)
+    # df.sort_values(by=['Median Income'],inplace=True)
     return df
 
 df = load_data()
