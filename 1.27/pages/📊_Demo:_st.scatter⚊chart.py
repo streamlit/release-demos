@@ -10,7 +10,7 @@ st.set_page_config(
 st.title("📊 st.scatter_chart Demo", anchor=False)
 st.write("Learn more about `st.scatter_chart` in [our docs](https://docs.streamlit.io/library/api-reference/charts/st.scatter_chart).")
 
-@st.cache_data
+# @st.cache_data
 def load_data():
     df = pd.read_csv('1.27/pages/data_simplified.csv')
     df['Average House Price'] = df['Average House Price'].str.replace('$', '').str.replace(',', '').astype(int)
@@ -50,7 +50,7 @@ with tab1:
     col1, col2, col3, col4 = st.columns(4)
     x_axis = col1.selectbox('X-axis:', df.columns, index=1, disabled=True)
     y_axis = col2.selectbox('Y-axis:', df.columns, index=0)
-    color_dim = col3.selectbox('Color:', df.columns, index=4)
+    color_dim = col3.selectbox('Color:', df.columns, index=3)
     size_dim = col4.selectbox('Size:', df.columns, index=2)
     
     st.scatter_chart(
