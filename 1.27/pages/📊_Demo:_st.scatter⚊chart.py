@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 st.title("📊 st.scatter_chart Demo", anchor=False)
-st.write("Learn more about `st.scatter_chart` in our [docs](https://docs.streamlit.io/library/api-reference/charts/st.scatter_chart).")
+st.write("Learn more about `st.scatter_chart` in [our docs](https://docs.streamlit.io/library/api-reference/charts/st.scatter_chart).")
 
 @st.cache_data
 def load_data():
