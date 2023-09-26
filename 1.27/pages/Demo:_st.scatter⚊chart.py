@@ -26,10 +26,9 @@ df['Region in the US'] = df['Region in the US'].astype(str)
 with st.expander("Dataset"):
     st.dataframe(df)
 
-tab1, tab2, tab3 = st.tabs(
+tab1, tab2 = st.tabs(
     [
         "Multi-Dimensional Analysis",
-        "Custom Dimensions & Colors",
         "Scatter Basics"
     ]
 )
@@ -87,45 +86,45 @@ with tab1:
         """
     )
 
+# with tab2:
+#     st.subheader("Region in the US vs Average House price", anchor=False)
+#     st.caption("The chart shows some minimal correlation between Region in the US and Average House Price.")
+#     st.scatter_chart(
+#         df,
+#         x='Region in the US',
+#         y='Average House Price',
+#         color='City',
+#         height=800,
+#         use_container_width=True
+#     )
+#     st.caption("💡 Rank is by housing price")
+#     st.divider()
+#     st.code(
+#         """
+#         import streamlit as st
+#         import pandas as pd
+
+#         @st.cache_data
+#         def load_data():
+#             df = pd.read_csv('data.csv')
+#             return df
+
+#         df = load_data()
+
+#         st.scatter_chart(
+#             df,
+#             x='Region in the US',
+#             y='Average House Price',
+#             color='Rank',
+#             height=800,
+#             use_container_width=True
+#         )
+#         """
+#     )
+
 with tab2:
-    st.subheader("Region in the US vs Average House price", anchor=False)
-    st.caption("The chart shows some minimal correlation between Region in the US and Average House Price.")
-    st.scatter_chart(
-        df,
-        x='Region in the US',
-        y='Average House Price',
-        color='City',
-        height=800,
-        use_container_width=True
-    )
-    st.caption("💡 Rank is by housing price")
-    st.divider()
-    st.code(
-        """
-        import streamlit as st
-        import pandas as pd
-
-        @st.cache_data
-        def load_data():
-            df = pd.read_csv('data.csv')
-            return df
-
-        df = load_data()
-
-        st.scatter_chart(
-            df,
-            x='Region in the US',
-            y='Average House Price',
-            color='Rank',
-            height=800,
-            use_container_width=True
-        )
-        """
-    )
-
-with tab3:
-    st.subheader("Average Rent vs Region in the US", anchor=False)
-    st.caption("This chart shows some positive correlation between Average Rent and Region in the US.")
+    st.subheader("Simple scatter chart", anchor=False)
+    st.caption("This chart shows a positive correlation between average rent and region in the US.")
     st.scatter_chart(
         df,
         x='Average Rent',
