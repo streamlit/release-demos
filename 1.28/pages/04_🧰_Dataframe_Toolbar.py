@@ -39,7 +39,7 @@ data = pd.DataFrame(
 )
 with tab1:
     st.info('Adding/deleting rows in a dataframe.', icon="ℹ️")
-    st.image("pages/add_delete.gif")
+    st.image("1.28/pages/add_delete.gif")
 
 with tab2:
     st.info('Downloading the dataframe as a CSV file.', icon="ℹ️")
