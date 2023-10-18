@@ -23,52 +23,11 @@ st.image("1.28/pages/tests.gif")
 tab1, tab2 = st.tabs(
     [
         "🧑‍💻 Main app code",
-        "🧪 Test code",
+        "🧪 Unit tests",
     ]
 )
 
 with tab1:
-    st.code(
-        """
-        import openai
-        import streamlit as st
-
-        with st.sidebar:
-            openai_api_key = st.text_input(
-                "OpenAI API Key", key="chatbot_api_key", type="password")
-            st.session_state["openai_api_key"] = openai_api_key
-            "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-            "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
-            "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
-
-        st.title("💬 Chatbot")
-        st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
-        if "messages" not in st.session_state:
-            st.session_state["messages"] = [
-                {"role": "assistant", "content": "How can I help you?"}]
-
-        for msg in st.session_state.messages:
-            st.chat_message(msg["role"]).write(msg["content"])
-
-        if prompt := st.chat_input():
-            if not st.session_state["openai_api_key"]:
-                st.info("Please add your OpenAI API key to continue.")
-                st.stop()
-
-            openai.api_key = st.session_state["openai_api_key"]
-            st.session_state.messages.append({"role": "user", "content": prompt})
-            st.chat_message("user").write(prompt)
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=st.session_state.messages
-            )
-            msg = response.choices[0].message
-            st.session_state.messages.append(
-                {"role": "assistant", "content": msg.content})
-            st.chat_message("assistant").write(msg.content)
-        """, language="python"
-    )
-
-with tab2:
     st.code(
         '''
         import unittest
@@ -127,4 +86,46 @@ with tab2:
                 else:
                     print("text_area is empty! Something's wrong!")
         ''', language="python"
+    )
+
+
+with tab2:
+    st.code(
+        """
+        import openai
+        import streamlit as st
+
+        with st.sidebar:
+            openai_api_key = st.text_input(
+                "OpenAI API Key", key="chatbot_api_key", type="password")
+            st.session_state["openai_api_key"] = openai_api_key
+            "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+            "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
+            "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+
+        st.title("💬 Chatbot")
+        st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
+        if "messages" not in st.session_state:
+            st.session_state["messages"] = [
+                {"role": "assistant", "content": "How can I help you?"}]
+
+        for msg in st.session_state.messages:
+            st.chat_message(msg["role"]).write(msg["content"])
+
+        if prompt := st.chat_input():
+            if not st.session_state["openai_api_key"]:
+                st.info("Please add your OpenAI API key to continue.")
+                st.stop()
+
+            openai.api_key = st.session_state["openai_api_key"]
+            st.session_state.messages.append({"role": "user", "content": prompt})
+            st.chat_message("user").write(prompt)
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo", messages=st.session_state.messages
+            )
+            msg = response.choices[0].message
+            st.session_state.messages.append(
+                {"role": "assistant", "content": msg.content})
+            st.chat_message("assistant").write(msg.content)
+        """, language="python"
     )
