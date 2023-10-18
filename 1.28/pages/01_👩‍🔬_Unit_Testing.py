@@ -13,7 +13,8 @@ icon("👩‍🔬")
 st.title("Unit Testing Demo", anchor=False)
 #st.caption("A new API to write unit tests for Streamlit apps.")
 st.subheader("Introducing a new API to write unit tests for Streamlit apps")
-st.write("Learn more about unit testing in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
+st.write("Our new unit testing API makes it easy to automate your app testing. Learn more in the docs [TODO: add link].
+#st.write("Learn more about unit testing in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 st.divider()
 
 st.info("The GIF shows an OpenAI API-powered chatbot app, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
