@@ -21,10 +21,10 @@ st.caption("Enhanced caching spinner prevents UI jumpiness by overlaying, not pu
 st.write("Learn more about caching in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 st.divider()
 
-corgi = Image.open("pages/kevin.jpg")
-otter = Image.open("pages/sea_otter.png")
-duck = Image.open("pages/duck.jpeg")
-penguin = Image.open("pages/penguin.jpeg")
+corgi = Image.open("1.28/pages/kevin.jpg")
+otter = Image.open("1.28/pages/sea_otter.png")
+duck = Image.open("1.28/pages/duck.jpeg")
+penguin = Image.open("1.28/pages/penguin.jpeg")
 
 def clear_cache():
     st.cache_data.clear()
