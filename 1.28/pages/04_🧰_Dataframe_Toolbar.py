@@ -43,11 +43,11 @@ with tab1:
 
 with tab2:
     st.info('Downloading the dataframe as a CSV file.', icon="ℹ️")
-    st.image("pages/download.gif")
+    st.image("1.28/pages/download.gif")
 
 with tab3:
     st.info('Searching through your dataframe.', icon="ℹ️")
-    st.image("pages/search.gif")
+    st.image("1.28/pages/search.gif")
 
 st.info("Give it a spin with this dataframe.", icon="👇")
 edited_data = st.data_editor(
