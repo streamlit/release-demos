@@ -35,22 +35,22 @@ cache_load = st.slider("Choose cache function load time:", 0, 30, 10)
 st.button("Clear :red[**ALL**] Caches", on_click=clear_cache)
 st.divider()
 
-with st.sidebar:
-    @st.cache_data
-    def fetch_pokemon():
-        time.sleep(cache_load)
-        random_id = random.randint(1, 251)
-        pokemon = pb.pokemon(random_id)
-        pokemon_name = pokemon.name
-        sprite = pb.SpriteResource('pokemon', random_id, official_artwork=True)
-        return pokemon_name.capitalize(), sprite.url
-    st.subheader("⚠️ Vital Sidebar Content")
-    st.info("The spinner overlays below to prevent UI jumpiness.", icon="🌀")
-    st.divider()
-    st.write("**Cached Pokemon** :fire:")
-    pokemon_name, sprite = fetch_pokemon()
-    st.image(sprite, width=150)
-    st.caption(f"**{pokemon_name}**")
+# with st.sidebar:
+#     @st.cache_data
+#     def fetch_pokemon():
+#         time.sleep(cache_load)
+#         random_id = random.randint(1, 251)
+#         pokemon = pb.pokemon(random_id)
+#         pokemon_name = pokemon.name
+#         sprite = pb.SpriteResource('pokemon', random_id, official_artwork=True)
+#         return pokemon_name.capitalize(), sprite.url
+#     st.subheader("⚠️ Vital Sidebar Content")
+#     st.info("The spinner overlays below to prevent UI jumpiness.", icon="🌀")
+#     st.divider()
+#     st.write("**Cached Pokemon** :fire:")
+#     pokemon_name, sprite = fetch_pokemon()
+#     st.image(sprite, width=150)
+#     st.caption(f"**{pokemon_name}**")
 
 @st.cache_data
 def render_df():
