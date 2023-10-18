@@ -51,3 +51,4 @@ def create_static_notes(contributors, previous_version, current_version):
         [the forums](https://discuss.streamlit.io/c/official-announcements/6) if you'd like to ask questions,
         post awesome apps, or just say hi!
     """)
+
