@@ -10,7 +10,7 @@ def icon(emoji: str):
     )
 
     
-st.set_page_config("Toolbar for DataFrames Demo", "🧰")
+st.set_page_config("Toolbar for DataFrames Demo", "🧰", layout="wide")
 icon("🧰")
 
 st.title("Toolbar for DataFrames Demo", anchor=False)
