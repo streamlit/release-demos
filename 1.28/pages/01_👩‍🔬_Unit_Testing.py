@@ -22,8 +22,8 @@ st.image("1.28/pages/tests.gif")
 
 tab1, tab2 = st.tabs(
     [
-        "🧑‍💻 Main app code",
         "🧪 Unit tests",
+        "🧑‍💻 Main app code",
     ]
 )
 
@@ -35,7 +35,6 @@ with tab1:
         from unittest.mock import patch
         from types import SimpleNamespace
         from streamlit.testing.v1 import AppTest
-
 
         class TestChatbotApp(unittest.TestCase):
 
