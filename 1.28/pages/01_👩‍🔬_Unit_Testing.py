@@ -15,7 +15,7 @@ st.caption("A new API to write unit tests for Streamlit apps.")
 st.write("Learn more about unit testing in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 st.divider()
 
-st.info("The GIF shows an OpenAI API-powered chatbot app, chatbot code, test code, and the tests passing after run.", icon="ℹ️")
+st.info("The GIF shows an OpenAI API-powered chatbot app, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
 st.image("1.28/pages/tests.gif")
 
 tab1, tab2 = st.tabs(
