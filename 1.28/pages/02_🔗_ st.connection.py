@@ -37,7 +37,7 @@ with tab1:
         """, language="toml"
     )
 
-    st.markdown("#### Your code in the `streamlit_app.py` file:")
+    st.markdown("#### Your app code:")
 
     st.code(
         """
