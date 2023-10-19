@@ -30,12 +30,13 @@ st.caption("The GIF shows a chatbot app being tested using the new unit testing 
 #, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
 # gif = Image.open('1.28/pages/tests.gif')
 
+file_url = get_file_url('1.28/pages/tests.gif')
+
 st.markdown(
     f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
     unsafe_allow_html=True,
 )
 
-file_url = get_file_url('1.28/pages/tests.gif')
 # st.image(gif)
 
 tab1, tab2 = st.tabs(
