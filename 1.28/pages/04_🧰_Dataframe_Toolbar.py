@@ -78,9 +78,9 @@ edited_data = st.data_editor(
     ),
 )
 
-with st.expander("Edited Data"):
-    "This is the dataframe returned by the data editor:"
-    st.dataframe(edited_data, use_container_width=True)
+# with st.expander("Edited Data"):
+#     "This is the dataframe returned by the data editor:"
+#     st.dataframe(edited_data, use_container_width=True)
 
 st.code(
     """
