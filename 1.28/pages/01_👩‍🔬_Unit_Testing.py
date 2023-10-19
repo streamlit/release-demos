@@ -3,7 +3,7 @@ from PIL import Image
 import base64
 
 @st.cache_data
-def get_file_url(path)
+def get_file_url(path):
     file_ = open(path, "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
