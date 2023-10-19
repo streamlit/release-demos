@@ -7,7 +7,7 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
     
-st.set_page_config("st.connection Demo", "🔗", layout="wide")
+st.set_page_config("st.connection demo", "🔗", layout="wide")
 icon("🔗")
 
 st.title("st.connection Demo", anchor=False)
@@ -26,7 +26,7 @@ tab1, tab2 = st.tabs([
 ])
 
 with tab1:
-    st.info('With **st.connection**, fetch data directly without manual setup.', icon="ℹ️")
+    st.info('With **st.connection**, fetch data directly without a manual setup.', icon="ℹ️")
 
     st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
 
@@ -77,7 +77,7 @@ with tab1:
 
 
 with tab2:
-    st.info('Manually managing database connections and cursors.', icon="ℹ️")
+    st.info('In this example, the database connections and cursors have been managed manually .', icon="ℹ️")
 
     st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
 
