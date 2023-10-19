@@ -10,22 +10,22 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches a new `Unit testing for Apps` feature, and includes bug fixes and improvements.
+This release launches a new app testing framework and `st.connection` is no longer experimental – it's fully supported! The release also includes bug fixes and improvements.
 """
 
 release_notes = f"""
 ---
 **Highlights**
 
-- ✨ Introducing 
+- ✨ Introducing [will be filled in from docs]
 
 **Notable Changes**
 
-- 👻 
+- 👻 [will be filled in from docs]
 
 **Other changes**
 
-- 🐛 Bug fix:
+- 🐛 Bug fix: [will be filled in from docs]
 ---
 """
 # End release updates
