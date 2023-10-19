@@ -17,7 +17,7 @@ st.info("Get started building with `st.connection` by checking out our docs. [TO
 # st.info("You can now switch from **st.experimental_connection** to the more stable and officially supported **st.connection**. Learn more about [st.connection](https://docs.streamlit.io/).", icon="💡")
 
 tab1, tab2 = st.tabs([
-    "🚀 With **st.connection**", 
+    "🚀 With **`st.connection`**", 
     "🐢 How it worked before"
 ])
 
