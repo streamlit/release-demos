@@ -16,7 +16,7 @@ st.title("st.connection Demo", anchor=False)
 #     With `st.connection()`, you can now connect data sources and APIs to your Streamlit app with a fraction of the code.
 #     """
 # )
-st.write("`st.connection` is no longer experimental – it's officially supported! Be sure to switch over from `st.experimental_connection` to `st.connection.` Learn more about [st.connection](https://docs.streamlit.io/) and [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease).")
+st.write("`st.connection` is no longer experimental – it's officially supported! Be sure to switch over from `st.experimental_connection` to `st.connection.` Learn more about [`st.connection`](https://docs.streamlit.io/) and [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease).")
 # st.info("You can now switch from **st.experimental_connection** to the more stable and officially supported **st.connection**. Learn more about [st.connection](https://docs.streamlit.io/).", icon="💡")
 # st.write("Learn more about `st.connection` in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 
