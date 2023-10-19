@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
@@ -18,7 +19,8 @@ st.write("Our new unit testing API makes it easy to automate your app testing. L
 st.caption("The GIF shows a chatbot app being tested using the new unit testing API.")
 #st.info("The GIF shows a chatbot app being tested using the new unit testing API.")
 #, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
-st.image("1.28/pages/tests.gif")
+gif = Image.open('1.28/pages/tests.gif')
+st.image(gif)
 
 tab1, tab2 = st.tabs(
     [
