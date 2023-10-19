@@ -1,5 +1,11 @@
 import streamlit as st
 from PIL import Image
+import base64
+
+file_ = open("1.28/pages/tests.gif", "rb")
+contents = file_.read()
+data_url = base64.b64encode(contents).decode("utf-8")
+file_.close()
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
@@ -20,7 +26,12 @@ st.caption("The GIF shows a chatbot app being tested using the new unit testing 
 #st.info("The GIF shows a chatbot app being tested using the new unit testing API.")
 #, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
 gif = Image.open('1.28/pages/tests.gif')
-st.image(gif)
+
+st.markdown(
+    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    unsafe_allow_html=True,
+)
+# st.image(gif)
 
 tab1, tab2 = st.tabs(
     [
