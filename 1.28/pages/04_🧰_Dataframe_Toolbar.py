@@ -10,17 +10,17 @@ def icon(emoji: str):
     )
 
     
-st.set_page_config("Toolbar for DataFrames Demo", "🧰", layout="wide")
+st.set_page_config("Toolbar for dataframes demo", "🧰", layout="wide")
 icon("🧰")
 
-st.title("Toolbar for DataFrames Demo", anchor=False)
-st.caption("A toolbar on top of `st.dataframe` and `st.data_editor` that lets you add/delete rows, download as CSV, and search.")
+st.title("Toolbar for dataframes demo", anchor=False)
+st.write("Check out the new toolbar on top of st.dataframe and st.data_editor that lets you add/delete rows, download as CSV, and search.")
 st.write("Learn more about dataframes in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 
 tab1, tab2, tab3 = st.tabs([
     "🚣‍♀️ Add/Delete row", 
-    "📥 Download as CSV",
-    "🔎 Search",
+    "📥 Download table as a CSV",
+    "🔎 Search the table ",
 ])
 
 data = pd.DataFrame(
@@ -38,7 +38,7 @@ data = pd.DataFrame(
     }
 )
 with tab1:
-    st.info('Adding/deleting rows in a dataframe.', icon="ℹ️")
+    st.info('Now you can add/delete rows in a dataframe.', icon="ℹ️")
     st.image("1.28/pages/add_delete.gif")
 
 with tab2:
