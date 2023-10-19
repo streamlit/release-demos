@@ -22,7 +22,7 @@ tab1, tab2 = st.tabs([
 ])
 
 with tab1:
-    st.info('With **`st.connection`**, connect to data sources and fetch data in just a few lines of code without a manual setup.', icon="ℹ️")
+    st.info('With **`st.connection`**, connect to data sources and fetch data in just a few lines of code.', icon="ℹ️")
 
     st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
 
