@@ -28,7 +28,7 @@ st.caption("The GIF shows a chatbot app being tested using the new unit testing 
 gif = Image.open('1.28/pages/tests.gif')
 
 st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url}" width=500 alt="demo gif">',
     unsafe_allow_html=True,
 )
 # st.image(gif)
