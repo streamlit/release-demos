@@ -45,7 +45,7 @@ data = pd.DataFrame(
     }
 )
 with tab1:
-    st.info('Now you can add and delete rows in a dataframe.', icon="ℹ️")
+    st.info('Now you can add and delete rows in `st.data_editor` and `st.dataframe`.', icon="ℹ️")
     file_url = get_file_url('1.28/pages/add_delete.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
