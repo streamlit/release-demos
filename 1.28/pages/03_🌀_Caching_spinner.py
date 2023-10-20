@@ -36,7 +36,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.header("Old spinner")
     show_spinner = st.button("Show me the spinner!")
-    st.image(Image.open("1.28/pages/kevin.jpg"))
+    # st.image(Image.open("1.28/pages/kevin.jpg"))
     if show_spinner:
         with st.spinner("`st.spinner` Old spinner..."):
             time.sleep(5)
