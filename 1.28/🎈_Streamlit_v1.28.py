@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches [AppTest](https://release128-demo-test.streamlit.app/AppTest), improvements to the [caching spinner](https://release128-demo-test.streamlit.app/Cache_spinner), a handy [data toolbar](https://release128-demo-test.streamlit.app/Dataframe_toolbar), and [`st.connection`](https://release128-demo-test.streamlit.app/st.connection) is no longer experimental – it's fully supported! The release also includes bug fixes. [todo: update links once url changes]
+This release launches [AppTest](https://release128-demo-test.streamlit.app/AppTest), improvements to the [caching spinner](https://release128-demo-test.streamlit.app/Cache_spinner), a handy [dataframe toolbar](https://release128-demo-test.streamlit.app/Dataframe_toolbar), and [`st.connection`](https://release128-demo-test.streamlit.app/st.connection) is no longer experimental – it's fully supported! The release also includes bug fixes. [todo: update links once url changes]
 """
 
 release_notes = f"""
