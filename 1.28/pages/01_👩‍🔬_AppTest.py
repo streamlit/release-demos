@@ -17,14 +17,14 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
     
-st.set_page_config("Unit testing demo", "👩‍🔬", layout="wide")
+st.set_page_config("AppTest demo", "👩‍🔬", layout="wide")
 icon("👩‍🔬")
 
-st.title("Unit testing demo", anchor=False)
+st.title("AppTest demo", anchor=False)
 #st.caption("A new API to write unit tests for Streamlit apps.")
 #st.subheader("Introducing a new API to write unit tests for Streamlit apps")
-st.subheader("Introducing AppTest, a Streamlit app testing framework")
-st.write("AppTest allows you to write automated unit tests to ensure your app logic and UI are working as expected.")
+# st.subheader("Introducing AppTest, a Streamlit app testing framework")
+st.write("Introducing AppTest, a Streamlit app testing framework that allows you to write automated unit tests to ensure your app logic and UI are working as expected.")
 st.info("Learn more about the API to start building your own unit tests in the [docs](https://docs.streamlit.io/) TODO: UPDATE LINK.", icon="📖")
 st.caption("The GIF shows a chatbot app being tested using the new unit testing API.")
 #st.info("The GIF shows a chatbot app being tested using the new unit testing API.")
