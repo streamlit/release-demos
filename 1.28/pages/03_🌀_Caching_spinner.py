@@ -38,9 +38,7 @@ with col1:
     
     with st.spinner("Loading Spinner..."):
         time.sleep(3)
-        st.image(Image.open("1.28/pages/kevin.jpg"))
-        st.caption(caption)
-    
+        st.image(Image.open("1.28/pages/kevin.jpg"))    
     # st.image(Image.open("1.28/pages/kevin.jpg"))
     # with st.spinner("`st.spinner` Old spinner..."):
     #     st.info("Notice how the puppy gets pushed down further on the page.")
