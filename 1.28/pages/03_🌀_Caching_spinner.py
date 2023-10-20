@@ -35,6 +35,8 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("🕸️ Old spinner")
+    with st.spinner("`st.spinner` Old spinner..."):
+        time.sleep(3)
 
 with col2:
     st.header("🎀 New and improved spinner")
