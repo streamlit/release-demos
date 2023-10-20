@@ -15,7 +15,7 @@ icon("🧰")
 
 st.title("Toolbar for dataframes demo", anchor=False)
 st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_editor` that lets you add and delete rows, download your data as a CSV, and search your data.")
-st.info("Learn more about dataframes in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).", icon="📖")
+st.info("Learn more about [`st.dataframe`](https://docs.streamlit.io/) and [`st.data_editor.`](https://docs.streamlit.io/) (TODO: update links once live)", icon="📖")
 
 tab1, tab2, tab3 = st.tabs([
     "🚣‍♀️ Add/Delete row", 
