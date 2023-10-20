@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches a new app testing framework and `st.connection` is no longer experimental – it's fully supported! The release also includes bug fixes and improvements.
+This release launches a new app testing framework, improvements to the caching spinner, a handy data toolbar, and `st.connection` is no longer experimental – it's fully supported! The release also includes bug fixes and improvements.
 """
 
 release_notes = f"""
@@ -34,7 +34,7 @@ def draw_main_page():
 
     st.title(f"Welcome to Streamlit {VERSION}! :wave:", anchor=False)
 
-    st.caption(intro)
+    st.write(intro)
 
     st.write(release_notes)
 
