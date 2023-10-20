@@ -1,6 +1,14 @@
 import pandas as pd
 import streamlit as st
 
+@st.cache_data
+def get_file_url(path):
+    file_ = open(path, "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+    return data_url
+
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
     st.write(
@@ -37,15 +45,27 @@ data = pd.DataFrame(
 )
 with tab1:
     st.info('Now you can add and delete rows in a dataframe.', icon="ℹ️")
-    st.image("1.28/pages/add_delete.gif")
+    file_url = get_file_url('1.28/pages/add_delete.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 with tab2:
     st.info('Download your data as a CSV file.', icon="ℹ️")
-    st.image("1.28/pages/download.gif")
+    file_url = get_file_url('1.28/pages/download.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 with tab3:
     st.info('Search through your data.', icon="ℹ️")
-    st.image("1.28/pages/search.gif")
+    file_url = get_file_url('1.28/pages/search.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 st.info("Give it a spin with this dataframe.", icon="👇")
 edited_data = st.data_editor(
