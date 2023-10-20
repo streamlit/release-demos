@@ -21,12 +21,12 @@ st.set_page_config("AppTest demo", "👩‍🔬", layout="wide")
 icon("👩‍🔬")
 
 st.title("AppTest demo", anchor=False)
-#st.caption("A new API to write unit tests for Streamlit apps.")
-#st.subheader("Introducing a new API to write unit tests for Streamlit apps")
+#st.caption("A new API to write app tests for Streamlit apps.")
+#st.subheader("Introducing a new API to write app tests for Streamlit apps")
 # st.subheader("Introducing AppTest, a Streamlit app testing framework")
-st.write("Introducing AppTest, a Streamlit app testing framework that allows you to write automated unit tests to ensure your app logic and UI are working as expected.")
-st.info("Learn more about the API to start building your own unit tests in the [docs](https://docs.streamlit.io/) TODO: UPDATE LINK.", icon="📖")
-st.caption("The GIF shows a chatbot app being tested using the new unit testing API.")
+st.write("Introducing AppTest, a Streamlit app testing framework that allows you to write automated app tests to ensure your app logic and UI are working as expected.")
+st.info("Learn more about the API to start building your own app tests in the [docs](https://docs.streamlit.io/) TODO: UPDATE LINK.", icon="📖")
+st.caption("The GIF shows a chatbot app being tested using the new app testing API.")
 #st.info("The GIF shows a chatbot app being tested using the new unit testing API.")
 #, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
 # gif = Image.open('1.28/pages/tests.gif')
@@ -42,7 +42,7 @@ st.image("1.28/pages/tests.gif")
 
 tab1, tab2 = st.tabs(
     [
-        "🧪 Unit tests",
+        "🧪 App tests",
         "🧑‍💻 Main app code",
     ]
 )
@@ -50,7 +50,7 @@ tab1, tab2 = st.tabs(
 with tab1:
     st.code(
         '''
-        import unittest
+        import apptest
         import openai
         from unittest.mock import patch
         from types import SimpleNamespace
