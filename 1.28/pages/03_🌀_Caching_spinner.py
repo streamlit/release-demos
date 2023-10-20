@@ -28,7 +28,7 @@ def retrieve_corgi_image():
     
 st.set_page_config("Improved cache spinner demo", "🌀", layout="wide")
 icon("🌀")
-cache_load = 15
+cache_load = 20
 def clear_cache():
     st.cache_data.clear()
     
@@ -60,5 +60,6 @@ with col1:
 with col2:
     st.header("New and improved spinner")
     st.text("")
-    st.write("This spinner is overlayed on top of the image, rather than pushing it down.")
+    st.write("This spinner is overlayed on top of the image or any visual element.")
+    st.write("The improved spinner is smaller and does not push widgets down, creating a smoother UI.")
     st.image(retrieve_corgi_image())
