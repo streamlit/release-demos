@@ -54,7 +54,7 @@ with col1:
     
     # st.info("We're using a regular **st.spinner** for contrast. Notice how it doesn't overlay but instead pushes down other elements? ", icon="⏳")
     # st.subheader("Using non-cache spinner:")
-    with st.spinner("`st.spinner` Spinner..."):
+    with st.spinner("Notice how the spinner pushes the image down ⬇️"):
         time.sleep(3)
     st.image(corgi)
 with col2:
