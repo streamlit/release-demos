@@ -59,7 +59,7 @@ with col2:
     def render_kevin():
         time.sleep(cache_load)
         return corgi
-    st.image(render_kevin())
+    st.image(retrieve_corgi_image())
     # st.caption("🚗 Corgi on a Roadtrip")
 # tell user what happens when they select the ruler below
 # st.info("Use the slider to simulate different cache load times. It'll help you see how the enhanced caching spinner behaves.", icon="ℹ️")
@@ -105,7 +105,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     @st.cache_data
-    def render_kevin():
+    def retrieve_corgi_image():
         time.sleep(cache_load)
         return corgi
 
