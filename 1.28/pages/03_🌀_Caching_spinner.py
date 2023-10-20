@@ -38,7 +38,7 @@ with col1:
     
     with st.spinner("Loading Spinner..."):
         time.sleep(3)
-        st.image(picture, use_column_width=True)
+        st.image(Image.open("1.28/pages/kevin.jpg"))
         st.caption(caption)
     
     # st.image(Image.open("1.28/pages/kevin.jpg"))
