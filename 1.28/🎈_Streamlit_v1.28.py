@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches a new app testing framework, improvements to the caching spinner, a handy data toolbar, and `st.connection` is no longer experimental – it's fully supported! The release also includes bug fixes and improvements.
+This release launches an [app testing framework](https://release128-demo-test.streamlit.app/Unit_testing), improvements to the [caching spinner](https://release128-demo-test.streamlit.app/Caching_spinner), a handy [data toolbar](https://release128-demo-test.streamlit.app/Dataframe_toolbar), and [`st.connection`](https://release128-demo-test.streamlit.app/st.connection) is no longer experimental – it's fully supported! The release also includes bug fixes.
 """
 
 release_notes = f"""
