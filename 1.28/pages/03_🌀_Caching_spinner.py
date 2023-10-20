@@ -40,7 +40,7 @@ with col1:
     if show_spinner:
         with st.spinner("`st.spinner` Old spinner..."):
             time.sleep(5)
-    st.image(Image.open("1.28/pages/kevin.jpg"))
+        st.image(Image.open("1.28/pages/kevin.jpg"))
 
 
 
