@@ -49,26 +49,21 @@ def render_chart():
 
 with col1:
     st.header("Old Spinner")
-    st.subheader("This is what the spinner looked like before these improvements.")
+    # st.subheader("This is what the spinner looked like before these improvements.")
     
     # st.info("We're using a regular **st.spinner** for contrast. Notice how it doesn't overlay but instead pushes down other elements? ", icon="⏳")
     # st.subheader("Using non-cache spinner:")
     with st.spinner("`st.spinner` Spinner..."):
         time.sleep(3)
-    
-    st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-
-    with st.spinner("`st.spinner` Spinner..."):
-        time.sleep(3)
     st.image(corgi)
-    # st.caption("🚗 Corgi on a Roadtrip")
 with col2:
     st.header("New Spinner")
+    # st.subheader("This is what the spinner looked like before these improvements.")
     @st.cache_data
     def render_kevin():
         time.sleep(cache_load)
         return corgi
-
+        
     st.write("**Cached Corgi Cuteness...**")
     st.image(render_kevin())
     # st.caption("🚗 Corgi on a Roadtrip")
