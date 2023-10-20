@@ -20,6 +20,11 @@ def get_file_url(path):
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
     return data_url
+
+@st.cache_data
+def retrieve_corgi_image():
+    time.sleep(cache_load)
+    return corgi
     
 st.set_page_config("Improved cache spinner demo", "🌀", layout="wide")
 icon("🌀")
@@ -28,10 +33,10 @@ def clear_cache():
     st.cache_data.clear()
     
 st.title("Improved cache spinner demo", anchor=False)
-col_a, col_b = st.columns([2,1])
-with col_a:
-    st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
+col_a, col_b = st.columns([1, 2])
 with col_b:
+    st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
+with col_a:
     file_url = get_file_url('1.28/pages/spinner.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=200 alt="demo gif">',
@@ -45,19 +50,6 @@ corgi = Image.open("1.28/pages/kevin.jpg")
 # st.button("Show me the spinners!", on_click=clear_cache)
 
 col1, col2 = st.columns(2)
-
-@st.cache_data
-def render_df():
-    df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-    time.sleep(cache_load)
-    return df
-
-@st.cache_data
-def render_chart():
-    df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-    time.sleep(cache_load)
-    return df
-
 with col1:
     st.header("Old spinner")
     st.write("This spinner displaces the image.")
@@ -67,16 +59,4 @@ with col1:
 with col2:
     st.header("New and improved spinner")
     st.write("This spinner is overlayed on top of the image, rather than pushing it down.")
-
-    @st.cache_data
-    def retrieve_corgi_image():
-        time.sleep(cache_load)
-        return corgi
     st.image(retrieve_corgi_image())
-    # st.caption("🚗 Corgi on a Roadtrip")
-# tell user what happens when they select the ruler below
-# st.info("Use the slider to simulate different cache load times. It'll help you see how the enhanced caching spinner behaves.", icon="ℹ️")
-# cache_load = st.slider("Choose cache function load time:", 0, 30, 10)
-
-
-
