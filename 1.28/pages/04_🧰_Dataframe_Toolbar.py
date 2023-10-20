@@ -14,7 +14,7 @@ st.set_page_config("Toolbar for dataframes demo", "🧰", layout="wide")
 icon("🧰")
 
 st.title("Toolbar for dataframes demo", anchor=False)
-st.write("Check out the new toolbar on top of st.dataframe and st.data_editor that lets you add and delete rows, download your data as a CSV, and search your data.")
+st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_editor` that lets you add and delete rows, download your data as a CSV, and search your data.")
 st.info("Learn more about dataframes in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).", icon="📖")
 
 tab1, tab2, tab3 = st.tabs([
