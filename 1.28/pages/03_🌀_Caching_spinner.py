@@ -30,7 +30,7 @@ corgi = Image.open("1.28/pages/kevin.jpg")
 otter = Image.open("1.28/pages/sea_otter.png")
 duck = Image.open("1.28/pages/duck.jpeg")
 penguin = Image.open("1.28/pages/penguin.jpeg")
-st.button("Clear :red[**ALL**] Caches", on_click=clear_cache)
+st.button("Show me the spinners", on_click=clear_cache)
 
 col1, col2, = st.columns(2)
 
@@ -44,11 +44,11 @@ with col1:
     
     st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 
-
-
+with col2:
+    st.header("New Spinner")
 # tell user what happens when they select the ruler below
-st.info("Use the slider to simulate different cache load times. It'll help you see how the enhanced caching spinner behaves.", icon="ℹ️")
-cache_load = st.slider("Choose cache function load time:", 0, 30, 10)
+# st.info("Use the slider to simulate different cache load times. It'll help you see how the enhanced caching spinner behaves.", icon="ℹ️")
+# cache_load = st.slider("Choose cache function load time:", 0, 30, 10)
 
 st.divider()
 
