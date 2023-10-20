@@ -35,7 +35,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("🕸️ Old spinner")
-    with st.button("Show me the spinner!"):
+    if st.button("Show me the spinner!"):
         with st.spinner("`st.spinner` Old spinner..."):
             time.sleep(5)
 
