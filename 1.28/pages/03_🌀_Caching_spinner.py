@@ -53,8 +53,8 @@ st.button("Show me the spinners!", on_click=clear_cache)
 col1, col2 = st.columns(2)
 with col1:
     st.header("Old spinner")
-    st.write("This spinner displaces the image.")
-    with st.spinner("Pushes the corgi down ⬇️"):
+    st.write("This spinner displaces the image, pushing the corgi downward ⬇️")
+    with st.spinner("Old spinner"):
         time.sleep(3)
     st.image(corgi)
 with col2:
