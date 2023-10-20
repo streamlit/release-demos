@@ -48,17 +48,16 @@ corgi = Image.open("1.28/pages/kevin.jpg")
 # col_a, col_b, col_c = st.columns(3)
 # with col_b:
 # st.button("Show me the spinners!", on_click=clear_cache)
+st.button("Show me the spinners!", on_click=clear_cache)
 
 col1, col2 = st.columns(2)
 with col1:
     st.header("Old spinner")
-    st.button("Show me the spinners!", on_click=clear_cache)
     st.write("This spinner displaces the image.")
     with st.spinner("Pushes the corgi down ⬇️"):
         time.sleep(3)
     st.image(corgi)
 with col2:
     st.header("New and improved spinner")
-    st.text("")
-    st.write("This spinner is overlayed on top of the image or any visual element. The improved spinner is smaller and does not push widgets down, creating a smoother UI.")
+    st.write("The improved spinner is smaller and is overlayed on top of the image, rather than pushing the image down.") 
     st.image(retrieve_corgi_image())
