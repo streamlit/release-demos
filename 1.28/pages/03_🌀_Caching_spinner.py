@@ -35,14 +35,12 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("Old spinner")
-    
-    with st.spinner("Loading Spinner..."):
-        time.sleep(3)
-        st.image(Image.open("1.28/pages/kevin.jpg"))    
-    # st.image(Image.open("1.28/pages/kevin.jpg"))
-    # with st.spinner("`st.spinner` Old spinner..."):
-    #     st.info("Notice how the puppy gets pushed down further on the page.")
-    #     time.sleep(20)
+    if st.button("show spinner"):
+        with st.spinner("`st.spinner` Old spinner..."):
+            st.info("Notice how the puppy gets pushed down further on the page.")
+            time.sleep(20)
+    st.image(Image.open("1.28/pages/kevin.jpg"))
+
 
 
 
