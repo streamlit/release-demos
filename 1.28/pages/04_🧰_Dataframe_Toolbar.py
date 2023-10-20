@@ -18,7 +18,7 @@ st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_edi
 st.info("Learn more about [`st.dataframe`](https://docs.streamlit.io/) and [`st.data_editor.`](https://docs.streamlit.io/) (TODO: update links once live)", icon="📖")
 
 tab1, tab2, tab3 = st.tabs([
-    "🚣‍♀️ Add/Delete row", 
+    "🚣‍♀️ Add and delete row", 
     "📥 Download table as a CSV",
     "🔎 Search the table ",
 ])
@@ -38,7 +38,7 @@ data = pd.DataFrame(
     }
 )
 with tab1:
-    st.info('Now you can add/delete rows in a dataframe.', icon="ℹ️")
+    st.info('Now you can add and delete rows in a dataframe.', icon="ℹ️")
     st.image("1.28/pages/add_delete.gif")
 
 with tab2:
