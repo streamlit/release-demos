@@ -49,7 +49,7 @@ def render_chart():
     return df
 
 with col1:
-    st.header("Old spinner"))
+    st.header("Old spinner")
     with st.spinner("Notice how the spinner pushes the image down ⬇️"):
         time.sleep(3)
     st.image(corgi)
