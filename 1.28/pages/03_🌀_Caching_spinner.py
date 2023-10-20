@@ -1,10 +1,10 @@
 import streamlit as st
-# import pokebase as pb
 import pandas as pd
 import numpy as np
 from PIL import Image
 import time
 import random
+import base64
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
