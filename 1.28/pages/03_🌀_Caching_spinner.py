@@ -23,14 +23,14 @@ st.write("This spinner has received UI improvements – it is now overlayed on 
 # st.write("Learn more about caching in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 st.divider()
 
+def clear_cache():
+    st.cache_data.clear()
+
 corgi = Image.open("1.28/pages/kevin.jpg")
 otter = Image.open("1.28/pages/sea_otter.png")
 duck = Image.open("1.28/pages/duck.jpeg")
 penguin = Image.open("1.28/pages/penguin.jpeg")
 st.button("Clear :red[**ALL**] Caches", on_click=clear_cache)
-
-def clear_cache():
-    st.cache_data.clear()
 
 col1, col2, = st.columns(2)
 
