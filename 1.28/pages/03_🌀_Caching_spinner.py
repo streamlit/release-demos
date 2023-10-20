@@ -63,8 +63,6 @@ with col2:
     def render_kevin():
         time.sleep(cache_load)
         return corgi
-        
-    st.write("**Cached Corgi Cuteness...**")
     st.image(render_kevin())
     # st.caption("🚗 Corgi on a Roadtrip")
 # tell user what happens when they select the ruler below
