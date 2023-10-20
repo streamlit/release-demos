@@ -18,7 +18,7 @@ icon("🌀")
 
 st.title("Improved cache spinner demo", anchor=False)
 st.write("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs.""")
-st.write("This spinner has received UI improvements – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.")
+st.write("This spinner has received UI improvements – it is now smaller and overlayed on top of existing UI elements, preventing jumpiness and visual glitches.", icon="ℹ️")
 # Enhanced caching spinner prevents UI jumpiness by overlaying, not pushing down, elements.")
 # st.write("Learn more about caching in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 st.divider()
