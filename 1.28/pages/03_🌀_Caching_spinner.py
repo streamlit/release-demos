@@ -35,14 +35,16 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("Old spinner")
+    
+    with st.spinner("Loading Spinner..."):
+        time.sleep(3)
+        st.image(picture, use_column_width=True)
+        st.caption(caption)
+    
     # st.image(Image.open("1.28/pages/kevin.jpg"))
     # with st.spinner("`st.spinner` Old spinner..."):
     #     st.info("Notice how the puppy gets pushed down further on the page.")
     #     time.sleep(20)
-    with st.spinner("`st.spinner` Spinner..."):
-        time.sleep(3)
-
-    st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 
 
 
