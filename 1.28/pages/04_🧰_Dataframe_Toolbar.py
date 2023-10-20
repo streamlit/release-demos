@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import base64
 
 @st.cache_data
 def get_file_url(path):
