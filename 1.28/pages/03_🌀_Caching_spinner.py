@@ -15,6 +15,7 @@ def icon(emoji: str):
     
 st.set_page_config("Improved cache spinner demo", "🌀", layout="wide")
 icon("🌀")
+cache_load = 15
 
 st.title("Improved cache spinner demo", anchor=False)
 st.write("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs.""")
@@ -33,6 +34,18 @@ penguin = Image.open("1.28/pages/penguin.jpeg")
 st.button("Show me the spinners", on_click=clear_cache)
 
 col1, col2, = st.columns(2)
+
+@st.cache_data
+def render_df():
+    df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
+    time.sleep(cache_load)
+    return df
+
+@st.cache_data
+def render_chart():
+    df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
+    time.sleep(cache_load)
+    return df
 
 with col1:
     st.header("Old Spinner")
@@ -69,17 +82,7 @@ st.divider()
 #     st.image(sprite, width=150)
 #     st.caption(f"**{pokemon_name}**")
 
-@st.cache_data
-def render_df():
-    df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-    time.sleep(cache_load)
-    return df
 
-@st.cache_data
-def render_chart():
-    df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
-    time.sleep(cache_load)
-    return df
 
 
 st.subheader("Cache spinners:")
