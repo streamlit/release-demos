@@ -26,7 +26,7 @@ def clear_cache():
 corgi = Image.open("1.28/pages/kevin.jpg")
 # col_a, col_b, col_c = st.columns(3)
 # with col_b:
-st.button("Show me the spinners", on_click=clear_cache)
+st.button("Show me the spinners!", on_click=clear_cache)
 
 col1, col2 = st.columns(2)
 
