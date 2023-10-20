@@ -50,11 +50,14 @@ def render_chart():
 
 with col1:
     st.header("Old spinner")
-    with st.spinner("Notice how the spinner pushes the image down ⬇️"):
+    st.write("This spinner displaces the image.")
+    with st.spinner("Pushes the image down ⬇️"):
         time.sleep(3)
     st.image(corgi)
 with col2:
     st.header("New and improved spinner")
+    st.write("This spinner is overlayed on top of the image, rather than pushing it down.")
+
     @st.cache_data
     def render_kevin():
         time.sleep(cache_load)
