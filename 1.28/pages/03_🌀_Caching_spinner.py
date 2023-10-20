@@ -19,22 +19,16 @@ cache_load = 15
 
 st.title("Improved cache spinner demo", anchor=False)
 st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
-# st.write("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs.""")
-# st.write("We've made some **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.")
-# Enhanced caching spinner prevents UI jumpiness by overlaying, not pushing down, elements.")
-# st.write("Learn more about caching in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
-st.divider()
 
 def clear_cache():
     st.cache_data.clear()
 
 corgi = Image.open("1.28/pages/kevin.jpg")
-otter = Image.open("1.28/pages/sea_otter.png")
-duck = Image.open("1.28/pages/duck.jpeg")
-penguin = Image.open("1.28/pages/penguin.jpeg")
-st.button("Show me the spinners", on_click=clear_cache)
+col_a, col_b, col_c = st.columns(3)
+with col_b:
+    st.button("Show me the spinners", on_click=clear_cache)
 
-col1, col2, = st.columns(2)
+col1, col2 = st.columns(2)
 
 @st.cache_data
 def render_df():
@@ -51,7 +45,7 @@ def render_chart():
 with col1:
     st.header("Old spinner")
     st.write("This spinner displaces the image.")
-    with st.spinner("Pushes the image down ⬇️"):
+    with st.spinner("Pushes the corgi down ⬇️"):
         time.sleep(3)
     st.image(corgi)
 with col2:
