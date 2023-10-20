@@ -18,9 +18,9 @@ st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_edi
 st.info("Learn more about [`st.dataframe`](https://docs.streamlit.io/) and [`st.data_editor.`](https://docs.streamlit.io/) (TODO: update links once live)", icon="📖")
 
 tab1, tab2, tab3 = st.tabs([
-    "🚣‍♀️ Add and delete row", 
-    "📥 Download table as a CSV",
-    "🔎 Search the table ",
+    "🚣‍♀️ Add and delete rows", 
+    "📥 Download data as a CSV",
+    "🔎 Search the data ",
 ])
 
 data = pd.DataFrame(
