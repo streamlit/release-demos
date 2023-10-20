@@ -34,7 +34,7 @@ with col_a:
 with col_b:
     file_url = get_file_url('1.28/pages/spinner.gif')
     st.markdown(
-        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
+        f'<img src="data:image/gif;base64,{file_url}" width=200 alt="demo gif">',
         unsafe_allow_html=True,
     )
     st.button("Show me the spinners!", on_click=clear_cache)
