@@ -48,7 +48,7 @@ with tab1:
     st.info('Now you can add and delete rows in `st.data_editor` and `st.dataframe`.', icon="ℹ️")
     file_url = get_file_url('1.28/pages/add_delete.gif')
     st.markdown(
-        f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
@@ -56,7 +56,7 @@ with tab2:
     st.info('Download your data as a CSV file.', icon="ℹ️")
     file_url = get_file_url('1.28/pages/download.gif')
     st.markdown(
-        f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
@@ -64,7 +64,7 @@ with tab3:
     st.info('Search through your data.', icon="ℹ️")
     file_url = get_file_url('1.28/pages/search.gif')
     st.markdown(
-        f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
