@@ -10,7 +10,7 @@ def icon(emoji: str):
 st.set_page_config("st.connection demo", "🔗", layout="wide")
 icon("🔗")
 
-st.title("st.connection Demo", anchor=False)
+st.title("st.connection demo", anchor=False)
 st.write("`st.connection` is now fully supported in Streamlit. Upgrade your apps that use the legacy `st.experimental_connection` feature today to enjoy the benefits of this newly released version.")
 st.info("Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]", icon="📖")
 # st.write("`st.connection` is no longer experimental – it's officially supported! Be sure to switch over from `st.experimental_connection` to `st.connection.` Learn more about [`st.connection`](https://docs.streamlit.io/) and [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease).")
