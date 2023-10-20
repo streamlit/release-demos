@@ -35,7 +35,7 @@ def clear_cache():
 st.title("Improved cache spinner demo", anchor=False)
 # col_a, col_b = st.columns([1, 2])
 # with col_b:
-st.write("""Now, in the event of a "cache miss", when you use st.cache_data or st.cache_resource, your spinner will be overlayed on top of existing UI elements, preventing jumpiness and visual glitches!""")
+st.write("""Now, in the event of a "cache miss", when you use `st.cache_data` or `st.cache_resource`, your spinner will be overlayed on top of existing UI elements, preventing jumpiness and visual glitches!""")
 
 # st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
 # with col_a:
