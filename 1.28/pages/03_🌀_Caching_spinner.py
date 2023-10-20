@@ -12,6 +12,14 @@ def icon(emoji: str):
         f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
         unsafe_allow_html=True,
     )
+
+@st.cache_data
+def get_file_url(path):
+    file_ = open(path, "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+    return data_url
     
 st.set_page_config("Improved cache spinner demo", "🌀", layout="wide")
 icon("🌀")
@@ -24,7 +32,11 @@ col_a, col_b = st.columns([2,1])
 with col_a:
     st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
 with col_b:
-    st.image(Image.open("1.28/pages/spinner.gif"))
+    file_url = get_file_url('1.28/pages/spinner.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
     st.button("Show me the spinners!", on_click=clear_cache)
 
 corgi = Image.open("1.28/pages/kevin.jpg")
