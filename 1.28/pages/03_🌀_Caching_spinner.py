@@ -20,7 +20,7 @@ def clear_cache():
     st.cache_data.clear()
     
 st.title("Improved cache spinner demo", anchor=False)
-col_a, col_b = st.columns([1,2])
+col_a, col_b = st.columns([2,1])
 with col_a:
     st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
 with col_b:
@@ -30,7 +30,7 @@ with col_b:
 corgi = Image.open("1.28/pages/kevin.jpg")
 # col_a, col_b, col_c = st.columns(3)
 # with col_b:
-st.button("Show me the spinners!", on_click=clear_cache)
+# st.button("Show me the spinners!", on_click=clear_cache)
 
 col1, col2 = st.columns(2)
 
