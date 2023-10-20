@@ -1,5 +1,5 @@
 import streamlit as st
-import pokebase as pb
+# import pokebase as pb
 import pandas as pd
 import numpy as np
 from PIL import Image
@@ -18,8 +18,9 @@ icon("🌀")
 cache_load = 15
 
 st.title("Improved cache spinner demo", anchor=False)
+st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
 st.write("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs.""")
-st.write("This spinner has received UI improvements – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.")
+st.write("We've made some **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.")
 # Enhanced caching spinner prevents UI jumpiness by overlaying, not pushing down, elements.")
 # st.write("Learn more about caching in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 st.divider()
