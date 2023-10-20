@@ -59,5 +59,5 @@ with col1:
     st.image(corgi)
 with col2:
     st.header("New and improved spinner")
-    st.write("The improved spinner is smaller and is overlayed on top of the image.") 
+    st.write("The improved spinner is smaller and overlayed on top of the image.") 
     st.image(retrieve_corgi_image())
