@@ -17,10 +17,10 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
     
-st.set_page_config("Unit Testing Demo", "👩‍🔬", layout="wide")
+st.set_page_config("Unit testing demo", "👩‍🔬", layout="wide")
 icon("👩‍🔬")
 
-st.title("Unit Testing Demo", anchor=False)
+st.title("Unit testing demo", anchor=False)
 #st.caption("A new API to write unit tests for Streamlit apps.")
 #st.subheader("Introducing a new API to write unit tests for Streamlit apps")
 st.subheader("Introducing AppTest, a Streamlit app testing framework")
