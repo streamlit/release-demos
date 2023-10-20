@@ -22,7 +22,7 @@ icon("👩‍🔬")
 
 st.title("Unit Testing Demo", anchor=False)
 #st.caption("A new API to write unit tests for Streamlit apps.")
-st.subheader("Introducing a new API to write unit tests for Streamlit apps")
+#st.subheader("Introducing a new API to write unit tests for Streamlit apps")
 st.subheader("Introducing AppTest, a new Streamlit testing framework")
 st.write("AppTest allows you to write automated unit tests to ensure your app logic and UI are working as expected. Check out the full API in the [docs](https://docs.streamlit.io/).")
 st.info("Check out the full API in the [docs](https://docs.streamlit.io/).")
