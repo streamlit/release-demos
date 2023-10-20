@@ -59,7 +59,7 @@ with col2:
     st.write("This spinner is overlayed on top of the image, rather than pushing it down.")
 
     @st.cache_data
-    def render_kevin():
+    def retrieve_corgi_image():
         time.sleep(cache_load)
         return corgi
     st.image(retrieve_corgi_image())
@@ -68,69 +68,5 @@ with col2:
 # st.info("Use the slider to simulate different cache load times. It'll help you see how the enhanced caching spinner behaves.", icon="ℹ️")
 # cache_load = st.slider("Choose cache function load time:", 0, 30, 10)
 
-st.divider()
 
-# with st.sidebar:
-#     @st.cache_data
-#     def fetch_pokemon():
-#         time.sleep(cache_load)
-#         random_id = random.randint(1, 251)
-#         pokemon = pb.pokemon(random_id)
-#         pokemon_name = pokemon.name
-#         sprite = pb.SpriteResource('pokemon', random_id, official_artwork=True)
-#         return pokemon_name.capitalize(), sprite.url
-#     st.subheader("⚠️ Vital Sidebar Content")
-#     st.info("The spinner overlays below to prevent UI jumpiness.", icon="🌀")
-#     st.divider()
-#     st.write("**Cached Pokemon** :fire:")
-#     pokemon_name, sprite = fetch_pokemon()
-#     st.image(sprite, width=150)
-#     st.caption(f"**{pokemon_name}**")
-
-
-
-
-st.subheader("Cache spinners:")
-st.info("Notice how the spinner overlays other elements, keeping UI sleek and avoiding jumps.", icon="🔄")
-st.write("Rendering a dataframe...")
-st.dataframe(render_df())
-st.divider()
-st.info("A bar chart, also cached. Again, watch for the non-intrusive spinner.", icon="📊")
-st.write("Rendering a chart...")
-st.bar_chart(render_chart())
-st.divider()
-
-st.info("Choose your aquatic pet and see the cached image load smoothly.", icon="🖼️")
-st.write("Rendering some images...")
-animal = st.radio("Select your aquatic pet:", ["Otter", "Duck", "Penguin"], horizontal=True)
-
-col1, col2 = st.columns(2)
-
-with col1:
-    @st.cache_data
-    def retrieve_corgi_image():
-        time.sleep(cache_load)
-        return corgi
-
-    st.write("**Cached Corgi Cuteness...**")
-    st.image(render_kevin())
-    st.caption("🚗 Corgi on a Roadtrip")
-
-with col2:
-    st.write("**`st.spinner` Cuteness** 🌊")
-    if animal == "Duck":
-        picture = duck
-        caption = "🦆 Baby Duckling"
-    elif animal == "Penguin":
-        picture = penguin
-        caption = "🐧 Little Penguin"
-    else:    
-        picture = otter
-        caption = "🦦 Fluffy Otter"
-
-    with st.spinner("Loading Spinner..."):
-        time.sleep(3)
-        st.image(picture, use_column_width=True)
-        st.caption(caption)
-st.divider()
 
