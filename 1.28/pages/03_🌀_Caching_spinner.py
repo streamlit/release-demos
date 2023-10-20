@@ -20,7 +20,7 @@ st.title("Improved cache spinner demo", anchor=False)
 # st.write("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs.""")
 # st.write("This spinner has received UI improvements – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.")
 
-col1, col2 = st.columns([1, 2]))
+col1, col2 = st.columns([1, 2])
 
 with col1:
     st.write("gif of caching spinner")
