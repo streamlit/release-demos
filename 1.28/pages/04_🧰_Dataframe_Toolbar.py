@@ -42,11 +42,11 @@ with tab1:
     st.image("1.28/pages/add_delete.gif")
 
 with tab2:
-    st.info('Downloading the dataframe as a CSV file.', icon="ℹ️")
+    st.info('Download your data as a CSV file.', icon="ℹ️")
     st.image("1.28/pages/download.gif")
 
 with tab3:
-    st.info('Searching through your dataframe.', icon="ℹ️")
+    st.info('Search through your data.', icon="ℹ️")
     st.image("1.28/pages/search.gif")
 
 st.info("Give it a spin with this dataframe.", icon="👇")
