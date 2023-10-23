@@ -1,14 +1,4 @@
 import streamlit as st
-from PIL import Image
-import base64
-
-@st.cache_data
-def get_file_url(path):
-    file_ = open(path, "rb")
-    contents = file_.read()
-    data_url = base64.b64encode(contents).decode("utf-8")
-    file_.close()
-    return data_url
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
@@ -17,44 +7,74 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
     
-st.set_page_config("AppTest demo", "👩‍🔬", layout="wide")
+st.set_page_config("Unit Testing Demo", "👩‍🔬", layout="wide")
 icon("👩‍🔬")
 
-st.title("AppTest demo", anchor=False)
-#st.caption("A new API to write app tests for Streamlit apps.")
-#st.subheader("Introducing a new API to write app tests for Streamlit apps")
-# st.subheader("Introducing AppTest, a Streamlit app testing framework")
-st.write("Introducing AppTest, a Streamlit app testing framework that allows you to write automated app tests to ensure your app logic and UI are working as expected.")
-st.info("Learn more about the API to start building your own app tests in the [docs](https://docs.streamlit.io/) TODO: UPDATE LINK.", icon="📖")
-st.caption("The GIF shows a chatbot app being tested using the new app testing API.")
-#st.info("The GIF shows a chatbot app being tested using the new unit testing API.")
-#, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
-# gif = Image.open('1.28/pages/tests.gif')
+st.title("Unit Testing Demo", anchor=False)
+st.caption("A new API to write unit tests for Streamlit apps.")
+st.write("Learn more about unit testing in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
+st.divider()
 
-# file_url = get_file_url('1.28/pages/tests.gif')
-
-# st.markdown(
-#     f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
-#     unsafe_allow_html=True,
-# )
-
+st.info("The GIF shows an OpenAI API-powered chatbot app, chatbot code, test code, and the tests passing after run.", icon="ℹ️")
 st.image("1.28/pages/tests.gif")
 
 tab1, tab2 = st.tabs(
     [
-        "🧪 App tests",
         "🧑‍💻 Main app code",
+        "🧪 Test code",
     ]
 )
 
 with tab1:
     st.code(
+        """
+        import openai
+        import streamlit as st
+
+        with st.sidebar:
+            openai_api_key = st.text_input(
+                "OpenAI API Key", key="chatbot_api_key", type="password")
+            st.session_state["openai_api_key"] = openai_api_key
+            "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+            "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
+            "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+
+        st.title("💬 Chatbot")
+        st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
+        if "messages" not in st.session_state:
+            st.session_state["messages"] = [
+                {"role": "assistant", "content": "How can I help you?"}]
+
+        for msg in st.session_state.messages:
+            st.chat_message(msg["role"]).write(msg["content"])
+
+        if prompt := st.chat_input():
+            if not st.session_state["openai_api_key"]:
+                st.info("Please add your OpenAI API key to continue.")
+                st.stop()
+
+            openai.api_key = st.session_state["openai_api_key"]
+            st.session_state.messages.append({"role": "user", "content": prompt})
+            st.chat_message("user").write(prompt)
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo", messages=st.session_state.messages
+            )
+            msg = response.choices[0].message
+            st.session_state.messages.append(
+                {"role": "assistant", "content": msg.content})
+            st.chat_message("assistant").write(msg.content)
+        """, language="python"
+    )
+
+with tab2:
+    st.code(
         '''
-        import apptest
+        import unittest
         import openai
         from unittest.mock import patch
         from types import SimpleNamespace
         from streamlit.testing.v1 import AppTest
+
 
         class TestChatbotApp(unittest.TestCase):
 
@@ -105,46 +125,4 @@ with tab1:
                 else:
                     print("text_area is empty! Something's wrong!")
         ''', language="python"
-    )
-
-
-with tab2:
-    st.code(
-        """
-        import openai
-        import streamlit as st
-
-        with st.sidebar:
-            openai_api_key = st.text_input(
-                "OpenAI API Key", key="chatbot_api_key", type="password")
-            st.session_state["openai_api_key"] = openai_api_key
-            "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-            "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
-            "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
-
-        st.title("💬 Chatbot")
-        st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
-        if "messages" not in st.session_state:
-            st.session_state["messages"] = [
-                {"role": "assistant", "content": "How can I help you?"}]
-
-        for msg in st.session_state.messages:
-            st.chat_message(msg["role"]).write(msg["content"])
-
-        if prompt := st.chat_input():
-            if not st.session_state["openai_api_key"]:
-                st.info("Please add your OpenAI API key to continue.")
-                st.stop()
-
-            openai.api_key = st.session_state["openai_api_key"]
-            st.session_state.messages.append({"role": "user", "content": prompt})
-            st.chat_message("user").write(prompt)
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo", messages=st.session_state.messages
-            )
-            msg = response.choices[0].message
-            st.session_state.messages.append(
-                {"role": "assistant", "content": msg.content})
-            st.chat_message("assistant").write(msg.content)
-        """, language="python"
     )
