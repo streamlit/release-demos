@@ -10,22 +10,22 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches a new `Unit testing for Apps` feature, and includes bug fixes and improvements.
+This release launches [AppTest](https://release128-demo-test.streamlit.app/AppTest), improvements to the [caching spinner](https://release128-demo-test.streamlit.app/Cache_spinner), a handy [dataframe toolbar](https://release128-demo-test.streamlit.app/Dataframe_toolbar), and [`st.connection`](https://release128-demo-test.streamlit.app/st.connection) is no longer experimental – it's fully supported! The release also includes bug fixes. [todo: update links once url changes]
 """
 
 release_notes = f"""
 ---
 **Highlights**
 
-- ✨ Introducing 
+- ✨ Introducing [will be filled in from docs]
 
 **Notable Changes**
 
-- 👻 
+- 👻 [will be filled in from docs]
 
 **Other changes**
 
-- 🐛 Bug fix:
+- 🐛 Bug fix: [will be filled in from docs]
 ---
 """
 # End release updates
@@ -34,7 +34,7 @@ def draw_main_page():
 
     st.title(f"Welcome to Streamlit {VERSION}! :wave:", anchor=False)
 
-    st.caption(intro)
+    st.write(intro)
 
     st.write(release_notes)
 
