@@ -7,22 +7,24 @@ def icon(emoji: str):
         unsafe_allow_html=True,
     )
     
-st.set_page_config("st.connection demo", "🔗", layout="wide")
+st.set_page_config("st.connection Demo", "🔗", layout="wide")
 icon("🔗")
 
-st.title("st.connection demo", anchor=False)
-st.write("`st.connection` is now fully supported in Streamlit. Upgrade your apps that use the legacy `st.experimental_connection` feature today to enjoy the benefits of this newly released version. Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]")
-# st.info("Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]", icon="📖")
-# st.write("`st.connection` is no longer experimental – it's officially supported! Be sure to switch over from `st.experimental_connection` to `st.connection.` Learn more about [`st.connection`](https://docs.streamlit.io/) and [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease).")
-# st.info("You can now switch from **st.experimental_connection** to the more stable and officially supported **st.connection**. Learn more about [st.connection](https://docs.streamlit.io/).", icon="💡")
+st.title("st.connection Demo", anchor=False)
+st.caption(
+    """
+    With `st.connection()`, you can now connect data sources and APIs to your Streamlit app with a fraction of the code.
+    """
+)
+st.write("Learn more about `st.connection` in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
 
 tab1, tab2 = st.tabs([
-    "🚀 With **`st.connection`**", 
+    "🚀 With **st.connection**", 
     "🐢 How it worked before"
 ])
 
 with tab1:
-    st.write('With **`st.connection`**, connect to data sources and fetch data in just a few lines of code.')
+    st.info('With **st.connection**, fetch data directly without manual setup.', icon="ℹ️")
 
     st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
 
@@ -37,7 +39,7 @@ with tab1:
         """, language="toml"
     )
 
-    st.markdown("#### Your app code:")
+    st.markdown("#### Your code in the `streamlit_app.py` file:")
 
     st.code(
         """
@@ -73,7 +75,7 @@ with tab1:
 
 
 with tab2:
-    st.write('In this example, the database connections and cursors have been managed manually.')
+    st.info('Manually managing database connections and cursors.', icon="ℹ️")
 
     st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
 
