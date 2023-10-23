@@ -1,10 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-from PIL import Image
-import time
-import random
-import base64
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
@@ -12,54 +6,133 @@ def icon(emoji: str):
         f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
         unsafe_allow_html=True,
     )
-
-@st.cache_data
-def get_file_url(path):
-    file_ = open(path, "rb")
-    contents = file_.read()
-    data_url = base64.b64encode(contents).decode("utf-8")
-    file_.close()
-    return data_url
-
-@st.cache_data
-def retrieve_corgi_image():
-    time.sleep(cache_load)
-    return corgi
     
-st.set_page_config("Improved cache spinner demo", "🌀", layout="wide")
-icon("🌀")
-cache_load = 20
-def clear_cache():
-    st.cache_data.clear()
-    
-st.title("Improved cache spinner demo", anchor=False)
-# col_a, col_b = st.columns([1, 2])
-# with col_b:
-st.write("""When using st.cache_data or st.cache_resource, the cache spinner is now overlayed on top of existing UI elements. This prevents jumpiness and visual glitches!""")
+st.set_page_config("st.connection demo", "🔗", layout="wide")
+icon("🔗")
 
-# st.info("""If you've used `st.cache_data` or `st.cache_resource`, you've probably noticed the spinner displayed in your UI in the event of a "cache miss" when your cached function runs. We've made **visual improvements** to this spinner – it is now overlayed on top of existing UI elements, preventing jumpiness and visual glitches.""")
-# with col_a:
-#     file_url = get_file_url('1.28/pages/spinner.gif')
-#     st.markdown(
-#         f'<img src="data:image/gif;base64,{file_url}" width=200 alt="demo gif">',
-#         unsafe_allow_html=True,
-#     )
-#     st.button("Show me the spinners!", on_click=clear_cache)
+st.title("st.connection demo", anchor=False)
+st.write("`st.connection` is now fully supported in Streamlit. Upgrade your apps that use the legacy `st.experimental_connection` feature today to enjoy the benefits of this newly released version. Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]")
+# st.info("Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]", icon="📖")
+# st.write("`st.connection` is no longer experimental – it's officially supported! Be sure to switch over from `st.experimental_connection` to `st.connection.` Learn more about [`st.connection`](https://docs.streamlit.io/) and [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease).")
+# st.info("You can now switch from **st.experimental_connection** to the more stable and officially supported **st.connection**. Learn more about [st.connection](https://docs.streamlit.io/).", icon="💡")
 
-corgi = Image.open("1.28/pages/kevin.jpg")
-# col_a, col_b, col_c = st.columns(3)
-# with col_b:
-# st.button("Show me the spinners!", on_click=clear_cache)
-st.button("Show me the spinners!", on_click=clear_cache)
+tab1, tab2 = st.tabs([
+    "🚀 With **`st.connection`**", 
+    "🐢 How it worked before"
+])
 
-col1, col2 = st.columns(2)
-with col1:
-    st.header("Old spinner")
-    st.write("This spinner displaces the image, pushing the corgi downward ⬇️")
-    with st.spinner("Old spinner"):
-        time.sleep(3)
-    st.image(corgi)
-with col2:
-    st.header("New and improved spinner")
-    st.write("The improved spinner is smaller and overlayed on top of the image.") 
-    st.image(retrieve_corgi_image())
+with tab1:
+    st.write('With **`st.connection`**, connect to data sources and fetch data in just a few lines of code.')
+
+    st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
+
+    st.code(
+        """
+        [connections.snowflake]
+        user = "<username>"
+        password = "<pass>"
+        warehouse = "MY_WH"
+        role = "MYROLE"
+        account = "MY ACCOUNT ID"
+        """, language="toml"
+    )
+
+    st.markdown("#### Your app code:")
+
+    st.code(
+        """
+        import streamlit as st
+        import pandas as pd
+
+        @st.cache_resource
+        def get_snowflake_connection():
+            return st.connection("snowflake")
+
+        @st.cache_data
+        def fetch_pet_data(conn):
+            return conn.query("SELECT species, weight FROM pets_table")
+
+        # Connect and fetch data
+        conn = get_snowflake_connection()
+        pets_df = fetch_pet_data(conn)
+
+        # Sidebar for species selection
+        species_filter = st.sidebar.multiselect("Select species", pets_df['species'].unique())
+
+        # Main app
+        st.title("Average Pet Weight by Species")
+
+        if species_filter:
+            # Calculate average weights for selected species using pandas
+            avg_weights = pets_df[pets_df['species'].isin(species_filter)].groupby('species')['weight'].mean()
+            st.bar_chart(avg_weights)
+        else:
+            st.warning("Select species from the sidebar to see the average weights.", icon="⚠️")
+        """, language="python"
+    )
+
+
+with tab2:
+    st.write('In this example, the database connections and cursors have been managed manually.')
+
+    st.markdown("#### Your credentials in the `.streamlit/secrets.toml` file:")
+
+    st.code(
+        """
+        [connections.snowflake]
+        user = "<username>"
+        password = "<pass>"
+        warehouse = "MY_WH"
+        role = "MYROLE"
+        account = "MY ACCOUNT ID"
+        """, language="toml"
+    )
+
+    st.markdown("#### Your code in the `streamlit_app.py` file:")
+
+    st.code(
+        """
+        import streamlit as st
+        import snowflake.connector
+
+        @st.cache_resource
+        def get_snowflake_connection():
+            secrets = st.secrets["connections.snowflake"]
+            conn = snowflake.connector.connect(
+                user=secrets["user"],
+                password=secrets["password"],
+                warehouse=secrets["warehouse"],
+                role=secrets["role"],
+                account=secrets["account"]
+            )
+            return conn
+
+        @st.cache_data
+        def fetch_pet_data(conn):
+            cur = conn.cursor()
+            cur.execute("SELECT species, weight FROM pets_table")
+            rows = cur.fetchall()
+            cur.close()
+            return pd.DataFrame(rows, columns=["species", "weight"])
+
+        # Connect and fetch data
+        conn = get_snowflake_connection()
+        pets_df = fetch_pet_data(conn)
+
+        # Sidebar for species selection
+        species_filter = st.sidebar.multiselect("Select species", pets_df['species'].unique())
+
+        # Main app
+        st.title("Average Pet Weight by Species")
+
+        if species_filter:
+            # Calculate average weights for selected species using pandas
+            avg_weights = pets_df[pets_df['species'].isin(species_filter)].groupby('species')['weight'].mean()
+            st.bar_chart(avg_weights)
+        else:
+            st.warning("Select species from the sidebar to see the average weights.", icon="⚠️")
+
+        # Close the connection
+        conn.close()
+        """, language="python"
+    )
