@@ -1,6 +1,14 @@
 import pandas as pd
 import streamlit as st
+import base64
 
+@st.cache_data
+def get_file_url(path):
+    file_ = open(path, "rb")
+    contents = file_.read()
+    data_url = base64.b64encode(contents).decode("utf-8")
+    file_.close()
+    return data_url
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
@@ -8,19 +16,17 @@ def icon(emoji: str):
         f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
         unsafe_allow_html=True,
     )
-
     
-st.set_page_config("Toolbar for DataFrames Demo", "🧰", layout="wide")
+st.set_page_config("Toolbar for dataframes demo", "🧰", layout="wide")
 icon("🧰")
 
-st.title("Toolbar for DataFrames Demo", anchor=False)
-st.caption("A toolbar on top of `st.dataframe` and `st.data_editor` that lets you add/delete rows, download as CSV, and search.")
-st.write("Learn more about dataframes in [<PLACEHOLDER_OUR_DOCS>](https://docs.streamlit.io/).")
+st.title("Toolbar for dataframes demo", anchor=False)
+st.write("Check out the new toolbar on top of `st.dataframe` and `st.data_editor` that lets you add and delete rows, download your data as a CSV, and search your data. Learn more about [`st.dataframe`](https://docs.streamlit.io/) and [`st.data_editor.`](https://docs.streamlit.io/) (TODO: update links once live)")
 
 tab1, tab2, tab3 = st.tabs([
-    "🚣‍♀️ Add/Delete row", 
-    "📥 Download as CSV",
-    "🔎 Search",
+    "🚣‍♀️ Add and delete rows", 
+    "📥 Download data as a CSV",
+    "🔎 Search your data ",
 ])
 
 data = pd.DataFrame(
@@ -38,16 +44,28 @@ data = pd.DataFrame(
     }
 )
 with tab1:
-    st.info('Adding/deleting rows in a dataframe.', icon="ℹ️")
-    st.image("pages/add_delete.gif")
+    # st.info('Now you can add and delete rows in `st.data_editor` and `st.dataframe`.', icon="ℹ️")
+    file_url = get_file_url('1.28/pages/add_delete.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 with tab2:
-    st.info('Downloading the dataframe as a CSV file.', icon="ℹ️")
-    st.image("pages/download.gif")
+    # st.info('Download your data as a CSV file.', icon="ℹ️")
+    file_url = get_file_url('1.28/pages/download.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 with tab3:
-    st.info('Searching through your dataframe.', icon="ℹ️")
-    st.image("pages/search.gif")
+    # st.info('Search through your data.', icon="ℹ️")
+    file_url = get_file_url('1.28/pages/search.gif')
+    st.markdown(
+        f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 st.info("Give it a spin with this dataframe.", icon="👇")
 edited_data = st.data_editor(
@@ -78,9 +96,9 @@ edited_data = st.data_editor(
     ),
 )
 
-with st.expander("Edited Data"):
-    "This is the dataframe returned by the data editor:"
-    st.dataframe(edited_data, use_container_width=True)
+# with st.expander("Edited Data"):
+#     "This is the dataframe returned by the data editor:"
+#     st.dataframe(edited_data, use_container_width=True)
 
 st.code(
     """
