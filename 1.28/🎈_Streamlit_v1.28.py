@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 intro = f"""
-This release launches [AppTest](https://release128.streamlit.app/AppTest), improvements to the [caching spinner](https://release128.streamlit.app/Cache_spinner), a handy [dataframe toolbar](https://release128.streamlit.app/Dataframe_toolbar), and [`st.connection`](https://release128.streamlit.app/st.connection) is no longer experimental – it's fully supported! The release also includes bug fixes.
+This release launches <a href="https://release128.streamlit.app/AppTest" target="_self">AppTest</a>, improvements to the <a href="https://release128.streamlit.app/Cache_spinner" target="_self">cache spinner</a>, a handy <a href="https://release128.streamlit.app/Dataframe_toolbar" target="_self">dataframe toolbar</a>, and <a href="https://release128.streamlit.app/st.connection" target="_self">st.connection</a> is no longer experimental – it's fully supported! The release also includes bug fixes.
 """
 
 release_notes = f"""
@@ -65,7 +65,7 @@ def draw_main_page():
 
     st.title(f"Welcome to Streamlit {VERSION}! :wave:", anchor=False)
 
-    st.write(intro)
+    st.markdown(intro,unsafe_allow_html=True)
 
     st.write(release_notes)
 
