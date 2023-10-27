@@ -33,7 +33,7 @@ st.caption("The GIF shows a chatbot app being tested using the new app testing A
 #     unsafe_allow_html=True,
 # )
 
-st.image("1.28/pages/tests.gif")
+st.image("pages/tests.gif")
 
 tab1, tab2 = st.tabs(
     [

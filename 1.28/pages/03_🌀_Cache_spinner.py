@@ -35,7 +35,7 @@ def clear_cache():
 st.title("Improved cache spinner demo", anchor=False)
 st.write("""When using st.cache_data or st.cache_resource, the cache spinner is now overlayed on top of existing UI elements. This prevents jumpiness and visual glitches!""")
 
-corgi = Image.open("1.28/pages/kevin.jpg")
+corgi = Image.open("pages/kevin.jpg")
 st.button("Show me the spinners!", on_click=clear_cache)
 
 col1, col2 = st.columns(2)
