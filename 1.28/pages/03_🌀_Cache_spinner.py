@@ -14,14 +14,6 @@ def icon(emoji: str):
     )
 
 @st.cache_data
-def get_file_url(path):
-    file_ = open(path, "rb")
-    contents = file_.read()
-    data_url = base64.b64encode(contents).decode("utf-8")
-    file_.close()
-    return data_url
-
-@st.cache_data
 def retrieve_corgi_image():
     time.sleep(cache_load)
     return corgi
