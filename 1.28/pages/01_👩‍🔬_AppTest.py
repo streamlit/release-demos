@@ -21,14 +21,9 @@ st.set_page_config("AppTest demo", "👩‍🔬", layout="wide")
 icon("👩‍🔬")
 
 st.title("AppTest demo", anchor=False)
-#st.caption("A new API to write app tests for Streamlit apps.")
-#st.subheader("Introducing a new API to write app tests for Streamlit apps")
-# st.subheader("Introducing AppTest, a Streamlit app testing framework")
 st.write("Introducing AppTest, a Streamlit app testing framework that allows you to write automated app tests to ensure your app logic and UI are working as expected.")
-st.info("Learn more about the API to start building your own app tests in the [docs](https://docs.streamlit.io/) TODO: UPDATE LINK.", icon="📖")
+st.info("Learn more about the API to start building your own app tests in the [docs](https://docs.streamlit.io/library/api-reference/app-testing).", icon="📖")
 st.caption("The GIF shows a chatbot app being tested using the new app testing API.")
-#st.info("The GIF shows a chatbot app being tested using the new unit testing API.")
-#, chatbot code, test code, and the tests passing after a run.", icon="ℹ️")
 # gif = Image.open('1.28/pages/tests.gif')
 
 # file_url = get_file_url('1.28/pages/tests.gif')
@@ -38,7 +33,7 @@ st.caption("The GIF shows a chatbot app being tested using the new app testing A
 #     unsafe_allow_html=True,
 # )
 
-st.image("1.28/pages/tests.gif")
+st.image("pages/tests.gif")
 
 tab1, tab2 = st.tabs(
     [

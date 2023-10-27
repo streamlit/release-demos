@@ -11,10 +11,7 @@ st.set_page_config("st.connection demo", "🔗", layout="wide")
 icon("🔗")
 
 st.title("st.connection demo", anchor=False)
-st.write("`st.connection` is now fully supported in Streamlit. Upgrade your apps that use the legacy `st.experimental_connection` feature today to enjoy the benefits of this newly released version. Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]")
-# st.info("Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/). [TODO: Add link to docs once live]", icon="📖")
-# st.write("`st.connection` is no longer experimental – it's officially supported! Be sure to switch over from `st.experimental_connection` to `st.connection.` Learn more about [`st.connection`](https://docs.streamlit.io/) and [experimental features](https://docs.streamlit.io/library/advanced-features/prerelease).")
-# st.info("You can now switch from **st.experimental_connection** to the more stable and officially supported **st.connection**. Learn more about [st.connection](https://docs.streamlit.io/).", icon="💡")
+st.write("`st.connection` is now fully supported in Streamlit. Upgrade your apps that use the legacy `st.experimental_connection` feature today to enjoy the benefits of this newly released version. Get started building with `st.connection` by checking out [our docs](https://docs.streamlit.io/library/api-reference/connections/st.connection).")
 
 tab1, tab2 = st.tabs([
     "🚀 With **`st.connection`**", 
