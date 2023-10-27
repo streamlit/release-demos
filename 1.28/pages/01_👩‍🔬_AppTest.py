@@ -24,16 +24,15 @@ st.title("AppTest demo", anchor=False)
 st.write("Introducing AppTest, a Streamlit app testing framework that allows you to write automated app tests to ensure your app logic and UI are working as expected.")
 st.info("Learn more about the API to start building your own app tests in the [docs](https://docs.streamlit.io/library/api-reference/app-testing).", icon="📖")
 st.caption("The GIF shows a chatbot app being tested using the new app testing API.")
-# gif = Image.open('1.28/pages/tests.gif')
 
-# file_url = get_file_url('1.28/pages/tests.gif')
+file_url = get_file_url('pages/tests.gif')
 
-# st.markdown(
-#     f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
-#     unsafe_allow_html=True,
-# )
+st.markdown(
+    f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',
+    unsafe_allow_html=True,
+)
 
-st.image("pages/tests.gif")
+# st.image("tests.gif")
 
 tab1, tab2 = st.tabs(
     [
