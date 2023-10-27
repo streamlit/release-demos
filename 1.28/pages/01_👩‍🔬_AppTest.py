@@ -25,7 +25,7 @@ st.write("Introducing AppTest, a Streamlit app testing framework that allows you
 st.info("Learn more about the API to start building your own app tests in the [docs](https://docs.streamlit.io/library/api-reference/app-testing).", icon="📖")
 st.caption("The GIF shows a chatbot app being tested using the new app testing API.")
 
-file_url = get_file_url('pages/tests.gif')
+file_url = get_file_url('/mount/src/release-demos/1.28/pages/tests.gif')
 
 st.markdown(
     f'<img src="data:image/gif;base64,{file_url}" width=800 alt="demo gif">',

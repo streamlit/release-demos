@@ -44,21 +44,21 @@ data = pd.DataFrame(
     }
 )
 with tab1:
-    file_url = get_file_url('pages/add_delete.gif')
+    file_url = get_file_url('/mount/src/release-demos/1.28/pages/add_delete.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
 with tab2:
-    file_url = get_file_url('pages/download.gif')
+    file_url = get_file_url('/mount/src/release-demos/1.28/pages/download.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
 with tab3:
-    file_url = get_file_url('pages/search.gif')
+    file_url = get_file_url('/mount/src/release-demos/1.28/pages/search.gif')
     st.markdown(
         f'<img src="data:image/gif;base64,{file_url}" width=1000 alt="demo gif">',
         unsafe_allow_html=True,
