@@ -23,7 +23,7 @@ with gif1:
     st.subheader("Old loading message")
     st.caption("Upon reload, the page shows :blue[Please wait...]")
     st.markdown(
-        f'<img src="data:image/gif;base64,{skeleton_file_url}" width=800 alt="demo gif">',
+        f'<img src="data:image/gif;base64,{skeleton_file_url}" width=100 alt="demo gif">',
         unsafe_allow_html=True,
     )
 
