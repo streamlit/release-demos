@@ -20,7 +20,7 @@ gif1, gif2 = st.columns(2)
 with gif1:
     st.subheader("Old loading message")
     st.caption("Upon reload, the page shows :blue[Please wait...]")
-    st.image("/Users/tkipkemboi/release-demos/1.29/pages/skeleton.gif")
+    st.image("pages/skeleton.gif")
 
 with gif2:
     st.subheader("New loading behavior")
@@ -95,7 +95,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Anchor on the left")
     st.caption("Behavior before the update")
-    st.image("/Users/tkipkemboi/release-demos/1.29/pages/anchor_img.png")
+    st.image("pages/anchor_img.png")
 with col2:
     st.subheader("New and updated anchor on the right")
     st.caption("Hover over the header to interact with the new changes")
