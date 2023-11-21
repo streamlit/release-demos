@@ -9,9 +9,7 @@ st.set_page_config(
     layout="wide",
 )
 
-intro = f"""
-This release launches <tag>, improvements to the <tag>, <tag> is no longer experimental – it's fully supported! The release also includes bug fixes.
-"""
+intro = "This release introduces [:red[PENDING ->]`st.get_query` and `st.set_query`], improvements to `st.container` and `st.form`! The release also includes bug fixes."
 
 release_notes = f"""
 ---
@@ -47,13 +45,14 @@ release_notes = f"""
 
 ---
 """
-# End release updates
+
+
 
 def draw_main_page():
 
     st.title(f"Welcome to Streamlit {VERSION}! :wave:", anchor=False)
 
-    st.markdown(intro,unsafe_allow_html=True)
+    st.caption(intro)
 
     st.write(release_notes)
 
