@@ -16,7 +16,6 @@ st.set_page_config("Demos", "🚀", layout="wide")
 st.header("🦴 App skeleton")
 st.caption("When loading a Streamlit app URL, the ':blue[Please wait...]' message is now replaced by a gray pulsating app skeleton!")
 
-# skeleton_file_url = get_file_url('/mount/src/release-demos/1.29/pages/skeleton.gif')
 skeleton_gif = Image.open("/mount/src/release-demos/1.29/pages/skeleton.gif")
 
 gif1, gif2 = st.columns(2)
@@ -94,11 +93,14 @@ st.divider()
 # Anchor Demo
 st.header("🔗 Improved anchor button")
 st.caption("Streamlit headers have anchors on the left side which overlaps other elements. This new change moves it to the right side of the header.")
+
+anchor = Image.open("/mount/src/release-demos/1.29/pages/anchor_img.png")
+
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("Anchor on the left")
     st.caption("Behavior before the update")
-    st.image("anchor_img.png")
+    st.image(anchor)
 with col2:
     st.subheader("New and updated anchor on the right")
     st.caption("Hover over the header to interact with the new changes")
