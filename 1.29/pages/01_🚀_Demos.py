@@ -20,7 +20,7 @@ gif1, gif2 = st.columns(2)
 with gif1:
     st.subheader("Old loading message")
     st.caption("Upon reload, the page shows :blue[Please wait...]")
-    st.image("skeleton.gif")
+    st.image("/skeleton.gif")
 
 with gif2:
     st.subheader("New loading behavior")
