@@ -16,11 +16,16 @@ st.set_page_config("Demos", "🚀", layout="wide")
 st.header("🦴 App skeleton")
 st.caption("When loading a Streamlit app URL, the ':blue[Please wait...]' message is now replaced by a gray pulsating app skeleton!")
 
+skeleton_file_url = get_file_url('/mount/src/release-demos/1.29/pages/skeleton.gif')
+
 gif1, gif2 = st.columns(2)
 with gif1:
     st.subheader("Old loading message")
     st.caption("Upon reload, the page shows :blue[Please wait...]")
-    st.image("skeleton.gif")
+    st.markdown(
+        f'<img src="data:image/gif;base64,{skeleton_file_url}" width=800 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
 
 with gif2:
     st.subheader("New loading behavior")
