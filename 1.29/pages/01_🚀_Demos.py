@@ -9,8 +9,18 @@ def get_file_url(path):
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
     return data_url
+
+def icon(emoji: str):
+    """Shows an emoji as a Notion-style page icon."""
+    st.write(
+        f'<span style="font-size: 78px; line-height: 1">{emoji}</span>',
+        unsafe_allow_html=True,
+    )
     
 st.set_page_config("Demos", "🚀", layout="wide")
+
+icon("🚀")
+st.title("v1.29 Feature Demos", anchor=False)
 
 # App skeleton Demo
 st.header("🦴 App skeleton")
