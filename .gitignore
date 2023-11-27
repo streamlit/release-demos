@@ -1,5 +1,6 @@
 .DS_Store
 secrets.toml
+.vscode
 
 test-files/
 *.db
