@@ -22,30 +22,6 @@ st.set_page_config("Demos", "🚀", layout="wide")
 icon("🚀")
 st.title("v1.29 Feature Demos", anchor=False)
 
-# App skeleton Demo
-st.header("🦴 App skeleton")
-st.caption("When loading a Streamlit app URL, the ':blue[Please wait...]' message is now replaced by a gray pulsating app skeleton!")
-
-skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/skeleton.gif")
-
-gif1, gif2 = st.columns(2)
-with gif1:
-    st.subheader("Old loading message")
-    st.caption("Upon reload, the page shows :blue[Please wait...]")
-    st.markdown(
-        f'<img src="data:image/gif;base64,{skeleton_url}" width=450 alt="demo gif">',
-        unsafe_allow_html=True,
-    )
-
-with gif2:
-    st.subheader("New loading behavior")
-    st.caption("The new update shows the app skeleton ")
-    st.warning("[A SIMILAR GIF TO THE ONE ON THE RIGHT WILL GO HERE WITH THE UPDATED BEHAVIOR]")
-    st.markdown("[GIF HERE]")
-    st.info('Refresh your browser to see the new update in action', icon="💡")
-
-st.divider()
-
 # Border Demo
 st.header("🔲 Customizable border")
 st.caption("You can now add or remove border around `st.container` and `st.form`!")
@@ -100,6 +76,30 @@ with after:
         st.dataframe(data={"col1": [1, 2], "col2": [3, 4]}, use_container_width=True)
         st.form_submit_button(label="Submit", help="Help text")
     """)
+
+st.divider()
+
+# App skeleton Demo
+st.header("🦴 App skeleton")
+st.caption("When loading a Streamlit app URL, the ':blue[Please wait...]' message is now replaced by a gray pulsating app skeleton!")
+
+skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/skeleton.gif")
+
+gif1, gif2 = st.columns(2)
+with gif1:
+    st.subheader("Old loading message")
+    st.caption("Upon reload, the page shows :blue[Please wait...]")
+    st.markdown(
+        f'<img src="data:image/gif;base64,{skeleton_url}" width=450 alt="demo gif">',
+        unsafe_allow_html=True,
+    )
+
+with gif2:
+    st.subheader("New loading behavior")
+    st.caption("The new update shows the app skeleton ")
+    st.warning("[A SIMILAR GIF TO THE ONE ON THE RIGHT WILL GO HERE WITH THE UPDATED BEHAVIOR]")
+    st.markdown("[GIF HERE]")
+    st.info('Refresh your browser to see the new update in action', icon="💡")
 
 st.divider()
 
