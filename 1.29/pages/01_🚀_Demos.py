@@ -147,33 +147,33 @@ with gif1:
 
 st.divider()
 
-## -------------------------------------------------------------------- ##
-# Anchor Demo
-st.header("🔗 :red[Improved anchor button]")
-st.caption("Streamlit headers have anchors on the left side which overlaps other elements. This new change moves it to the right side of the header.")
+# ## --------------------NEXT RELEASE------------------------------------------------ ##
+# # Anchor Demo
+# st.header("🔗 :red[Improved anchor button]")
+# st.caption("Streamlit headers have anchors on the left side which overlaps other elements. This new change moves it to the right side of the header.")
 
-anchor = Image.open("/mount/src/release-demos/1.29/pages/anchor_img.png")
-# anchor = "pages/anchor_img.png"
+# anchor = Image.open("/mount/src/release-demos/1.29/pages/anchor_img.png")
+# # anchor = "pages/anchor_img.png"
 
-col1, col2 = st.columns(2)
-with col2:
-    st.subheader("Anchor on the left")
-    st.caption("Behavior before the update ⬇️")
-    st.image(anchor)
-with col1:
-    st.subheader("New and updated anchor on the right")
-    st.caption("Hover over the header to interact with the new changes ⬇️")
-    from datetime import datetime
+# col1, col2 = st.columns(2)
+# with col2:
+#     st.subheader("Anchor on the left")
+#     st.caption("Behavior before the update ⬇️")
+#     st.image(anchor)
+# with col1:
+#     st.subheader("New and updated anchor on the right")
+#     st.caption("Hover over the header to interact with the new changes ⬇️")
+#     from datetime import datetime
 
-    with st.container():
-        st.header('Chart Timeframe Selection')
-        timeframe = st.radio(
-            "Select timeframe:",
-            ('All', 'Last 28 days', 'Quarter to date (QTD)', 'Year to date (YTD)')
-        )
-        start_date, end_date = st.date_input(
-            "Enter a date range",
-            value=(datetime(2019, 12, 1), datetime(2023, 7, 27)),
-            min_value=datetime(2000, 1, 1),
-            max_value=datetime.today()
-        )
+#     with st.container():
+#         st.header('Chart Timeframe Selection')
+#         timeframe = st.radio(
+#             "Select timeframe:",
+#             ('All', 'Last 28 days', 'Quarter to date (QTD)', 'Year to date (YTD)')
+#         )
+#         start_date, end_date = st.date_input(
+#             "Enter a date range",
+#             value=(datetime(2019, 12, 1), datetime(2023, 7, 27)),
+#             min_value=datetime(2000, 1, 1),
+#             max_value=datetime.today()
+#         )
