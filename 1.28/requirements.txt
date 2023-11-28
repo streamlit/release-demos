@@ -1,2 +1,1 @@
-#streamlit==1.28
-streamlit-nightly==1.28.3.dev20231124
+streamlit==1.28
