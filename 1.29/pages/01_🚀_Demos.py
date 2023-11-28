@@ -55,7 +55,7 @@ after, before = st.columns(2)
 
 with after:
     st.subheader("New customizable borders")
-    st.caption("⬇️ New `st.container` has border parameter ")
+    st.caption("⬇️ `st.container` has the new border parameter enabled")
    
     with st.container(border=True):
         st.info("This is inside a container with border")
@@ -89,7 +89,7 @@ with after:
 
 with before:
     st.subheader("Old non-customizable borders")
-    st.caption("⬇️ `st.container` does not have the border parameter ")
+    st.caption("⬇️ The legacy `st.container` does not have the border parameter")
     with st.container():
         st.info("This text is inside a container without border")
         st.dataframe(data=df, use_container_width=True)
