@@ -31,7 +31,7 @@ st.divider()
 
 ## -------------------------------------------------------------------- ##
 # Border Demo
-st.header("🔲 :red[Customizable border]")
+st.header("🔲 Customizable border")
 st.caption("You can now add or remove border around `st.container` and `st.form`!")
 
 # Initialize Faker to generate fake data
@@ -121,7 +121,7 @@ st.divider()
 
 ## -------------------------------------------------------------------- ##
 # App skeleton Demo
-st.header("🦴 :red[App loading display]")
+st.header("🦴 App loading display")
 st.caption("When loading a Streamlit app URL, the ':blue[Please wait...]' message is now replaced by a gray pulsating app skeleton!")
 
 old_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/old_skeleton.gif")
