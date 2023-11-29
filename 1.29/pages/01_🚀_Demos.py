@@ -60,7 +60,7 @@ after, before = st.columns(2)
 
 with after:
     st.subheader("New customizable borders")
-    st.caption("⬇️ `st.container` has the new border parameter enabled")
+    st.caption("⬇️ The new `st.container` has a border parameter enabled")
    
     with st.container(border=True):
         st.info("This text is inside a container with border")
@@ -76,7 +76,7 @@ with after:
         """
     )
 
-    st.caption("⬇️ New `st.form` has border parameter ")
+    st.caption("⬇️ The new `st.form` has a border parameter ")
 
     with st.form(key="my_form_2", border=False):
         st.info("This text is inside a form without border")
@@ -108,7 +108,7 @@ with before:
         """
     )
 
-    st.caption("⬇️ `st.form` does not have the border parameter ")
+    st.caption("⬇️ The legacy `st.form` does not have a border parameter ")
     with st.form(key="my_form_1"):
         st.info("This text is inside a form with border")
         st.dataframe(data=df, use_container_width=True)
