@@ -28,7 +28,7 @@ st.title("v1.29 Feature Demos", anchor=False)
 
 st.markdown("""
 - [Customizable Border](#customizable-border)
-- [App Loading Display](#new-app-loading-animation)
+- [New App Loading Animation](#new-app-loading-animation)
 """, unsafe_allow_html=True)
 
 st.divider()
