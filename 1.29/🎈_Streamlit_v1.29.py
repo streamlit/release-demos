@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide",
 )
 
-intro = "This release introduces [:red[PENDING ->]`st.get_query` and `st.set_query`], improvements to `st.container` and `st.form`! The release also includes bug fixes."
+intro = "This release features improvements to `st.container` and `st.form`, and Python 3.12 support, The release also includes bug fixes."
 
 release_notes = f"""
 ---
