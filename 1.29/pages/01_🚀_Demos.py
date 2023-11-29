@@ -26,12 +26,12 @@ st.set_page_config("Demos", "🚀", layout="wide")
 icon("🚀")
 st.title("v1.29 Feature Demos", anchor=False)
 
-
+st.divider()
 
 ## -------------------------------------------------------------------- ##
 # Border Demo
 st.header("🔲 Customizable border", divider="rainbow")
-st.caption("You can now customize `st.container` and `st.form` by adding or removing the border")
+st.markdown("You can now customize `st.container` and `st.form` by adding or removing the border")
 
 # Initialize Faker to generate fake data
 fake = Faker()
@@ -57,7 +57,7 @@ with after:
     st.caption("⬇️ `st.container` has the new border parameter enabled")
    
     with st.container(border=True):
-        st.info("This is inside a container with border")
+        st.info("This text is inside a container with border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="after1")
 
@@ -73,14 +73,14 @@ with after:
     st.caption("⬇️ New `st.form` has border parameter ")
 
     with st.form(key="my_form_2", border=False):
-        st.info("This is inside a form without border")
+        st.info("This text is inside a form without border")
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
     
     st.code(
         """
         with st.form(key="my_form_2", border=False):
-            st.info("This is inside a form without border")
+            st.info("This text is inside a form without border")
             st.dataframe(data=df, use_container_width=True)
             st.form_submit_button(label="Submit")
         """
@@ -96,7 +96,7 @@ with before:
     st.code(
         """
         with st.container():
-            st.info("This is inside a container without border")
+            st.info("This text is inside a container without border")
             st.dataframe(data=df, use_container_width=True)
             st.button("Refresh data", use_container_width=True)
         """
@@ -104,13 +104,13 @@ with before:
 
     st.caption("⬇️ `st.form` does not have the border parameter ")
     with st.form(key="my_form_1"):
-        st.info("This is inside a form with border")
+        st.info("This text is inside a form with border")
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
     st.code(
         """
         with st.form(key="my_form"):
-            st.info("This is inside a form with border")
+            st.info("This text is inside a form with border")
             st.dataframe(data=df, use_container_width=True)
             st.form_submit_button(label="Submit")
         """
@@ -120,7 +120,7 @@ with before:
 ## -------------------------------------------------------------------- ##
 # App skeleton Demo
 st.header("🦴 App loading display", divider="rainbow")
-st.caption("The ':blue[Please wait...]' message has been updated to a more engaging animation")
+st.markdown("The ':blue[Please wait...]' message has been updated to a more engaging animation")
 
 old_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/old_skeleton.gif")
 new_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/new_skeleton.gif")
