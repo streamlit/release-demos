@@ -28,7 +28,7 @@ st.title("v1.29 Feature Demos", anchor=False)
 
 st.markdown("""
 - [Customizable Border](#customizable-border)
-- [App Loading Display](#app-loading-display)
+- [App Loading Display](#new-app-loading-animation)
 """, unsafe_allow_html=True)
 
 st.divider()
@@ -125,8 +125,8 @@ with before:
 
 ## -------------------------------------------------------------------- ##
 # App skeleton Demo
-st.markdown('<a name="app-loading-display"></a>', unsafe_allow_html=True)
-st.header("🦴 App loading display", divider="rainbow")
+st.markdown('<a name="new-app-loading-animation"></a>', unsafe_allow_html=True)
+st.header("🦴 New app loading animation", divider="rainbow")
 st.markdown("The ':blue[Please wait...]' message has been updated to a more engaging animation")
 
 old_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/old_skeleton.gif")
