@@ -64,14 +64,14 @@ with after:
     st.caption("⬇️ The new `st.container` has a border parameter enabled")
    
     with st.container(border=True):
-        st.info("This text and table are inside a container with border")
+        st.info("This text and table are inside a container with a border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="after1")
 
     st.code(
         """
         with st.container(border=True):
-            st.info("This text and table are inside a container with border")
+            st.info("This text and table are inside a container with a border")
             st.dataframe(data=df, use_container_width=True)
             st.button("Refresh data", use_container_width=True)
         """
@@ -80,14 +80,14 @@ with after:
     st.caption("⬇️ The new `st.form` has a border parameter ")
 
     with st.form(key="my_form_2", border=False):
-        st.info("This text and table are inside a form without border")
+        st.info("This text and table are inside a form without a border")
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
     
     st.code(
         """
         with st.form(key="my_form_2", border=False):
-            st.info("This text and table are inside a form without border")
+            st.info("This text and table are inside a form without a border")
             st.dataframe(data=df, use_container_width=True)
             st.form_submit_button(label="Submit")
         """
@@ -97,13 +97,13 @@ with before:
     st.subheader("Old non-customizable borders")
     st.caption("⬇️ The legacy `st.container` does not have the border parameter")
     with st.container():
-        st.info("This text and table are inside a container without border")
+        st.info("This text and table are inside a container without a border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="before1")
     st.code(
         """
         with st.container():
-            st.info("This text is inside a container without border")
+            st.info("This text is inside a container without a border")
             st.dataframe(data=df, use_container_width=True)
             st.button("Refresh data", use_container_width=True)
         """
@@ -111,13 +111,13 @@ with before:
 
     st.caption("⬇️ The legacy `st.form` does not have a border parameter ")
     with st.form(key="my_form_1"):
-        st.info("This text and table are inside a form with border")
+        st.info("This text and table are inside a form with a border")
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
     st.code(
         """
         with st.form(key="my_form"):
-            st.info("This text and table are inside a form with border")
+            st.info("This text and table are inside a form with a border")
             st.dataframe(data=df, use_container_width=True)
             st.form_submit_button(label="Submit")
         """
