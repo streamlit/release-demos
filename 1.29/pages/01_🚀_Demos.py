@@ -26,13 +26,12 @@ st.set_page_config("Demos", "🚀", layout="wide")
 icon("🚀")
 st.title("v1.29 Feature Demos", anchor=False)
 
-st.divider()
 
 
 ## -------------------------------------------------------------------- ##
 # Border Demo
-st.header("🔲 Customizable border")
-st.caption("You can now add or remove border around `st.container` and `st.form`!")
+st.header("🔲 Customizable border", divider="rainbow")
+st.caption("You can now customize `st.container` and `st.form` by adding or removing the border")
 
 # Initialize Faker to generate fake data
 fake = Faker()
@@ -117,12 +116,11 @@ with before:
         """
     )
 
-st.divider()
 
 ## -------------------------------------------------------------------- ##
 # App skeleton Demo
-st.header("🦴 App loading display")
-st.caption("When loading a Streamlit app URL, the ':blue[Please wait...]' message is now replaced by a gray pulsating app skeleton!")
+st.header("🦴 App loading display", divider="rainbow")
+st.caption("The ':blue[Please wait...]' message has been updated to a more engaging animation")
 
 old_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/old_skeleton.gif")
 new_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/new_skeleton.gif")
@@ -147,7 +145,7 @@ with gif1:
 
 st.divider()
 
-# ## --------------------NEXT RELEASE------------------------------------------------ ##
+# ## --------------------NEXT RELEASE v1.30------------------------------------------------ ##
 # # Anchor Demo
 # st.header("🔗 :red[Improved anchor button]")
 # st.caption("Streamlit headers have anchors on the left side which overlaps other elements. This new change moves it to the right side of the header.")
