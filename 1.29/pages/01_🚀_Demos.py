@@ -26,10 +26,16 @@ st.set_page_config("Demos", "🚀", layout="wide")
 icon("🚀")
 st.title("v1.29 Feature Demos", anchor=False)
 
+st.markdown("""
+- [Customizable Border](#customizable-border)
+- [App Loading Display](#app-loading-display)
+""", unsafe_allow_html=True)
+
 st.divider()
 
 ## -------------------------------------------------------------------- ##
 # Border Demo
+st.markdown('<a name="customizable-border"></a>', unsafe_allow_html=True)
 st.header("🔲 Customizable border", divider="rainbow")
 st.markdown("You can now customize `st.container` and `st.form` by adding or removing the border")
 
@@ -119,6 +125,7 @@ with before:
 
 ## -------------------------------------------------------------------- ##
 # App skeleton Demo
+st.markdown('<a name="app-loading-display"></a>', unsafe_allow_html=True)
 st.header("🦴 App loading display", divider="rainbow")
 st.markdown("The ':blue[Please wait...]' message has been updated to a more engaging animation")
 
