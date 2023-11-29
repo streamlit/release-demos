@@ -27,8 +27,9 @@ icon("🚀")
 st.title("v1.29 Feature Demos", anchor=False)
 
 st.markdown("""
-🔲 [Customizable Border](#customizable-border)
-🦴 [New App Loading Animation](#new-app-loading-animation)
+🔲 [Customizable border](#customizable-border)
+
+🦴 [New app loading animation](#new-app-loading-animation)
 """, unsafe_allow_html=True)
 
 st.divider()
