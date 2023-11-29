@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide",
 )
 
-intro = "This release features improvements to `st.container` and `st.form`, and Python 3.12 support. The release also includes bug fixes."
+intro = "This release features improvements to `st.container` and `st.form`, and Python 3.12 support. Check out the [demos page](https://release129.streamlit.app/Demos) to try out the new features."
 
 release_notes = f"""
 ---
