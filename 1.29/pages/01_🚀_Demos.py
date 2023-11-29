@@ -145,7 +145,7 @@ with gif2:
 
 with gif1:
     st.subheader("New loading behavior")
-    st.caption("The new update shows the app skeleton ")
+    st.caption("The new update shows an app skeleton loading animation")
     st.markdown(
         f'<img src="data:image/gif;base64,{new_skeleton_url}" width=450 alt="demo gif">',
         unsafe_allow_html=True,
