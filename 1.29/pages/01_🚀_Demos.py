@@ -102,7 +102,7 @@ with before:
         st.button("Refresh data", use_container_width=True, key="before1")
         
     # Instead of st.empty(), use a markdown with empty space
-    st.markdown('<div style="height: 25px;"></div>', unsafe_allow_html=True)
+    st.markdown('<div style="height: 28px;"></div>', unsafe_allow_html=True)
     
     st.code(
         """
