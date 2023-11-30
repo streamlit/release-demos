@@ -32,7 +32,7 @@ st.markdown("""
 ⏳ [New app loading animation](#new-app-loading-animation)
 """, unsafe_allow_html=True)
 
-st.divider()
+# st.divider()
 
 ## -------------------------------------------------------------------- ##
 # Border Demo
@@ -61,33 +61,30 @@ after, before = st.columns(2)
 
 with after:
     st.subheader("New customizable borders")
-    st.caption("⬇️ The new `st.container` can now be configured to have a border")
+    st.info("⬇️ The new `st.container` can now be configured to have a border")
    
     with st.container(border=True):
-        st.info("This text and table are inside a container with a border")
+        # st.info("This text and table are inside a container with a border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="after1")
 
     st.code(
         """
         with st.container(border=True):
-            st.info("This text and table are inside a container with a border")
             st.dataframe(data=df, use_container_width=True)
             st.button("Refresh data", use_container_width=True)
         """
     )
 
-    st.caption("⬇️ The new `st.form` can now be configured to appear without a border")
+    st.info("⬇️ The new `st.form` can now be configured to appear without a border")
 
     with st.form(key="my_form_2", border=False):
-        st.info("This text and table are inside a form without a border")
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
     
     st.code(
         """
         with st.form(key="my_form_2", border=False):
-            st.info("This text and table are inside a form without a border")
             st.dataframe(data=df, use_container_width=True)
             st.form_submit_button(label="Submit")
         """
@@ -95,9 +92,8 @@ with after:
 
 with before:
     st.subheader("Old non-customizable borders")
-    st.caption("⬇️ The legacy `st.container` does not have a border")
+    st.info("⬇️ The legacy `st.container` does not have a border")
     with st.container():
-        st.info("This text and table are inside a container without a border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="before1")
         
@@ -107,15 +103,13 @@ with before:
     st.code(
         """
         with st.container():
-            st.info("This text is inside a container without a border")
             st.dataframe(data=df, use_container_width=True)
             st.button("Refresh data", use_container_width=True)
         """
     )
 
-    st.caption("⬇️ The legacy `st.form` always has a border")
+    st.info("⬇️ The legacy `st.form` always has a border")
     with st.form(key="my_form_1"):
-        st.info("This text and table are inside a form with a border")
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
     st.code(
