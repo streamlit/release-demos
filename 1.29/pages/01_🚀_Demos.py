@@ -100,8 +100,10 @@ with before:
         st.info("This text and table are inside a container without a border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="before1")
-    st.empty()
-    st.empty()
+        
+    # Instead of st.empty(), use a markdown with empty space
+    st.markdown('<div style="height: 50px;"></div>', unsafe_allow_html=True)
+    
     st.code(
         """
         with st.container():
