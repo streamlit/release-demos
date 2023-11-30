@@ -101,6 +101,7 @@ with before:
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="before1")
     st.empty()
+    st.empty()
     st.code(
         """
         with st.container():
