@@ -29,7 +29,7 @@ st.title("v1.29 Feature Demos", anchor=False)
 st.markdown("""
 🔲 [Customizable border](#customizable-border)
 
-🦴 [New app loading animation](#new-app-loading-animation)
+⏳ [New app loading animation](#new-app-loading-animation)
 """, unsafe_allow_html=True)
 
 st.divider()
@@ -61,7 +61,7 @@ after, before = st.columns(2)
 
 with after:
     st.subheader("New customizable borders")
-    st.caption("⬇️ The new `st.container` has a border parameter enabled")
+    st.caption("⬇️ The new `st.container` can now be configured to have a border")
    
     with st.container(border=True):
         st.info("This text and table are inside a container with a border")
@@ -77,7 +77,7 @@ with after:
         """
     )
 
-    st.caption("⬇️ The new `st.form` has a border parameter ")
+    st.caption("⬇️ The new `st.form` can now be configured to appear without a border")
 
     with st.form(key="my_form_2", border=False):
         st.info("This text and table are inside a form without a border")
@@ -95,11 +95,12 @@ with after:
 
 with before:
     st.subheader("Old non-customizable borders")
-    st.caption("⬇️ The legacy `st.container` does not have the border parameter")
+    st.caption("⬇️ The legacy `st.container` does not have a border")
     with st.container():
         st.info("This text and table are inside a container without a border")
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="before1")
+    st.empty()
     st.code(
         """
         with st.container():
@@ -109,7 +110,7 @@ with before:
         """
     )
 
-    st.caption("⬇️ The legacy `st.form` does not have a border parameter ")
+    st.caption("⬇️ The legacy `st.form` always has a border")
     with st.form(key="my_form_1"):
         st.info("This text and table are inside a form with a border")
         st.dataframe(data=df, use_container_width=True)
@@ -127,7 +128,7 @@ with before:
 ## -------------------------------------------------------------------- ##
 # App skeleton Demo
 st.markdown('<a name="new-app-loading-animation"></a>', unsafe_allow_html=True)
-st.header("🦴 New app loading animation", divider="rainbow")
+st.header("⏳ New app loading animation", divider="rainbow")
 st.markdown("The ':blue[Please wait...]' message has been updated to a more engaging animation")
 
 old_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/old_skeleton.gif")
