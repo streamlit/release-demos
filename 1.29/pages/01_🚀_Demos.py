@@ -91,6 +91,7 @@ with before:
     st.info("⬇️ :red[st.container] does not have a border")
     with st.container():
         st.dataframe(data=df, use_container_width=True)
+        st.form_submit_button(label="Submit")
         
     # Instead of st.empty(), use a markdown with empty space
     st.markdown('<div style="height: 31px;"></div>', unsafe_allow_html=True)
@@ -99,18 +100,21 @@ with before:
         """
         with st.container():
             st.dataframe(data=df, use_container_width=True)
+            st.form_submit_button(label="Submit")
         """
     )
 
     st.info("⬇️ :red[st.form] always has a border")
     with st.form(key="my_form_1"):
         st.dataframe(data=df, use_container_width=True)
+        st.form_submit_button(label="Submit")
         
     st.code(
         """
         with st.form(key="my_form"):
             st.info("This text and table are inside a form with a border")
             st.dataframe(data=df, use_container_width=True)
+            st.form_submit_button(label="Submit")
         """
     )
 
