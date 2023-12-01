@@ -91,7 +91,7 @@ with before:
     st.info("⬇️ :red[st.container] does not have a border")
     with st.container():
         st.dataframe(data=df, use_container_width=True)
-        st.form_submit_button(label="Submit")
+        st.button("Refresh data", use_container_width=True, key="before1")
         
     # Instead of st.empty(), use a markdown with empty space
     st.markdown('<div style="height: 31px;"></div>', unsafe_allow_html=True)
