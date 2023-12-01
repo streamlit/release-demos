@@ -35,6 +35,7 @@ st.markdown("""
 # st.divider()
 
 ## -------------------------------------------------------------------- ##
+
 # Border Demo
 st.markdown('<a name="customizable-border"></a>', unsafe_allow_html=True)
 st.header("🔲 Customizable border", divider="rainbow")
@@ -48,7 +49,6 @@ def random_date(start, end):
 
 def create_sample_data(num_rows=10):
     data = {
-        # "Order ID": [f"ORD{1000+i}" for i in range(num_rows)],
         "Customer Name": [fake.name() for _ in range(num_rows)],
         "Product": [random.choice(["Laptop", "Smartphone", "Tablet", "Headphones", "Charger"]) for _ in range(num_rows)],
         "Quantity": [random.randint(1, 5) for _ in range(num_rows)],
@@ -76,7 +76,7 @@ with after:
         """
     )
 
-    st.info("⬇️ The new `st.form` can now be configured to appear without a border")
+    st.info("⬇️ :red[st.form] can now be configured to appear without a border")
 
     with st.form(key="my_form_2", border=False):
         st.dataframe(data=df, use_container_width=True)
@@ -92,7 +92,7 @@ with after:
 
 with before:
     st.subheader("Old non-customizable borders")
-    st.info("⬇️ The legacy `st.container` does not have a border")
+    st.info("⬇️ :red[st.container] does not have a border")
     with st.container():
         st.dataframe(data=df, use_container_width=True)
         st.button("Refresh data", use_container_width=True, key="before1")
@@ -108,7 +108,7 @@ with before:
         """
     )
 
-    st.info("⬇️ The legacy `st.form` always has a border")
+    st.info("⬇️ :red[st.form] always has a border")
     with st.form(key="my_form_1"):
         st.dataframe(data=df, use_container_width=True)
         st.form_submit_button(label="Submit")
@@ -121,8 +121,8 @@ with before:
         """
     )
 
-
 ## -------------------------------------------------------------------- ##
+
 # App skeleton Demo
 st.markdown('<a name="new-app-loading-animation"></a>', unsafe_allow_html=True)
 st.header("⏳ New app loading animation", divider="rainbow")
@@ -130,7 +130,6 @@ st.markdown("The ':blue[Please wait...]' message has been updated to a more enga
 
 old_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/old_skeleton.gif")
 new_skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/new_skeleton.gif")
-# skeleton_url = get_file_url("/mount/src/release-demos/1.29/pages/skeleton.gif")
 
 gif1, gif2 = st.columns(2)
 with gif2:
@@ -150,34 +149,3 @@ with gif1:
     )
 
 st.divider()
-
-# ## --------------------NEXT RELEASE v1.30------------------------------------------------ ##
-# # Anchor Demo
-# st.header("🔗 :red[Improved anchor button]")
-# st.caption("Streamlit headers have anchors on the left side which overlaps other elements. This new change moves it to the right side of the header.")
-
-# anchor = Image.open("/mount/src/release-demos/1.29/pages/anchor_img.png")
-# # anchor = "pages/anchor_img.png"
-
-# col1, col2 = st.columns(2)
-# with col2:
-#     st.subheader("Anchor on the left")
-#     st.caption("Behavior before the update ⬇️")
-#     st.image(anchor)
-# with col1:
-#     st.subheader("New and updated anchor on the right")
-#     st.caption("Hover over the header to interact with the new changes ⬇️")
-#     from datetime import datetime
-
-#     with st.container():
-#         st.header('Chart Timeframe Selection')
-#         timeframe = st.radio(
-#             "Select timeframe:",
-#             ('All', 'Last 28 days', 'Quarter to date (QTD)', 'Year to date (YTD)')
-#         )
-#         start_date, end_date = st.date_input(
-#             "Enter a date range",
-#             value=(datetime(2019, 12, 1), datetime(2023, 7, 27)),
-#             min_value=datetime(2000, 1, 1),
-#             max_value=datetime.today()
-#         )
