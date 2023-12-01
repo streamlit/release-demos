@@ -61,7 +61,7 @@ after, before = st.columns(2)
 
 with after:
     st.subheader("New customizable borders")
-    st.info("⬇️ :green[st.container] can now be configured to have a border")
+    st.info("⬇️ :red[st.container] can now be configured to have a border")
    
     with st.container(border=True):
         # st.info("This text and table are inside a container with a border")
