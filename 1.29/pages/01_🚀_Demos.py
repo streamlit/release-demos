@@ -101,7 +101,6 @@ with before:
         """
         with st.container():
             st.dataframe(data=df, use_container_width=True)
-            st.form_submit_button(label="Submit")
         """
     )
 
