@@ -5,6 +5,8 @@ st.set_page_config(
     page_icon='🔌'
 )
 
+st.info("`st.experimental_connection` was changed to `st.connection` in Streamlit version 1.28.0. Check out the updated demo app for `st.connection` [here](https://stconnection.streamlit.app/).", icon="ℹ️")
+
 st.title("🔌 st.experimental_connection")
 
 """
