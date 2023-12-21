@@ -5,7 +5,7 @@ st.set_page_config(
     page_icon='🔌'
 )
 
-st.info("This demo app highlights `st.experimental_connection`, which has now been replaced by `st.connection.` Check out the updated demo app for `st.connection` [here](https://stconnection.streamlit.app/).", icon="ℹ️")
+st.info("`st.experimental_connection` has been updated to `st.connection.` Check out the updated demo app for `st.connection` [here](https://stconnection.streamlit.app/).", icon="ℹ️")
 
 st.title("🔌 st.experimental_connection")
 
