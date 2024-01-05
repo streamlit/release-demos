@@ -1,1 +1,1 @@
-streamlit-nightly
+https://core-previews.s3-us-west-2.amazonaws.com/pr-7896/streamlit-1.29.0-py2.py3-none-any.whl
