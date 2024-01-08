@@ -46,13 +46,21 @@ app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()
 
 # Add GitHub URL to the dataset
 for name, repo in app_repos.items():
-    app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+    if app_data[name]:
+        app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
-# Create a DataFrame
+# Convert to DataFrame and reorder columns
 df = pd.DataFrame.from_dict(app_data, orient='index').reset_index()
-df.rename(columns={'index': 'App name'}, inplace=True) 
-df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
-df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
+df.rename(columns={'index': 'App name'}, inplace=True)
+
+# Check if 'Stars' and 'Forks' are in df.columns and then reorder
+if 'Stars' in df.columns and 'Forks' in df.columns:
+    df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
+else:
+    # Handle the case where 'Stars' and 'Forks' are missing
+    st.error("Error: 'Stars' and/or 'Forks' data is missing.")
+    
+# df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
