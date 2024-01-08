@@ -101,15 +101,15 @@ with new:
             )
             """)
 
-        st.data_editor(
-            df,
-            column_config={
-                "GitHub URL": st.column_config.LinkColumn(
-                    "Hyperlink Text",
-                    display_text="Open GitHub",
-                ),
-            }
-        )
+    st.data_editor(
+        df,
+        column_config={
+            "GitHub URL": st.column_config.LinkColumn(
+                "Hyperlink Text",
+                display_text="Open GitHub",
+            ),
+        }
+    )
 
 # Raw links
 with old:
