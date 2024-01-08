@@ -57,6 +57,9 @@ df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 new_column_order = ['App name', 'GitHub URL', 'Stars', 'Forks']
 df = df[new_column_order]
 
+# Convert GitHub URL column to string
+df['GitHub URL'] = df['GitHub URL'].astype(str)
+
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
 
