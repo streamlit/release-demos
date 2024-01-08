@@ -31,8 +31,8 @@ def get_github_repo_data(repo_name):
     else:
         return None
 
-# List of frameworks and their GitHub repos
-framework_repos = {
+# List of apps and their GitHub repos
+app_repos = {
     "LLM Examples": "streamlit/llm-examples",
     "MemoryBot": "leo-usa/MemoryBot",
     "LangChain Quickstart": "dataprofessor/langchain-quickstart",
@@ -42,16 +42,16 @@ framework_repos = {
 }
 
 # Fetch and build the dataset
-framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
+app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
 
 # Add GitHub URL to the dataset
-for name, repo in framework_repos.items():
-    framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+for name, repo in app_repos.items():
+    app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
 # Create a DataFrame
-df = pd.DataFrame.from_dict(framework_data, orient='index')
+df = pd.DataFrame.from_dict(app_data, orient='index')
 df.reset_index(inplace=True)
-df.columns = ['Framework', 'Stars', 'Forks', 'GitHub URL']
+df.columns = ['App Name', 'GitHub URL', 'Stars', 'Forks']
 
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
@@ -78,28 +78,18 @@ with new:
                 else:
                     return None
 
-            # List of frameworks and their GitHub repos
-            framework_repos = {
-                "LLM Examples": "streamlit/llm-examples",
-                "MemoryBot": "leo-usa/MemoryBot",
-                "LangChain Quickstart": "dataprofessor/langchain-quickstart",
-                "Knowledge GPT": "mmz-001/knowledge_gpt",
-                "SEO Chatbot": "cefege/seo-chat-bot",
-                "LlamaIndex Chat with Streamlit Docs": "carolinedlu/llamaindex-chat-with-streamlit-docs"
-            }
-
             # Fetch and build the dataset
-            framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
-
+            app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
+            
             # Add GitHub URL to the dataset
-            for name, repo in framework_repos.items():
-                framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
-
+            for name, repo in app_repos.items():
+                app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+            
             # Create a DataFrame
-            df = pd.DataFrame.from_dict(framework_data, orient='index')
+            df = pd.DataFrame.from_dict(app_data, orient='index')
             df.reset_index(inplace=True)
-            df.columns = ['Framework', 'Stars', 'Forks', 'GitHub URL']
-
+            df.columns = ['App Name', 'GitHub URL', 'Stars', 'Forks']
+            
             st.data_editor(
                 df,
                 column_config={
@@ -142,28 +132,17 @@ with old:
                 else:
                     return None
 
-            # List of frameworks and their GitHub repos
-            framework_repos = {
-                "LLM Examples": "streamlit/llm-examples",
-                "MemoryBot": "leo-usa/MemoryBot",
-                "LangChain Quickstart": "dataprofessor/langchain-quickstart",
-                "Knowledge GPT": "mmz-001/knowledge_gpt",
-                "SEO Chatbot": "cefege/seo-chat-bot",
-                "LlamaIndex Chat with Streamlit Docs": "carolinedlu/llamaindex-chat-with-streamlit-docs"
-            }
-
             # Fetch and build the dataset
-            framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
-
+            app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
+            
             # Add GitHub URL to the dataset
-            for name, repo in framework_repos.items():
-                framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
-
+            for name, repo in app_repos.items():
+                app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+            
             # Create a DataFrame
-            df = pd.DataFrame.from_dict(framework_data, orient='index')
+            df = pd.DataFrame.from_dict(app_data, orient='index')
             df.reset_index(inplace=True)
-            df.columns = ['Framework', 'Stars', 'Forks', 'GitHub URL']
-
+            df.columns = ['App Name', 'GitHub URL', 'Stars', 'Forks']
             st.data_editor(
                 df,
                 key="old",
