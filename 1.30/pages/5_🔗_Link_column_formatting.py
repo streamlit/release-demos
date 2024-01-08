@@ -46,13 +46,12 @@ app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()
 
 # Add GitHub URL to the dataset
 for name, repo in app_repos.items():
-    if app_data[name]:
-        app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+    app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
 # Convert to DataFrame and reorder columns
 df = pd.DataFrame.from_dict(app_data, orient='index').reset_index()
 df.rename(columns={'index': 'App name'}, inplace=True)
-df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
+# df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
