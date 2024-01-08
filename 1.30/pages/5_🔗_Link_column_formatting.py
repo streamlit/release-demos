@@ -50,8 +50,9 @@ for name, repo in app_repos.items():
 
 # Create a DataFrame
 df = pd.DataFrame.from_dict(app_data, orient='index')
-df.reset_index(inplace=True)
-df.columns = ['App name', 'Stars', 'Forks', 'GitHub URL']
+df['App name'] = df.index
+df = df[['index', 'GitHub URL', 'Stars', 'Forks']]
+df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
