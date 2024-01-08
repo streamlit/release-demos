@@ -51,7 +51,7 @@ for name, repo in app_repos.items():
 # Create a DataFrame
 df = pd.DataFrame.from_dict(app_data, orient='index')
 df['App name'] = df.index
-df = df[['index', 'GitHub URL', 'Stars', 'Forks']]
+df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
 df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
 # Display in Streamlit
