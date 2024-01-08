@@ -52,14 +52,6 @@ for name, repo in app_repos.items():
 # Convert to DataFrame and reorder columns
 df = pd.DataFrame.from_dict(app_data, orient='index').reset_index()
 df.rename(columns={'index': 'App name'}, inplace=True)
-
-# Check if 'Stars' and 'Forks' are in df.columns and then reorder
-if 'Stars' in df.columns and 'Forks' in df.columns:
-    df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
-else:
-    # Handle the case where 'Stars' and 'Forks' are missing
-    st.error("Error: 'Stars' and/or 'Forks' data is missing.")
-    
 df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
 # Display in Streamlit
