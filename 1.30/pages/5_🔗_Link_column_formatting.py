@@ -32,7 +32,7 @@ def get_github_repo_data(repo_name):
         return None
 
 # List of frameworks and their GitHub repos
-framework_repos = {
+app_repos = {
     "LLM Examples": "streamlit/llm-examples",
     "MemoryBot": "leo-usa/MemoryBot",
     "LangChain Quickstart": "dataprofessor/langchain-quickstart",
@@ -42,14 +42,14 @@ framework_repos = {
 }
 
 # Fetch and build the dataset
-framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
+app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
 
 # Add GitHub URL to the dataset
-for name, repo in framework_repos.items():
-    framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+for name, repo in app_repos.items():
+    app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
 # Create a DataFrame
-df = pd.DataFrame.from_dict(framework_data, orient='index')
+df = pd.DataFrame.from_dict(app_data, orient='index')
 df.reset_index(inplace=True)
 df.columns = ['App name', 'Stars', 'Forks', 'GitHub URL']
 
@@ -82,7 +82,7 @@ with new:
                     return None
 
             # List of frameworks and their GitHub repos
-            framework_repos = {
+            app_repos = {
                 "LLM Examples": "streamlit/llm-examples",
                 "MemoryBot": "leo-usa/MemoryBot",
                 "LangChain Quickstart": "dataprofessor/langchain-quickstart",
@@ -92,16 +92,19 @@ with new:
             }
 
             # Fetch and build the dataset
-            framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
+            app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
 
             # Add GitHub URL to the dataset
-            for name, repo in framework_repos.items():
-                framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+            for name, repo in app_repos.items():
+                app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
             # Create a DataFrame
-            df = pd.DataFrame.from_dict(framework_data, orient='index')
+            df = pd.DataFrame.from_dict(app_data, orient='index')
             df.reset_index(inplace=True)
-            df.columns = ['Framework', 'Stars', 'Forks', 'GitHub URL']
+            df.columns = ['App name', 'Stars', 'Forks', 'GitHub URL']
+
+            # Reorder columns so that 'GitHub URL' is the second column
+            df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
 
             st.data_editor(
                 df,
@@ -146,7 +149,7 @@ with old:
                     return None
 
             # List of frameworks and their GitHub repos
-            framework_repos = {
+            app_repos = {
                 "LLM Examples": "streamlit/llm-examples",
                 "MemoryBot": "leo-usa/MemoryBot",
                 "LangChain Quickstart": "dataprofessor/langchain-quickstart",
@@ -156,16 +159,19 @@ with old:
             }
 
             # Fetch and build the dataset
-            framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
+            app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
 
             # Add GitHub URL to the dataset
-            for name, repo in framework_repos.items():
-                framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+            for name, repo in app_repos.items():
+                app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
             # Create a DataFrame
-            df = pd.DataFrame.from_dict(framework_data, orient='index')
+            df = pd.DataFrame.from_dict(app_data, orient='index')
             df.reset_index(inplace=True)
-            df.columns = ['Framework', 'Stars', 'Forks', 'GitHub URL']
+            df.columns = ['App name', 'Stars', 'Forks', 'GitHub URL']
+
+            # Reorder columns so that 'GitHub URL' is the second column
+            df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
 
             st.data_editor(
                 df,
