@@ -32,7 +32,7 @@ def get_github_repo_data(repo_name):
         return None
 
 # List of frameworks and their GitHub repos
-app_repos = {
+framework_repos = {
     "LLM Examples": "streamlit/llm-examples",
     "MemoryBot": "leo-usa/MemoryBot",
     "LangChain Quickstart": "dataprofessor/langchain-quickstart",
@@ -42,16 +42,16 @@ app_repos = {
 }
 
 # Fetch and build the dataset
-app_data = {name: get_github_repo_data(repo) for name, repo in app_repos.items()}
+framework_data = {name: get_github_repo_data(repo) for name, repo in framework_repos.items()}
 
 # Add GitHub URL to the dataset
-for name, repo in app_repos.items():
-    app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
+for name, repo in framework_repos.items():
+    framework_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
-# Convert to DataFrame and reorder columns
-df = pd.DataFrame.from_dict(app_data, orient='index').reset_index()
-df.rename(columns={'index': 'App name'}, inplace=True)
-# df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
+# Create a DataFrame
+df = pd.DataFrame.from_dict(framework_data, orient='index')
+df.reset_index(inplace=True)
+df.columns = ['Framework', 'Stars', 'Forks', 'GitHub URL']
 
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
