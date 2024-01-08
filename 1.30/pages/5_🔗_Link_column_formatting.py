@@ -53,6 +53,9 @@ df = pd.DataFrame.from_dict(app_data, orient='index')
 df.reset_index(inplace=True)
 df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
+# Convert GitHub URL column to string
+df['GitHub URL'] = df['GitHub URL'].astype(str)
+
 # Display in Streamlit
 st.info('Real-time GitHub data for a few LLM repos in the [Streamlit Gallery](https://streamlit.io/gallery?category=llms)', icon="⭐️")
 
