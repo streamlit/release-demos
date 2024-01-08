@@ -49,8 +49,8 @@ for name, repo in app_repos.items():
     app_data[name]["GitHub URL"] = f"https://github.com/{repo}"
 
 # Create a DataFrame
-df = pd.DataFrame.from_dict(app_data, orient='index')
-df['App name'] = df.index
+df = pd.DataFrame.from_dict(app_data, orient='index').reset_index()
+df.rename(columns={'index': 'App name'}, inplace=True) 
 df = df[['App name', 'GitHub URL', 'Stars', 'Forks']]
 df.columns = ['App name', 'GitHub URL', 'Stars', 'Forks']
 
