@@ -66,14 +66,15 @@ with col1:
 
 with col2:
     st.subheader("Fixed-height container")
-    st.code(
-            """
-            pup_images = get_images(pups_images_urls)
-            with st.container():
-                for img in pup_images:
-                    st.image(img, use_column_width=True)
-            """
-        )
+    with st.expander("Show code"):
+        st.code(
+                """
+                pup_images = get_images(pups_images_urls)
+                with st.container():
+                    for img in pup_images:
+                        st.image(img, use_column_width=True)
+                """
+            )
     pup_images = get_images(pups_images_urls)
     with st.container():
         for img in pup_images:
