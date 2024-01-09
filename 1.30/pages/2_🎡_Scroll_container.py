@@ -50,6 +50,15 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Scroll container")
+    with st.expander("Show code"):
+        st.code(
+            """
+            cat_images = get_images(cat_images_urls)
+            with st.container(height=600): # set the height of the container
+                for img in cat_images:
+                    st.image(img, use_column_width=True)
+            """
+        )
     cat_images = get_images(cat_images_urls)
     with st.container(height=600):
         for img in cat_images:
@@ -57,6 +66,14 @@ with col1:
 
 with col2:
     st.subheader("Fixed-height container")
+    st.code(
+            """
+            pup_images = get_images(pups_images_urls)
+            with st.container():
+                for img in pup_images:
+                    st.image(img, use_column_width=True)
+            """
+        )
     pup_images = get_images(pups_images_urls)
     with st.container():
         for img in pup_images:
