@@ -25,7 +25,6 @@ with st.expander("Show code"):
             "🔗 Link column formatting": "./pages/5_🔗_Link_column_formatting.py"
         }
 
-        st.info('Select page and submit to switch page', icon="👇")
         # Dropdown to select the page
         selected_page = st.selectbox("Select a page:", list(pages.keys()))
 
@@ -47,6 +46,7 @@ pages = {
 }
 
 st.info('Select page and submit to switch page', icon="👇")
+
 # Dropdown to select the page
 selected_page = st.selectbox("Select a page:", list(pages.keys()))
 
