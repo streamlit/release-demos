@@ -19,7 +19,6 @@ with st.expander("Show code"):
         """
         # List of pages
         pages = {
-            "💬 Non-fullscreen chat layout": ".pages/1_💬_Non-fullscreen_chat_layout.py",
             "🎡 Scroll container": "./pages/2_🎡_Scroll_container.py",
             "❓ st.query⚊params": "./pages/3_❓_st.query⚊params.py",
             "📄 st.switch⚊pages": "./pages/4_📄_st.switch⚊pages.py",
@@ -41,7 +40,6 @@ with st.expander("Show code"):
 
 # List of pages
 pages = {
-    "💬 Non-fullscreen chat layout": ".pages/1_💬_Non-fullscreen_chat_layout.py",
     "🎡 Scroll container": "./pages/2_🎡_Scroll_container.py",
     "❓ st.query⚊params": "./pages/3_❓_st.query⚊params.py",
     "📄 st.switch⚊pages": "./pages/4_📄_st.switch⚊pages.py",
