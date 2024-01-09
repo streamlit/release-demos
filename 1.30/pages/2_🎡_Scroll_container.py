@@ -51,7 +51,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Scroll container")
     cat_images = get_images(cat_images_urls)
-    with st.container():
+    with st.container(height=500):
         for img in cat_images:
             st.image(img, use_column_width=True)
 
