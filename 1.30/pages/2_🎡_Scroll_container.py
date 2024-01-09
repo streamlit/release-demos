@@ -46,6 +46,16 @@ st.title("Scroll container", anchor=False)
 
 st.divider()
 
+# Example of a general attribution for all images
+st.info(
+    """
+    All images are sourced from [Unsplash](https://unsplash.com/). 
+    Unsplash images are freely usable under their licensing terms.
+    """, 
+    icon="📸"
+)
+
+
 col1, col2 = st.columns(2)
 
 with col1:
