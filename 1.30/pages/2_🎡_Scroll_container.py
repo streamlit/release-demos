@@ -49,7 +49,7 @@ st.divider()
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Scroll container")
+    st.subheader("Scroll container", anchor=False)
     with st.expander("Show code"):
         st.code(
             """
@@ -65,7 +65,7 @@ with col1:
             st.image(img, use_column_width=True)
 
 with col2:
-    st.subheader("Fixed-height container")
+    st.subheader("Fixed-height container", anchor=False)
     with st.expander("Show code"):
         st.code(
                 """
