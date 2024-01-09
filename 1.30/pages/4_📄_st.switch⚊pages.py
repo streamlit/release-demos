@@ -14,6 +14,8 @@ st.title("Demo of st.switch_page", anchor=False)
 
 st.divider()
 
+st.info('Select page and submit to switch page', icon="👇")
+
 with st.expander("Show code"):
     st.code(
         """
@@ -44,8 +46,6 @@ pages = {
     "📄 st.switch⚊pages": "./pages/4_📄_st.switch⚊pages.py",
     "🔗 Link column formatting": "./pages/5_🔗_Link_column_formatting.py"
 }
-
-st.info('Select page and submit to switch page', icon="👇")
 
 # Dropdown to select the page
 selected_page = st.selectbox("Select a page:", list(pages.keys()))
