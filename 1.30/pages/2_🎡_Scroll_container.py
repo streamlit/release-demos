@@ -74,7 +74,7 @@ with col1:
             st.image(img, use_column_width=True)
 
 with col2:
-    st.subheader("Fixed-height container", anchor=False)
+    st.subheader("Non-scroll container", anchor=False)
     with st.expander("Show code"):
         st.code(
                 """
