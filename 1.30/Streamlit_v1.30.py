@@ -50,4 +50,8 @@ def draw_main_page():
 
     st.title(f"Welcome to Streamlit {VERSION}! :wave:", anchor=False)
 
+    st.caption(intro)
+
+    st.write(release_notes)
+
 draw_main_page()
