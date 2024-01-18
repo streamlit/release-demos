@@ -47,6 +47,7 @@ st.subheader("Key features")
 """
 - When the return value of a partial function changes, the full app is re-run with the new return value. This is
   useful for forms or other scenarios where you might trigger a full re-run based on some event.
+    - Note that using `st.rerun()` inside a partial function also triggers a full re-run.
 - Periodic rerun / streaming: Use `run_every` to automatically rerun the partial function at a specified interval.
   This is great for streaming or polling chart updates, or updating progress on a long-running background task.
 """
@@ -68,7 +69,6 @@ with st.expander("Details of limitations"):
     - In general, interacting with global state or containers created outside the partial function can lead to
       non-intuitive or otherwise unexpected results.
     - Partial functions running can stop some functionality of set_page_config
-    - Some control flow and similar commands may not work as expected inside a partial function
     - Interactions between caching and st.partial are not well tested
 
     Let us know what you find as you experiment with the preview!
