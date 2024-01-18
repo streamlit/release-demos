@@ -14,7 +14,7 @@ of the wider page.** _(Note: We will probably change the name in the final versi
 Whenever an input widget inside the partial function changes, only the function is rerun.
 """
 
-st.info("**[Install the latest whl](https://github.com/streamlit/release-demos)** to give it a try! 👈", icon="🎮")
+st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/partial-reruns/streamlit-1.30.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
 
 
 st.subheader("Simple example")
