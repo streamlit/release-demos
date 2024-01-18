@@ -23,6 +23,8 @@ with st.echo():
     with st.spinner("Doing a slow thing"):
         time.sleep(2)
 
+    st.button("Button in main app", help="Spinner will run again on click")
+
     @st.partial
     def simple_chart():
         st.write("When you move the slider, the spinner ^ doesn't rerun")
@@ -48,7 +50,7 @@ st.subheader("Key features")
 - When the return value of a partial function changes, the full app is re-run with the new return value. This is
   useful for forms or other scenarios where you might trigger a full re-run based on some event.
     - Note that using `st.rerun()` inside a partial function also triggers a full re-run.
-- Periodic rerun / streaming: Use `run_every` to automatically rerun the partial function at a specified interval.
+- Periodic rerun / streaming: Use the `run_every` kwarg to automatically rerun the partial function at a specified interval.
   This is great for streaming or polling chart updates, or updating progress on a long-running background task.
 """
 
