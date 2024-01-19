@@ -6,7 +6,6 @@ st.set_page_config("Partial reruns preview", page_icon="⚡")
 
 st.header("⚡ Introducing partial reruns!")
 
-# TODO: Add the actual WHL link before merge
 """
 ⚡ **`@st.partial` is a new decorator that turns any function into a Streamlit container that can run independently
 of the wider page.** _(Note: We will probably change the name in the final version)_
@@ -67,6 +66,7 @@ with st.expander("Details of limitations"):
     - Interacting with a widget in a partial during the initial page run will cause it to not completely
       load the page
     - Interacting with a widget in partial A while partial B is running will cause B to halt without completing
+      (This is especially frequent for pages with `run_every=` set, such as "Streaming chart" and "Multiple partials")
     - In the dynamic form example, some interactions with the selectbox will cause multiple submit buttons to draw
     - In general, interacting with global state or containers created outside the partial function can lead to
       non-intuitive or otherwise unexpected results.
