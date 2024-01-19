@@ -8,6 +8,9 @@ import streamlit as st
 
 st.set_page_config("Partial reruns preview", page_icon="⚡")
 
+st.header("Multiple partials")
+st.caption("This page highlights multiple different partial types all on the same page")
+
 np.random.seed(0)
 random.seed(0)
 

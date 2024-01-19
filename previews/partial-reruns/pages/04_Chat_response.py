@@ -5,6 +5,7 @@ import streamlit as st
 st.set_page_config("Partial reruns preview", page_icon="⚡")
 
 st.header("Chat response cell")
+st.caption('The "LLM-generated" code runs independently of the rest of the page')
 
 from utils import show_source
 show_source(__file__)

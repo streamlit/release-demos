@@ -19,7 +19,7 @@ col1, col2 = st.columns(2)
 @st.partial
 def app_chart():
     st.subheader("App count")
-    "Takes 3 seconds to load"
+    st.caption("This chart always takes 3 seconds to load")
     time.sleep(3)
     exclude = st.checkbox("Exclude internal apps")
     y = "apps" if not exclude else "external_apps"
@@ -31,7 +31,7 @@ with col1:
 @st.partial
 def meetup_chart():
     st.subheader("Developer meetups")
-    "Takes 1 second to load"
+    st.caption("This chart always takes 1 seconds to load")
     time.sleep(1)
     first, last = st.slider("Month filter", 1, 7, (1, 7), label_visibility="collapsed")
     filtered_df = meetup_df[(meetup_df["month"] >= first) & (meetup_df["month"] <= last)]
