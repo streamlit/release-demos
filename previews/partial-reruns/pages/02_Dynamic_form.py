@@ -4,7 +4,7 @@ import time
 st.set_page_config("Partial reruns preview", page_icon="⚡")
 
 st.header("Dynamic form - full app only runs on submit")
-st.caption("⚠️ There is a known bug on this page where certain interactions cause the app to render multiple Submit buttons.")
+st.caption("⚠️ There is a known bug on this page where certain interactions cause form elements to persist unexpectedly.")
 
 from utils import show_source
 show_source(__file__)
@@ -22,10 +22,15 @@ with st.spinner():
 def get_location():
     with st.container(border=True):
         st.subheader("Enter your location")
-        "Fill out the form below. Note the form is dynamic, while the outer page and spinner only runs after a successful submit."
+        st.info("""Fill out the form below. **Unlike** a regular Streamlit form, this form updates dynamically!
+            But **like** a regular form, the outer page and spinner only runs after a successful submit.
+            """)
+
         state = None
-        if country := st.selectbox("Country", ["", "USA", "Canada", "Germany"]):
-            state = st.selectbox("State", states[country])
+        country = st.selectbox("Country", ["", "USA", "Canada", "Germany"])
+        with st.empty(): # Reduce buggy behavior
+            if country:
+                state = st.selectbox("State", states[country])
         city = st.text_input("City")
 
         submit_enabled = city and state and country

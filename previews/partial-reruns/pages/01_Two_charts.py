@@ -5,6 +5,7 @@ import time
 st.set_page_config("Partial reruns preview", page_icon="⚡", layout="wide")
 
 st.header("Two independent charts with their own inputs")
+st.caption("Each graph filter update loads independently. This makes interactions much faster compared to re-running everything.")
 
 from utils import show_source
 show_source(__file__)

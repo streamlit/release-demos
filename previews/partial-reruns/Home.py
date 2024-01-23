@@ -22,11 +22,11 @@ with st.echo():
     with st.spinner("Doing a slow thing"):
         time.sleep(2)
 
-    st.button("Button in main app", help="Spinner will run again on click")
+    st.button("Button in main app triggers a spinner", help="Warning! Slow spinner!")
 
     @st.partial
     def simple_chart():
-        st.write("When you move the slider, the spinner ^ doesn't rerun")
+        st.write("When you move the slider, only the chart updates, and not the spinner above 👆")
         val = st.slider("Number of bars", 1, 20, 4)
         st.bar_chart(np.random.default_rng().random(val))
     
@@ -52,6 +52,21 @@ st.subheader("Key features")
 - Periodic rerun / streaming: Use the `run_every` kwarg to automatically rerun the partial function at a specified interval.
   This is great for streaming or polling chart updates, or updating progress on a long-running background task.
 """
+
+with st.expander("👀 More details about `@st.partial` behavior"):
+    """
+    Very roughly, you can think of partial rerun as an inverse or complement to caching functions.
+
+    :warning: **Note:** Some behavior described here may change in the final released version.
+    - When you interact with a widget initialized in a partial function, only the partial function code reruns with the updated value.
+    - A partial can access function arguments as well as any local or global variables on the page, and session state.
+    - Arguments and local variables will be set to the last outer / full rerun value for each partial rerun.
+    - Any updates in global variables or session state persist across partial reruns.
+    - Updates to mutable local variables like lists or Streamlit containers (!) are persisted across partial reruns.
+    - Each partial function has its own container that is reset for each partial rerun, similar to how pages reset on rerun.
+    - Streamlit containers and elements initialized outside the partial function are not reset across partial reruns, even
+      if they are modified by the function. This is possible but can lead to strange / unexpected behavior.
+    """
 
 st.subheader("Known limitations of the preview")
 
