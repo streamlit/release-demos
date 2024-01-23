@@ -6,7 +6,7 @@ import streamlit as st
 st.set_page_config("Partial reruns preview", page_icon="⚡")
 
 st.header("Streaming chart")
-st.caption("Every few seconds, the chart is updated with the latest (random) data.")
+st.caption("Every few seconds, the chart is updated with the latest (random) data using `run_every=`. The app only runs during the updates.")
 
 from utils import show_source
 show_source(__file__)

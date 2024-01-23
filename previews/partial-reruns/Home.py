@@ -22,11 +22,11 @@ with st.echo():
     with st.spinner("Doing a slow thing"):
         time.sleep(2)
 
-    st.button("Button in main app", help="Spinner will run again on click")
+    st.button("Button in main app triggers a spinner", help="Warning! Slow spinner!")
 
     @st.partial
     def simple_chart():
-        st.write("When you move the slider, the spinner ^ doesn't rerun")
+        st.write("When you move the slider, only the chart updates, and not the spinner above 👆")
         val = st.slider("Number of bars", 1, 20, 4)
         st.bar_chart(np.random.default_rng().random(val))
     
