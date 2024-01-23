@@ -58,14 +58,15 @@ with st.expander("👀 More details about `@st.partial` behavior"):
     Very roughly, you can think of partial rerun as an inverse or complement to caching functions.
 
     :warning: **Note:** Some behavior described here may change in the final released version.
-    - When you interact with a widget initialized in a partial function, only the partial function code reruns with the updated value.
+    - When you interact with a widget initialized in a partial function, only the partial function code reruns with the user's new value.
     - A partial can access function arguments as well as any local or global variables on the page, and session state.
-    - Arguments and local variables will be set to the last outer / full rerun value for each partial rerun.
+    - Arguments and immutable variables will be set to the value at the last function execution during a full rerun.
     - Any updates in global variables or session state persist across partial reruns.
     - Updates to mutable local variables like lists or Streamlit containers (!) are persisted across partial reruns.
     - Each partial function has its own container that is reset for each partial rerun, similar to how pages reset on rerun.
     - Streamlit containers and elements initialized outside the partial function are not reset across partial reruns, even
-      if they are modified by the function. This is possible but can lead to strange / unexpected behavior.
+      if they are modified by the function. If a partial function writes to a container initialized outside itself,
+      that container will show the cumulative updates from all partial reruns since the last full rerun.
     """
 
 st.subheader("Known limitations of the preview")
