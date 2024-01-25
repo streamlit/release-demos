@@ -39,6 +39,7 @@ This app provides a few key scenarios we think will be interesting with partial 
 - A dynamic form input that only runs the outer page on submission
 - An observability-style chart that streams the latest updates every few seconds
 - "Cell" of LLM-generated code in between two st.chat_messages
+- Tracking and reporting status of a running job
 
 👈 Take a look at the examples to try it.
 """
