@@ -4,17 +4,22 @@ import streamlit as st
 
 st.set_page_config("Partial reruns preview", page_icon="⚡")
 
-st.header("⚡ Introducing partial reruns!")
+st.header("⚡ Partial reruns - Feature preview!")
 
 """
 ⚡ **`@st.partial` is a new decorator that turns any function into a Streamlit container that can run independently
 of the wider page.** _(Note: We will probably change the name in the final version)_
-
-Whenever an input widget inside the partial function changes, only the function is rerun.
 """
 
 st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/partial-reruns/streamlit-1.30.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
 
+"""
+Whenever an input widget inside the partial function changes, only the function is rerun. This is the preview app as we
+finalize development of the feature. We plan to release it in early spring.
+
+Let us know what you think! Share bugs, public apps examples and what use-cases you hope to build in the
+[Streamlit forum post](https://discuss.streamlit.io/t/feature-preview-partial-reruns-share-your-feedback-and-cool-apps/60851).
+"""
 
 st.subheader("Simple example")
 
