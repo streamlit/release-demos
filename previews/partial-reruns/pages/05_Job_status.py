@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config("Partial reruns preview", page_icon="⚡")
+st.set_page_config("Fragments preview", page_icon="⚡")
 
 st.header("Job status")
 st.caption("Trigger a job and see progress updates until it completes")
@@ -19,7 +19,7 @@ def get_job_status():
         st.session_state.status_idx += 1
     return status_vals[st.session_state.status_idx]
 
-@st.partial(run_every=2)
+@st.experimental_fragment(run_every=2)
 def check_job_status():
     status = get_job_status()
     if status == "complete":

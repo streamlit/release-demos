@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 
-st.set_page_config("Partial reruns preview", page_icon="⚡", layout="wide")
+st.set_page_config("Fragments preview", page_icon="⚡", layout="wide")
 
 st.header("Two independent charts with their own inputs")
 st.caption("Each graph filter update loads independently. This makes interactions much faster compared to re-running everything.")
@@ -17,7 +17,7 @@ app_df = pd.DataFrame([[1, 1, 1], [2, 2, 2], [3, 3, 2], [4, 4, 2], [5, 5, 3]], c
 meetup_df = pd.DataFrame([[1, 4], [2, 3], [3, 5], [4, 2], [5, 4], [6, 3], [7, 4]], columns=["month", "meetups"])
 col1, col2 = st.columns(2)
 
-@st.partial
+@st.experimental_fragment
 def app_chart():
     st.subheader("App count")
     st.caption("This chart always takes 3 seconds to load")
@@ -29,7 +29,7 @@ def app_chart():
 with col1:
     app_chart()
 
-@st.partial
+@st.experimental_fragment
 def meetup_chart():
     st.subheader("Developer meetups")
     st.caption("This chart always takes 1 seconds to load")

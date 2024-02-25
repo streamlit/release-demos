@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config("Partial reruns preview", page_icon="⚡")
+st.set_page_config("Fragments preview", page_icon="⚡")
 
 st.header("Dynamic form - full app only runs on submit")
 st.caption("⚠️ There is a known bug on this page where certain interactions cause form elements to persist unexpectedly.")
@@ -18,7 +18,7 @@ states = {
 with st.spinner():
     time.sleep(1.5)
 
-@st.partial
+@st.experimental_fragment
 def get_location():
     with st.container(border=True):
         st.subheader("Enter your location")
@@ -38,11 +38,13 @@ def get_location():
             if len(city) < 8:
                 st.warning(f"City name {city} must be at least 8 characters")
             else:
-                # You could also store this value in session_state
-                # and call st.rerun()
-                return dict(country=country, state=state, city=city)
+                st.session_state.new_location = dict(country=country, state=state, city=city)
+                st.rerun()
 
-if result := get_location():
+get_location()
+
+if "new_location" in st.session_state:
+    result = st.session_state.pop("new_location")
     st.success("We have recorded your location, thank you!")
     "Response:"
     st.json(result)

@@ -2,7 +2,7 @@ import re
 import time
 import streamlit as st
 
-st.set_page_config("Partial reruns preview", page_icon="⚡")
+st.set_page_config("Fragments preview", page_icon="⚡")
 
 st.header("Chat response cell")
 st.caption('The "LLM-generated" code runs independently of the rest of the page')
@@ -23,7 +23,7 @@ st.line_chart(app_df, x="day", y=y)
 ```
 """
 
-@st.partial
+@st.experimental_fragment
 def parse_and_exec(response):
     code_match = re.search(r"```python\n(.*)\n```", response, re.DOTALL)
     if code_match:
@@ -35,9 +35,10 @@ if "messages" not in st.session_state:
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
-    parse_and_exec(msg["content"])
+    with st.container(): # bug that causes st.chat_input to go in-line without this
+        parse_and_exec(msg["content"])
 
-if prompt := st.chat_input(placeholder="Draw a simple line chart"):
+if prompt := st.chat_input(placeholder="Draw a simple line chart", ):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
     response = get_response(messages=st.session_state.messages)
