@@ -11,7 +11,9 @@ st.header("⚡ Fragments - Feature preview!")
 that can run independently of the wider page.**
 """
 
-st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/partial-reruns/streamlit-1.30.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
+# TODO: FIX THE WHL LINK
+st.info("**[Install the latest whl]()** to give it a try! 👈", icon="🎮")
+#st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/partial-reruns/streamlit-1.30.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
 
 """
 Whenever an input widget inside the fragment changes, only the fragment reruns. This is the preview app as we
