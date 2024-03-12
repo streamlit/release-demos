@@ -4,7 +4,6 @@ import time
 st.set_page_config("Fragments preview", page_icon="⚡")
 
 st.header("Dynamic form - full app only runs on submit")
-st.caption("⚠️ There is a known bug on this page where certain interactions cause form elements to persist unexpectedly.")
 
 from utils import show_source
 show_source(__file__)
@@ -28,9 +27,8 @@ def get_location():
 
         state = None
         country = st.selectbox("Country", ["", "USA", "Canada", "Germany"])
-        with st.empty(): # Reduce buggy behavior
-            if country:
-                state = st.selectbox("State", states[country])
+        if country:
+            state = st.selectbox("State", states[country])
         city = st.text_input("City")
 
         submit_enabled = city and state and country
