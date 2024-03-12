@@ -88,12 +88,11 @@ with st.expander("Details of limitations"):
     """
     - Interacting with a widget in a fragment during the initial page run will cause it to not completely
       load the page
+    - Fragment functions running can stop some functionality of set_page_config
     - Interacting with a widget in fragment A while fragment B is running will cause B to halt without completing
       (This is especially frequent for pages with `run_every=` set, such as "Streaming chart" and "Multiple fragments")
-    - In the dynamic form example, some interactions with the selectbox will cause multiple submit buttons to draw
     - In general, interacting with global state or containers created outside the fragment function can lead to
       non-intuitive or otherwise unexpected results.
-    - Fragment functions running can stop some functionality of set_page_config
     - Interactions between caching and st.experimental_fragment are not well tested
 
     Let us know what you find as you experiment with the preview!
