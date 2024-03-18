@@ -35,8 +35,7 @@ if "messages" not in st.session_state:
 
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
-    with st.container(): # bug that causes st.chat_input to go in-line without this
-        parse_and_exec(msg["content"])
+    parse_and_exec(msg["content"])
 
 if prompt := st.chat_input(placeholder="Draw a simple line chart", ):
     st.session_state.messages.append({"role": "user", "content": prompt})
