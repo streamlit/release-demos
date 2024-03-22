@@ -83,11 +83,8 @@ If you find other unexpected behavior while playing with the whl file, please le
 
 with st.expander("Details of limitations"):
     """
-    - There are strange widget state interactions with st.rerun() and buttons _(this should be fixed soon)_
     - If you use a callback that draws elements to the main container from inside a fragment, it will unexpectedly
       overwrite elements outside the fragment.
-    - In the case of multiple fragment interactions happening concurrently, some stale elements will not "fade out"
-      as usual during the execution. The end state should be as expected once the fragments finish running.
     - In general, interacting with global state or containers created outside the fragment function can lead to
       non-intuitive or otherwise unexpected results.
     - Interactions between caching and st.experimental_fragment are not well tested
