@@ -5,3 +5,4 @@ plotly-express
 statsmodels
 xarray
 streamlit-extras
+validators
