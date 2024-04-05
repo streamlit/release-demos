@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config("Fragments preview", page_icon="⚡")
+st.set_page_config("st.experimental_fragment", page_icon="⚡")
 
 st.header("Streaming chart")
 st.caption("Every few seconds, the chart is updated with the latest (random) data using `run_every=`. The app only runs during the updates.")

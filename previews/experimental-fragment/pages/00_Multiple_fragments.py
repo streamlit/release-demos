@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config("Fragments preview", page_icon="⚡")
+st.set_page_config("st.experimental_fragment", page_icon="⚡")
 
 st.header("Multiple fragments")
 st.caption("This page highlights multiple different fragment types all on the same page")
@@ -96,8 +96,8 @@ with st.expander("Interactive form with fragment", expanded=True):
 with st.expander("Streaming chart with fragment", expanded=True):
     stream_data()
 
-# with st.expander("Download button that doesn't require full rerun", expanded=True):
-#     improved_download_button()
+with st.expander("Download button that doesn't require full rerun", expanded=True):
+    improved_download_button()
 
 other_input = st.text_input(f"Input in main script")
 st.write(f"Reruns of main script: {st.session_state.reruns}")

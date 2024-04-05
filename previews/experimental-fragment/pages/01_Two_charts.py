@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 
-st.set_page_config("Fragments preview", page_icon="⚡", layout="wide")
+st.set_page_config("st.experimental_fragment", page_icon="⚡", layout="wide")
 
 st.header("Two independent charts with their own inputs")
 st.caption("Each graph filter update loads independently. This makes interactions much faster compared to re-running everything.")

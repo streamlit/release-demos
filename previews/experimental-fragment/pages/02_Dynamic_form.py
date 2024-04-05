@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config("Fragments preview", page_icon="⚡")
+st.set_page_config("st.experimental_fragment", page_icon="⚡")
 
 st.header("Dynamic form - full app only runs on submit")
 
