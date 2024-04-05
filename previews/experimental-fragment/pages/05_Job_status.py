@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config("Fragments preview", page_icon="⚡")
+st.set_page_config("st.experimental_fragment", page_icon="⚡")
 
 st.header("Job status")
 st.caption("Trigger a job and see progress updates until it completes")

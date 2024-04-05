@@ -2,7 +2,7 @@ import re
 import time
 import streamlit as st
 
-st.set_page_config("Fragments preview", page_icon="⚡")
+st.set_page_config("st.experimental_fragment", page_icon="⚡")
 
 st.header("Chat response cell")
 st.caption('The "LLM-generated" code runs independently of the rest of the page')

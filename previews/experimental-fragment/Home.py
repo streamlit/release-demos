@@ -2,23 +2,21 @@ import time
 import numpy as np
 import streamlit as st
 
-st.set_page_config("Fragments preview", page_icon="⚡")
+st.set_page_config("st.experimental_fragment", page_icon="⚡")
 
-st.header("⚡ Fragments - Feature preview!")
+st.header("⚡ Introducing Streamlit fragments!")
 
 """
-⚡ **`@st.experimental_fragment` is a new decorator that turns any function into a "Fragment"
+⚡ **`@st.experimental_fragment` is a new decorator that turns any function into a "fragment"
 that can run independently of the wider page.**
-"""
 
-st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/experimental-fragment/streamlit-1.32.2-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
+Whenever an input widget inside the fragment changes, only the fragment reruns. This app introduces
+the feature and some common use cases.
 
-"""
-Whenever an input widget inside the fragment changes, only the fragment reruns. This is the preview app as we
-finalize development of the feature. We plan to release it in early spring.
-
-Let us know what you think! Share bugs, public apps examples and what use-cases you hope to build in the
-[Streamlit forum post](https://discuss.streamlit.io/t/feature-preview-partial-reruns-share-your-feedback-and-cool-apps/60851).
+- 🎮 Try it yourself: `pip install streamlit>=1.33`
+- 📖 Check out the [docs article](https://docs.streamlit.io/develop/concepts/architecture/fragments)
+  and [API reference](https://docs.streamlit.io/develop/api-reference/execution-flow/st.fragment)
+  for more details.
 """
 
 st.subheader("Simple example")
@@ -57,37 +55,3 @@ st.subheader("Key features")
 - Use `st.rerun()` inside a fragment to trigger a full app re-run. Store values in `st.session_state` to use them
   outside the fragment.
 """
-
-with st.expander("👀 More details about `@st.experimental_fragment` behavior"):
-    """
-    Very roughly, you can think of fragments as an inverse or complement to caching functions.
-
-    :warning: **Note:** Some behavior described here may change in the final released version.
-    - When you interact with a widget initialized in a fragment, only the fragment code reruns with the user's new value.
-    - A fragment can access function arguments as well as any local or global variables on the page, and session state.
-    - Arguments and immutable variables will be set to the value at the last function execution during a full rerun.
-    - Any updates in global variables or session state persist across fragment reruns.
-    - Updates to mutable local variables like lists or Streamlit containers (!) are persisted across fragment reruns.
-    - Each fragment runs in its own container that IS reset for each fragment rerun, similar to how pages reset on rerun.
-    - Streamlit containers and elements initialized outside the fragment are not reset across fragment reruns, even
-      if they are modified by the function. If a fragment function writes to a container initialized outside itself,
-      that container will show the cumulative updates from all fragment reruns since the last full rerun.
-    """
-
-st.subheader("Known limitations of the preview")
-
-"""
-Critical and commonly encountered issues have been fixed, however we are aware of some remaining edge cases.
-If you find other unexpected behavior while playing with the whl file, please let us know!
-"""
-
-with st.expander("Details of limitations"):
-    """
-    - If you use a callback that draws elements to the main container from inside a fragment, it will unexpectedly
-      overwrite elements outside the fragment.
-    - In general, interacting with global state or containers created outside the fragment function can lead to
-      non-intuitive or otherwise unexpected results.
-    - Interactions between caching and st.experimental_fragment are not well tested
-
-    Let us know what you find as you experiment with the preview!
-    """
