@@ -1,11 +1,11 @@
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
 
-st.set_page_config(page_icon=":material:pizzzzza:")
+st.set_page_config(page_icon=":material/local_pizza:")
 
-st.success("We did it!", icon=":material:local_pizza:")
+st.success("We did it!", icon=":material/person_pin:")
 if st.button("toast"):
-    st.toast("A face", icon=":material:tag_faces:")
+    st.toast("A face", icon=":material/tag_faces:")
 
 def user_message():
     with stylable_container(
@@ -18,7 +18,7 @@ def user_message():
             }
             """,
     ):
-        cm = st.chat_message("user", avatar=":material:person_pin:")
+        cm = st.chat_message("user", avatar=":material/person_pin:")
     return cm
 
 def assistant_message():
@@ -32,7 +32,7 @@ def assistant_message():
             }
             """,
     ):
-        cm = st.chat_message("assistant", avatar=":material:computer:")
+        cm = st.chat_message("assistant", avatar=":material/computer:")
     return cm
 
 
