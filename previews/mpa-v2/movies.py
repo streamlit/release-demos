@@ -2,6 +2,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import altair as alt
+import pathlib
+
+CURRENT_DIR = pathlib.Path(__file__).parent.resolve()
 
 # st.title('📊 Interactive Data Explorer')
 
@@ -14,7 +17,7 @@ import altair as alt
 st.subheader('Which Movie Genre performs ($) best at the box office?')
 
 # Load data
-df = pd.read_csv('data/movies_genres_summary.csv')
+df = pd.read_csv(CURRENT_DIR / 'data/movies_genres_summary.csv')
 df.year = df.year.astype('int')
 
 # Input widgets
