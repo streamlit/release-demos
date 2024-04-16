@@ -31,6 +31,10 @@ if "logged_in" not in st.session_state:
         st.session_state.logged_in = True
         st.rerun()
     else:
+        def empty_page():
+            pass
+        pg = st.navigation([st.Page(empty_page)], position="hidden")
+        pg.run()
         st.stop()
 
 with st.sidebar:
