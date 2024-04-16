@@ -1,4 +1,7 @@
 import streamlit as st
+import pathlib
+
+CURRENT_DIR = pathlib.Path(__file__).parent.resolve()
 
 def page2():
     #st.title("Page 2")
@@ -13,7 +16,7 @@ def north_star():
     #st.title("North Star")
     st.markdown("Welcome to my awesome app")
 
-st.logo("logo.png", url="https://www.snowflake.com", collapsed_version="logo_small.png")
+st.logo(CURRENT_DIR / "logo.png", url="https://www.snowflake.com", collapsed_version=CURRENT_DIR / "logo_small.png")
 st.html("""
   <style>
     [data-testid=stSidebarNavLink] {
