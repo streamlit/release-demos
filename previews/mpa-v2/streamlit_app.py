@@ -16,7 +16,7 @@ def north_star():
     #st.title("North Star")
     st.markdown("Welcome to my awesome app")
 
-st.logo(CURRENT_DIR / "logo.png", url="https://www.snowflake.com", collapsed_version=CURRENT_DIR / "logo_small.png")
+st.logo(str(CURRENT_DIR / "logo.png"), url="https://www.snowflake.com", collapsed_version=str(CURRENT_DIR / "logo_small.png"))
 st.html("""
   <style>
     [data-testid=stSidebarNavLink] {
