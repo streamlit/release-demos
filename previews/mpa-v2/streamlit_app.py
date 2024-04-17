@@ -17,16 +17,6 @@ def north_star():
     st.markdown("Welcome to my awesome app")
 
 st.logo(str(CURRENT_DIR / "logo.png"), url="https://www.snowflake.com", collapsed_version=str(CURRENT_DIR / "logo_small.png"))
-st.html("""
-  <style>
-    [data-testid=stSidebarNavLink] {
-      color: rgba(49, 51, 63, 0.6);
-    }
-    [data-testid=stSidebarNavLink]:hover {
-      color: rgba(49, 51, 63, 0.6);
-    }
-  </style>
-""")
 
 if "logged_in" not in st.session_state:
     st.write("You'll need to log in to continue.")
@@ -42,8 +32,8 @@ if "logged_in" not in st.session_state:
 
 with st.sidebar:
   st.subheader("Having fun yet?")
-  st.slider("Amount of fun", 0, 1000, 450)
-  st.radio("Your thoughts", ["I agree", "I disagree"])
+  st.slider("Amount of fun", 0, 1000, 450, key="slide")
+  st.radio("Your thoughts", ["I agree", "I disagree"], key="radio")
   st.text_input("Thoughts", placeholder="Add your thoughts", label_visibility="collapsed")
   st.button("Submit")
   if st.button("Logout"):
