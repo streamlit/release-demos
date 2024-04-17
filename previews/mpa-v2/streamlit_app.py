@@ -3,6 +3,43 @@ import pathlib
 
 CURRENT_DIR = pathlib.Path(__file__).parent.resolve()
 
+st.logo(str(CURRENT_DIR / "logo.png"), url="https://www.snowflake.com", collapsed_version=str(CURRENT_DIR / "logo_small.png"))
+
+### Only define login once, no pages available until login ###
+
+if "logged_in" not in st.session_state:
+    st.write("Welcome to the new Multi-Page Apps demo. You'll need to log in to continue.")
+    if st.button("Log in"):
+        st.session_state.logged_in = True
+        st.rerun()
+    else:
+        def empty_page():
+            pass
+        pg = st.navigation([st.Page(empty_page, title="Streamlit Multi-Page V2")], position="hidden")
+        pg.run()
+        st.stop()
+
+### Common elements which are on every page after login ###
+
+st.header("📖 Multi-Page Apps V2: Preview Demo")
+
+"""
+**Streamlit Multi-page apps V2 provides a new way to define multi-page Streamlit apps and some new features coming for the side navigation.**
+"""
+
+with st.sidebar:
+  st.subheader("Having fun yet?")
+  st.slider("Amount of fun", 0, 1000, 450, key="slide")
+  st.radio("Your thoughts", ["I agree", "I disagree"], key="radio")
+  st.text_input("Thoughts", placeholder="Add your thoughts", label_visibility="collapsed")
+  st.button("Submit")
+  if st.button("Logout"):
+      del st.session_state["logged_in"]
+      st.rerun()
+
+
+### Add pages as functions (can also point to separate files) ###
+
 def page2():
     st.markdown("You can add core metrics here.")
 
@@ -44,35 +81,7 @@ def north_star():
             pg.run()
             """)
 
-st.logo(str(CURRENT_DIR / "logo.png"), url="https://www.snowflake.com", collapsed_version=str(CURRENT_DIR / "logo_small.png"))
-
-if "logged_in" not in st.session_state:
-    st.write("Welcome to the new Multi-Page Apps demo. You'll need to log in to continue.")
-    if st.button("Log in"):
-        st.session_state.logged_in = True
-        st.rerun()
-    else:
-        def empty_page():
-            pass
-        pg = st.navigation([st.Page(empty_page, title="Streamlit Multi-Page V2")], position="hidden")
-        pg.run()
-        st.stop()
-
-st.header("📖 Multi-Page Apps V2: Preview Demo")
-
-"""
-**Streamlit Multi-page apps V2 provides a new way to define multi-page Streamlit apps and some new features coming for the side navigation.**
-"""
-
-with st.sidebar:
-  st.subheader("Having fun yet?")
-  st.slider("Amount of fun", 0, 1000, 450, key="slide")
-  st.radio("Your thoughts", ["I agree", "I disagree"], key="radio")
-  st.text_input("Thoughts", placeholder="Add your thoughts", label_visibility="collapsed")
-  st.button("Submit")
-  if st.button("Logout"):
-      del st.session_state["logged_in"]
-      st.rerun()
+# Define the main navigation
 
 pg = st.navigation({
     "Overview": [
