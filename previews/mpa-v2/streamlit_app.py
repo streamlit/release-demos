@@ -80,6 +80,18 @@ def north_star():
             })
             pg.run()
             """)
+    
+    st.subheader("Limitations")
+
+    st.markdown("""
+                The current WHL file is not extensively tested for all use cases, we will do further
+                testing before release. There could be bugs with styling, interaction with `pages/` based
+                multi-page apps, or other weird issues. The current WHL also produces extra logs which will
+                of course be removed in the final version.
+
+                One particular note is that widgets defined in the common code will hard reset on page change.
+                We are looking into whether / how we can improve this behavior.
+                """)
 
 # Define the main navigation
 
