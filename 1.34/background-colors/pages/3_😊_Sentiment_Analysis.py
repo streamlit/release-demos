@@ -1,3 +1,6 @@
+import re
+import string
+
 import spacy
 import streamlit as st
 from spacytextblob.spacytextblob import SpacyTextBlob
@@ -16,20 +19,25 @@ def analyze_sentiment(text):
     output_text = text  # Start with the original text
     assessments = doc._.blob.sentiment_assessments.assessments
 
-    # Process each assessment and apply colors
-    for assessment in reversed(assessments):
+    # Create a list of tuples containing the start index, end index, and color for each phrase
+    replacements = []
+    for assessment in assessments:
         phrase_list, polarity, _, _ = assessment
-        phrase = " ".join(phrase_list)  # Join the list to form the phrase
-        start = output_text.rfind(phrase)  # Find the last occurrence of the phrase
-        if start != -1:
-            end = start + len(phrase)
+        first_token = phrase_list[0]
+        last_token = phrase_list[-1]
+        start_index = text.lower().find(first_token.lower())
+        end_index = text.lower().rfind(last_token.lower()) + len(last_token)
+        if start_index != -1 and end_index != -1:
             color = "green" if polarity > 0.1 else "red" if polarity < -0.1 else "gray"
-            # Slice and insert the color
-            output_text = (
-                output_text[:start]
-                + f":{color}-background[{phrase}]"
-                + output_text[end:]
-            )
+            replacements.append((start_index, end_index, color))
+
+    # Sort replacements by start_index in descending order to avoid disrupting indices
+    replacements.sort(key=lambda x: x[0], reverse=True)
+
+    # Apply replacements from the end of the text to the beginning
+    for start, end, color in replacements:
+        colored_segment = f":{color}-background[{text[start:end]}]"
+        output_text = output_text[:start] + colored_segment + output_text[end:]
 
     return output_text, assessments
 
