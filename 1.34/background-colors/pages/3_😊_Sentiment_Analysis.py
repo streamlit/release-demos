@@ -1,6 +1,3 @@
-import re
-import string
-
 import spacy
 import streamlit as st
 from spacytextblob.spacytextblob import SpacyTextBlob
