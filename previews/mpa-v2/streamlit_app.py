@@ -3,7 +3,7 @@ import pathlib
 
 CURRENT_DIR = pathlib.Path(__file__).parent.resolve()
 
-st.logo(str(CURRENT_DIR / "logo.png"), url="https://www.snowflake.com", collapsed_version=str(CURRENT_DIR / "logo_small.png"))
+st.logo(str(CURRENT_DIR / "logo.png"), link="https://www.snowflake.com", icon_image=str(CURRENT_DIR / "logo_small.png"))
 
 ### Only define login once, no pages available until login ###
 
