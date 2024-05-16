@@ -7,7 +7,7 @@ st.logo(str(CURRENT_DIR / "logo.png"), link="https://www.snowflake.com", icon_im
 
 ### Only define login once, no pages available until login ###
 
-if "logged_in" not in st.session_state:
+if "logged_in" not in st.session_state and not st.query_params.get("test_more_pages", False):
     st.write("Welcome to the new Multi-Page Apps demo. You'll need to log in to continue.")
     if st.button("Log in"):
         st.session_state.logged_in = True
