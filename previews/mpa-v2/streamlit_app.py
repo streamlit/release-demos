@@ -48,7 +48,7 @@ def page3():
     raise TypeError("This page has the wrong type")
 
 def north_star():
-    st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/mpa-v2/streamlit-1.34.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
+    st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/mpa-v2/streamlit-1.35.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
 
     st.markdown("""
     Using the new API, when you do `streamlit run streamlit_app.py`, the contents of streamlit_app.py will automatically run before every page instead of defining the home page. Any common code can go here.
