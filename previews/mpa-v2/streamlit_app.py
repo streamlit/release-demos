@@ -98,15 +98,15 @@ def north_star():
 pg = st.navigation({
     "Overview": [
         # Load pages from functions
-        st.Page(north_star, title="Home", default=True, icon=":material/home:"),
-        st.Page(north_star, title="North Star", icon=":material/star_border:"),
+        st.Page(north_star, title="Home", default=True, icon=":material/home:", url_path=""),
+        st.Page(north_star, title="North Star", icon=":material/star_border:", url_path="north_star2"),
         ],
     "Metrics": [
         st.Page(page2, title="Core Metrics", icon=":material/hourglass_top:"),
         # You can also load pages from files, as usual
         st.Page("movies.py", title="Movie Explorer", icon=":material/movie_filter:"),
         st.Page(page3, title="App statuses over time", icon=":material/access_time:"),
-        st.Page(page3, title="Cloud apps leaderboard", icon=":material/share:"),
+        st.Page(page3, title="Cloud apps leaderboard", icon=":material/share:", url_path="cloud_apps_leaderboard"),
         ],
 })
 
