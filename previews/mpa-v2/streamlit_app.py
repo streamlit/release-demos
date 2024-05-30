@@ -93,6 +93,19 @@ def north_star():
                 We are looking into whether / how we can improve this behavior.
                 """)
 
+def page4():
+    @st.experimental_dialog("Input")
+    def get_input():
+        st.session_state.input = st.text_input("Some input")
+        if st.button("Submit"):
+            st.rerun()
+
+    if st.button("Add input"):
+        get_input()
+
+    if input := st.session_state.get("input"):
+        st.write(f"Welcome, {input}")
+
 # Define the main navigation
 
 pg = st.navigation({
@@ -107,6 +120,7 @@ pg = st.navigation({
         st.Page("movies.py", title="Movie Explorer", icon=":material/movie_filter:"),
         st.Page(page3, title="App statuses over time", icon=":material/access_time:"),
         st.Page(page3, title="Cloud apps leaderboard", icon=":material/share:", url_path="cloud_apps_leaderboard"),
+        st.Page(page4, title="Dialogs", icon=":material/feedback:"),
         ],
 })
 
