@@ -24,10 +24,10 @@ if "logged_in" not in st.session_state:
 
 ### Common elements which are on every page after login ###
 
-st.header("📖 Multi-Page Apps V2: Preview Demo")
+st.header("📖 Multi-Page Apps V2: Demo")
 
 """
-**Streamlit Multi-page apps V2 provides a new way to define multi-page Streamlit apps and some new features coming for the side navigation.**
+**Streamlit Multi-page apps V2 provides a new way to define multi-page Streamlit apps and some new features for the side navigation.**
 """
 
 with st.sidebar:
@@ -51,7 +51,7 @@ def page3():
     raise TypeError("This page has the wrong type")
 
 def north_star():
-    st.info("**[Install the latest whl](https://github.com/streamlit/release-demos/raw/master/previews/mpa-v2/streamlit-1.35.0-py2.py3-none-any.whl)** to give it a try! 👈", icon="🎮")
+    st.info("**Install Streamlit 1.36** to give it a try! 👈", icon="🎮")
 
     st.markdown("""
     Using the new API, when you do `streamlit run streamlit_app.py`, the contents of streamlit_app.py will automatically run before every page instead of defining the home page. Any common code can go here.
@@ -60,7 +60,7 @@ def north_star():
     - **Write common code once:** Besides defining your pages / nav, you can also add any common session setup code, authorization check, page_config, styles, etc only once in this file.
     - **Native logos and icons:** use `st.logo()` to add an app logo at the top left, add text headings between page groups in the native navigation, and (limited) support for Material icons in addition to emojis.
 
-    Let us know what you think! Share bugs, public apps examples and what use-cases you hope to build in the
+    Let us know what you think! Share bugs, public apps examples and what use-cases you build in the
     [Streamlit forum post](https://discuss.streamlit.io/t/coming-soon-multi-page-apps-improved-api-and-new-navigation-ui-features/65679).
                 
     The navigation for this app is copied below. **View the [full source code here](https://github.com/streamlit/release-demos/blob/master/previews/mpa-v2/streamlit_app.py).**
@@ -83,18 +83,7 @@ def north_star():
             })
             pg.run()
             """)
-    
-    st.subheader("Limitations")
 
-    st.markdown("""
-                The current WHL file is not extensively tested for all use cases, we will do further
-                testing before release. There could be bugs with styling, interaction with `pages/` based
-                multi-page apps, or other weird issues. The current WHL also produces extra logs which will
-                of course be removed in the final version.
-
-                One particular note is that widgets defined in the common code will hard reset on page change.
-                We are looking into whether / how we can improve this behavior.
-                """)
 
 def page4():
     @st.experimental_dialog("Input")
