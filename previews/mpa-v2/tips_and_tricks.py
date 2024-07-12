@@ -1,16 +1,10 @@
 import streamlit as st
-
-def page1():
-    st.markdown("This is a page")
-
-def page2():
-    st.markdown("This is another page")
-    if st.button("Make a mistake"):
-        raise TypeError("Something bad happened")
+from extra_pages import page1, page2
 
 
-pg = st.navigation([st.Page(page1), st.Page(page2)])
+pg = st.navigation([st.Page(page1), st.Page(page2), st.Page("movies.py")])
 
+# Customize the page config behavior with st.Page properties
 st.set_page_config(
         # Add a prefix to the browser tab title
         page_title=f"My App: {pg.title}",
@@ -18,7 +12,7 @@ st.set_page_config(
         layout="wide" if pg.url_path == "page2" else "centered",
     )
 
-# Hide the Streamlit "running man" on all pages
+# Common styling: hide the Streamlit "running man" on all pages
 st.sidebar.html(
     """
     <style>
