@@ -155,7 +155,7 @@ with old:
                 "LangChain Quickstart": "dataprofessor/langchain-quickstart",
                 "Knowledge GPT": "mmz-001/knowledge_gpt",
                 "SEO Chatbot": "cefege/seo-chat-bot",
-                "LlamaIndex Chat with Streamlit Docs": "carolinedlu/llamaindex-chat-with-streamlit-docs"
+                "LlamaIndex Chat with Streamlit Docs": "carolinefrasca/llamaindex-chat-with-streamlit-docs"
             }
 
             # Fetch and build the dataset
