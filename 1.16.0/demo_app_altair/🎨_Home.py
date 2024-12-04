@@ -28,20 +28,6 @@ This is a demo app for the 1.16 release of Streamlit, focusing on showcasing the
 """
 )
 
-show = st.button("I'm lazy!")
-if show:
-    new_page = np.random.choice(
-        [
-            "Horizontal Stacked Bar Chart",
-            "Bar Chart With Mean Line",
-            "Layered Bar Chart",
-            "Iowa Electricity",
-            "Scatter Marginal Hist",
-            "Simple Stacked Area Chart",
-        ]
-    )
-    st.switch_page(new_page)
-
 st.markdown(
     """
 Read more in the dedicated [Streamlit blog post](https://blog.streamlit.io/)!
