@@ -16,12 +16,11 @@ ICON = "🎨"
 st.set_page_config(page_title=TITLE, page_icon=ICON)
 icon(ICON)
 st.title(TITLE)
-PLOTLY_ICON_URL = "https://images.prismic.io/plotly-marketing-website-2/7a351ee7-8d24-45b4-8352-0e1485bd94da_favicon_png_1%402x+%281%29.ico?auto=compress,format"
 
 st.markdown(
     f"""Welcome! 👋
 
-This is a demo app for the 1.16 release of Streamlit, focusing on showcasing the new Streamlit theme for Plotly charts! We collected a bunch of example charts from [{PLOTLY_ICON_URL}](Plotly's docs)(https://plotly.com/python/) to show you how the charts look with/without Streamlit theme. \n
+This is a demo app for the 1.16 release of Streamlit, focusing on showcasing the new Streamlit theme for Plotly charts! We collected a bunch of example charts from [Plotly's docs](https://plotly.com/python/) to show you how the charts look with/without Streamlit theme. \n
 
 👈 Check them out by browsing the pages in the sidebar!
 """
