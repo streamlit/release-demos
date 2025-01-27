@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config("st.experimental_fragment", page_icon="⚡")
+st.set_page_config("st.fragment", page_icon="⚡")
 
 st.header("Dynamic form - full app only runs on submit")
 
@@ -17,7 +17,7 @@ states = {
 with st.spinner():
     time.sleep(1.5)
 
-@st.experimental_fragment
+@st.fragment
 def get_location():
     with st.container(border=True):
         st.subheader("Enter your location")
