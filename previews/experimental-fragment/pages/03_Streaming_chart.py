@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config("st.experimental_fragment", page_icon="⚡")
+st.set_page_config("st.fragment", page_icon="⚡")
 
 st.header("Streaming chart")
 st.caption("Every few seconds, the chart is updated with the latest (random) data using `run_every=`. The app only runs during the updates.")
@@ -16,7 +16,7 @@ rng = np.random.default_rng()
 if st.button("Reset streaming") or "chart_data" not in st.session_state:
     st.session_state.chart_data = pd.DataFrame(rng.random((20, 3)), columns=["a", "b", "c"])
 
-@st.experimental_fragment(run_every=2)
+@st.fragment(run_every=2)
 def generate_chart():
     rng = np.random.default_rng()
     new_data = pd.DataFrame(rng.random((2, 3)), columns=["a", "b", "c"])
