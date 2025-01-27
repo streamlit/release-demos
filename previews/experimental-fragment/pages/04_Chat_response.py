@@ -2,7 +2,7 @@ import re
 import time
 import streamlit as st
 
-st.set_page_config("st.experimental_fragment", page_icon="⚡")
+st.set_page_config("st.fragment", page_icon="⚡")
 
 st.header("Chat response cell")
 st.caption('The "LLM-generated" code runs independently of the rest of the page')
@@ -23,7 +23,7 @@ st.line_chart(app_df, x="day", y=y)
 ```
 """
 
-@st.experimental_fragment
+@st.fragment
 def parse_and_exec(response):
     code_match = re.search(r"```python\n(.*)\n```", response, re.DOTALL)
     if code_match:
