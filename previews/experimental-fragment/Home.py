@@ -7,7 +7,7 @@ st.set_page_config("st.experimental_fragment", page_icon="⚡")
 st.header("⚡ Introducing Streamlit fragments!")
 
 """
-⚡ **`@st.experimental_fragment` is a new decorator that turns any function into a "fragment"
+⚡ **`@st.fragment` is a new decorator that turns any function into a "fragment"
 that can run independently of the wider page.**
 
 Whenever an input widget inside the fragment changes, only the fragment reruns. This app introduces
@@ -27,7 +27,7 @@ with st.echo():
 
     st.button("Button in main app triggers a spinner", help="Warning! Slow spinner!")
 
-    @st.experimental_fragment
+    @st.fragment
     def simple_chart():
         st.write("When you move the slider, only the chart updates, and not the spinner above 👆")
         val = st.slider("Number of bars", 1, 20, 4)
