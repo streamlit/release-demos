@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.set_page_config("st.experimental_fragment", page_icon="⚡")
+st.set_page_config("st.fragment", page_icon="⚡")
 
 st.header("Multiple fragments")
 st.caption("This page highlights multiple different fragment types all on the same page")
@@ -31,7 +31,7 @@ with st.spinner("Doing some heavy work in the main script..."):
     time.sleep(3)
 
 
-@st.experimental_fragment
+@st.fragment
 def interactive_form():
     st.caption(
         "Interacting with any of the elements in this fragment will only rerun the code of this fragment."
@@ -44,7 +44,7 @@ def interactive_form():
         st.success(f"Contact data ({option}: {contact_info}) submitted successfully!")
 
 
-@st.experimental_fragment
+@st.fragment
 def chart_filtering(data: pd.DataFrame):
     time.sleep(1)
     st.caption(
@@ -55,7 +55,7 @@ def chart_filtering(data: pd.DataFrame):
     st.line_chart(data if not columns else data[columns])
 
 
-@st.experimental_fragment(run_every=5)
+@st.fragment(run_every=5)
 def stream_data():
     rng = np.random.default_rng()
     chart_data = pd.DataFrame(rng.random((20, 3)), columns=["a", "b", "c"])
@@ -70,7 +70,7 @@ def transform_data():
     return chart_data_1.to_csv().encode("utf-8")
 
 
-@st.experimental_fragment
+@st.fragment
 def improved_download_button():
     st.download_button(
         label="Download data as CSV",
