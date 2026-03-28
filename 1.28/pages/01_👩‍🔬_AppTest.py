@@ -44,7 +44,7 @@ tab1, tab2 = st.tabs(
 with tab1:
     st.code(
         '''
-        import apptest
+        import unittest
         import openai
         from unittest.mock import patch
         from types import SimpleNamespace
